@@ -1,0 +1,144 @@
+.review {
+  padding: 40px 0;
+
+
+  &__text {
+    text-align: center;
+  }
+
+  &__item {
+    padding: 20px 0;
+    border-bottom: 2px solid rgba(219, 219, 219, 0.6);
+
+    &:first-child {
+      padding-top: 0;
+    }
+
+    &:last-child {
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+  }
+
+  &__title {
+    font-family: 'ff-tisa-web-pro', "Times New Roman", Times, serif;
+    font-size: 24px;
+    font-weight: 700;
+  }
+
+  &__desc {
+    font-family: 'freight-sans-pro', Arial, sans-serif;
+    font-size: 18px;
+    line-height: 1.2;
+    color: var(--slate);
+  }
+
+  &__author {
+    margin: 0;
+    font-family: 'freight-sans-pro', Arial, sans-serif;
+    font-size: 18px;
+    line-height: 1.2;
+    font-weight: 700;
+    color: var(--slate);
+
+    &:before {
+      content: '- ';
+    }
+  }
+
+  &__title-block {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__stars {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__star-item {
+    display: block;
+    width: 24px;
+    height: 24px;
+    margin-right: 5px;
+    background-image: url("../img/star-copy-5.svg");
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-position: center;
+  }
+}
+
+@media (max-width: $sm) {
+  .review {
+
+    &__content {
+      margin-top: 40px;
+    }
+
+    &__item {
+      padding-top: 30px;
+    }
+
+    &__title {
+      font-size: 22px;
+    }
+
+    &__text {
+      text-align: center;
+      font-size: 22px;
+    }
+  }
+}
+
+@media (max-width: $xs) {
+  .review {
+    padding: 30px 0;
+
+    &__item {
+      position: relative;
+      padding: 25px 0;
+      border-bottom: none;
+      text-align: center;
+
+      &:last-child {
+        &::after {
+          display: none;
+        }
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        margin-left: -20px;
+        display: block;
+        height: 2px;
+        width: 40px;
+        background-color: #dbdbdb;
+      }
+    }
+
+    &__title {
+      margin-bottom: 5px;
+      font-size: 18px;
+    }
+
+    &__desc {
+      font-size: 16px;
+    }
+
+    &__author {
+      font-size: 16px;
+    }
+
+    &__title-block {
+      flex-direction: column;
+    }
+
+    &__stars {
+      order: -1;
+      justify-content: center;
+    }
+  }
+}

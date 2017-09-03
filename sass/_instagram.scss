@@ -1,0 +1,68 @@
+.insta {
+  padding-top: 60px;
+  padding-bottom: 67px;
+  width: 100%;
+  height: 678px;
+  background: url('../img/group-23@3x.jpg') no-repeat center;
+  background-size: cover;
+
+  &__title {
+    position: relative;
+    margin-top: 0;
+    text-align: center;
+    color: var(--white);
+
+    &::after {
+      content: '';
+      position: absolute;
+      right: 60px;
+      top: 24px;
+      height: 41px;
+      width: 29px;
+      background: url('../img/group-3-copy.svg') no-repeat center;
+      background-size: contain;
+    }
+  }
+
+  &__subtitle {
+    margin-bottom: 14px;
+    text-align: center;
+    color: var(--white);
+  }
+
+  &__widget {
+    width: 100%;
+    height: 460px;
+    background-color: var(--white);
+  }
+}
+
+@media (max-width: $md) {
+  .insta {
+    &__title {
+      &::after {
+        right: -14px;
+      }
+    }
+  }
+}
+
+@media (max-width: $sm) {
+  .insta {
+    &__title {
+      &::after {
+        right: 60px;
+      }
+    }
+  }
+}
+
+@media (max-width: $xs) {
+  .insta {
+    &__title {
+      &::after {
+        content: none;
+      }
+    }
+  }
+}

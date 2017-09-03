@@ -1,0 +1,603 @@
+
+@import "features/checkbox";
+@import "features/switch";
+@import "features/animated-circle";
+
+.calc {
+  padding-top: 136px;
+  margin-bottom: 60px;
+  background: url('../img/bg-pattern-right.png'), url('../img/bg-pattern-left.png'), url('../img/calc-bg.jpg');
+  background-position: right 85%, left 60%, center 136px;
+  background-repeat: no-repeat;
+  background-size: auto, auto, cover;
+
+  &__title {
+    font-size: 34px;
+    text-align: center;
+  }
+
+  &__subtitle {
+    margin-bottom: 27px;
+    font-size: 22px;
+    text-align: center;
+    color: $slate;
+  }
+
+  &__laptop-bg {
+    position: relative;
+    margin: 0 calc((100% - 1072px)/2);
+    margin-bottom: -55px;
+    min-height: 561px;
+    width: 1072px;
+    background: url('../img/macbook.png') no-repeat center bottom;
+    background-size: contain;
+    border: 1px solid transparent; // temp
+  }
+
+
+  &__form-wrapper {
+    display: flex;
+    margin: 31px 150px 0;
+    //border: 1px solid black;
+    width: 772px;
+    height: 450px;
+  }
+
+  &__captions-block {
+    display: flex;
+    flex-direction: column;
+    width: 175px;
+    height: 450px;
+  }
+
+  &__caption {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20%;
+    width: 100%;
+
+    font-size: 16px;
+    font-weight: bold;
+    color: $steel-blue;
+    text-transform: uppercase;
+    background: $white;
+    border-bottom: solid 1px rgb(222, 231, 237);
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+}
+
+.calc-form {
+  display: flex;
+  flex-direction: column;
+  width: calc(100% - 175px);
+  height: 450px;
+
+  background-image: url('../img/bg-human.png');
+  background-repeat: no-repeat;
+  background-position: right center;
+  background-size: contain;
+  background-color: #EFF7FD;
+
+  &__area {
+    display: flex;
+    align-items: center;
+    padding-left: 39px;
+    height: 20%;
+
+    border-bottom: solid 1px rgb(222, 231, 237);
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  &__checkbox-label {
+    font-size: 16px;
+    letter-spacing: 0.4px;
+    text-align: center;
+    color: $steel-blue;
+  }
+
+  &__input-group {
+    position: relative;
+    width: 361.3px;
+  }
+
+  &__input {
+    position: relative;
+    padding: 16px 10px 17px 19px;
+    width: 250px;
+    height: 54px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    background-color: $white;
+    background-position: -14px center;
+    box-shadow: 0 1px 3px 0 $transparent, 0 1px 3px 0 rgba(0, 0, 0, 0.15);
+    @include trans(0.5s);
+
+    &_long {
+      width: 360px;
+    }
+
+    &_short {
+      width: 117px;
+
+      &:first-child {
+        margin-right: 10px;
+      }
+    }
+
+    &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+      opacity: 0.31;
+      font-family: Lato;
+      font-size: 16px;
+      letter-spacing: 0.4px;
+      color: $light-navy-blue;
+    }
+    &::-moz-placeholder { /* Firefox 19+ */
+      opacity: 0.31;
+      font-family: Lato;
+      font-size: 16px;
+      letter-spacing: 0.4px;
+      color: $light-navy-blue;
+    }
+    &:-ms-input-placeholder { /* IE 10+ */
+      opacity: 0.31;
+      font-family: Lato;
+      font-size: 16px;
+      letter-spacing: 0.4px;
+      color: $light-navy-blue;
+    }
+    &:-moz-placeholder { /* Firefox 18- */
+      opacity: 0.31;
+      font-family: Lato;
+      font-size: 16px;
+      letter-spacing: 0.4px;
+      color: $light-navy-blue;
+    }
+
+    &_valid {
+      padding-left: 43px;
+      border-bottom: 2.4px solid $seafoam-blue;
+
+      background-image: url('../img/valid-icon.svg');
+      background-size: 14px 10px;
+      background-position: 20px center;
+      background-repeat: no-repeat;
+    }
+
+    &_invalid {
+      padding-left: 43px;
+      border-bottom: 2.4px solid $red-pink;
+
+      background-image: url('../img/invalid-icon.svg');
+      background-size: 14px 10px;
+      background-position: 20px center;
+      background-repeat: no-repeat;
+    }
+  }
+
+  &__switch {
+    position: absolute;
+    right: 0;
+    top: 11px;
+    width: 95px;
+  }
+
+  &__btn {
+    width: 361px;
+    height: 54px;
+    border-radius: 3px;
+    background-image: linear-gradient(95deg, $azure, rgb(0, 118, 245));
+
+    font-family: FuturaTEE-Medi;
+    font-size: 18px;
+    text-align: center;
+    color: $white;
+    @extend .wave;
+  }
+}
+
+.bmr {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: white url('../img/calc-second-screen-bg.jpg') no-repeat center 80px;
+  background-size: cover;
+
+  &__btn-back {
+    position: absolute;
+    top: 14.5px;
+    left: 11.5px;
+    display: inline-block;
+    height: 34px;
+    padding: 0 15px;
+
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    color: $slate;
+
+    vertical-align: middle;
+    border-radius: 4px;
+    background-color: $duck-egg-blue;
+    border: solid 1px rgb(239, 247, 253);
+
+    &_mobile {
+      display: none;
+    }
+  }
+
+  &__title {
+    margin-top: 25px;
+    margin-bottom: 70px;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  &__form-area {
+    position: relative;
+  }
+
+  &__caption {
+    &-arrow {
+      position: absolute;
+      left: -34px;
+      top: -25px;
+      height: 60px;
+    }
+
+    &-title {
+      position: absolute;
+      top: -59px;
+      width: 181px;
+      font-family: 'ff-tisa-web-pro';
+      @include fontSH(22px, 24px);
+      color: $slate;
+    }
+  }
+
+  &__form {
+    margin-left: 40px;
+    margin-right: 35px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__form-area {
+    width: 100%;
+  }
+
+  &__input_first {
+    width: 42%;
+    padding-right: 0;
+  }
+
+  &__input_second {
+    width: 42%;
+    padding-right: 0;
+  }
+
+  &__btn-go {
+    width: 93px;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px 0 $transparent, 0 1px 3px 0 rgba(0, 0, 0, 0.15);
+    @extend .wave;
+  }
+
+}
+
+//calc animations
+.slide1-enter-active,
+.slide1-leave-active,
+.slide2-enter-active,
+.slide2-leave-active {
+  transition: all 0.3s ease;
+  position: absolute;
+}
+
+.slide1-enter {
+  opacity: 0;
+}
+
+.slide1-enter-to {
+  opacity: 1;
+}
+
+.slide1-leave-to {
+  opacity: 1;
+}
+
+.slide2-enter {
+  opacity: 0;
+}
+
+.slide2-enter-to {
+  opacity: 1;
+}
+
+.slide2-leave {
+  opacity: 1;
+}
+
+.slide2-leave-to {
+  opacity: 0;
+}
+
+.calc-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 100vw;
+  height: 100vh;
+  background: white;
+  opacity: 0.9;
+
+  &__title {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    transform: translate(0, -50%);
+    padding-right: 50px;
+    text-align:center;
+    @include fontSH(34px, auto);
+    color: #58637A;
+    font-weight: bold;
+
+    &:after {
+      position: absolute;
+      overflow: hidden;
+      display: inline-block;
+      vertical-align: bottom;
+      -webkit-animation: ellipsis steps(4,end) 900ms infinite;
+      animation: ellipsis steps(4,end) 900ms infinite;
+      content: "\2026"; /* ascii code for the ellipsis character */
+      width: 0;
+    }
+
+    @keyframes ellipsis {
+      to {
+        width: 1.25em;
+      }
+    }
+  }
+
+  &-enter {
+    opacity: 0;
+  }
+
+  &-enter-to {
+    opacity: 0.9;
+  }
+
+  &-leave {
+    opacity: 0.9;
+  }
+
+  &-leave-to {
+    opacity: 0;
+  }
+
+  &-enter-active,
+  &-leave-active {
+    transition: all 0.8s ease;
+  }
+}
+
+
+
+
+@media (max-width: 1072px) {
+  .calc {
+    &__laptop-bg {
+      position: static;
+      width: 770px;
+      height: 450px;
+      margin: 0 calc((100% - 770px) / 2);
+      margin-bottom: -50px;
+      background: transparent;
+    }
+
+    &__form-wrapper {
+      margin: 0;
+      width: 770px;
+      border-radius: $borderRad;
+      box-shadow: 0 15px 35px 0 $transparent-2, 0 5px 15px 0 rgba(0, 0, 0, 0.07);
+    }
+  }
+
+  .calc-form {
+    &__area {
+      background-color: $white;
+    }
+  }
+}
+
+@media (max-width: $sm) {
+  .calc {
+    padding-top: 99px;
+    margin-bottom: 27px;
+
+    &__subtitle {
+      margin-bottom: 37px;
+      padding: 0 10%;
+    }
+
+    &__laptop-bg {
+      width: 510px;
+      height: auto;
+      margin: 0 calc((100% - 510px) / 2);
+    }
+
+    &__form-wrapper {
+      height: auto;
+      width: 510px;
+    }
+
+    &__captions-block {
+      width: 120px;
+      height: 550px;
+    }
+
+    &__caption {
+      justify-content: flex-end;
+      padding-right: 27px;
+    }
+
+  }
+
+  .calc-form {
+    width: calc(100% - 120px);
+    margin-bottom: -50px;
+    height: 550px;
+    background-color: transparent;
+
+    &__area {
+      padding-left: 0;
+    }
+
+    &__input {
+      /*width: 361px;*/
+    }
+  }
+
+  .bmr {
+    &__title {
+      margin-top: 29px;
+      font-size: 24px;
+    }
+
+    &__input_first {
+      width: 100%;
+      margin-bottom: 12px;
+    }
+
+    &__input_second {
+      width: 100%;
+      margin-bottom: 12px;
+    }
+
+    &__btn-go {
+      width: 100%;
+      margin-bottom: 27px;
+    }
+  }
+}
+
+@media (max-width: $xs) {
+  .calc {
+   // padding-bottom: 73px;
+    margin-bottom: 23px;
+    padding-top: 49px;
+
+    &__title {
+      margin-bottom: 16px;
+      font-size: 28px;
+    }
+
+    &__subtitle {
+      margin-bottom: 32px;
+      padding: 0 34px;
+      font-size: 18px;
+    }
+
+    &__laptop-bg {
+      width: 310px;
+      margin: 0 auto;
+    }
+
+    &__form-wrapper {
+      width: 310px;
+    }
+
+    &__captions-block {
+      display: none;
+    }
+  }
+
+  .calc-form {
+    width: 100%;
+
+    &__area {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+
+    &__input-group {
+      width: 100%;
+    }
+
+    &__input {
+      width: 100%;
+      box-shadow: none;
+    }
+
+    &__btn {
+      width: 100%;
+    }
+  }
+
+  .bmr {
+    &__btn-back {
+      display: none;
+
+      &_mobile {
+        position: absolute;
+        top: 14.5px;
+        left: 11.5px;
+        display: inline-block;
+        height: 43px;
+        padding: 0 12px;
+
+        opacity: 0.7;
+        font-size: 20px;
+        font-weight: bold;
+        text-align: center;
+        color: $electric-blue;
+
+        vertical-align: middle;
+        border-radius: 4px;
+        background-color: $duck-egg-blue;
+        border: solid 1px rgb(239, 247, 253);
+      }
+    }
+
+    &__title {
+      margin-top: 22px;
+    }
+
+    &__caption {
+      &-arrow {
+        display: none;
+      }
+
+      &-title {
+        top: -34px;
+        width: 100%;
+        @include fontSH(18px, 22px);
+      }
+    }
+
+    &__form {
+      margin: 0 30px;
+    }
+
+    &__input_first,
+    &__input_second {
+      box-shadow: 0 1px 3px 0 transparent, 0 1px 3px 0 rgba(0,0,0,.15);
+    }
+  }
+
+  .calc-overlay {
+    &__title {
+      font-size: 18px;
+    }
+  }
+}

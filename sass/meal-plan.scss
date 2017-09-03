@@ -1,0 +1,186 @@
+.meal-plan {
+  padding-bottom: 40px;
+
+  .container_reverse:last-child .container-wrapper{
+    padding-left: 100px;
+  }
+
+  &__block-title {
+    margin-left: -50px;
+    margin-right: -50px;
+  }
+
+  &__title {
+    font-size: 28px;
+    text-align: left;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  &__text {
+    text-align: center;
+  }
+
+  &__item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &_reverse {
+      flex-direction: row-reverse;
+      padding-left: 0;
+
+      .meal-plan__item-desc {
+        width: 35%;
+      }
+
+      .meal-plan__item-img {
+        width: 60%;
+      }
+    }
+
+    &-desc {
+      width: 48%;
+    }
+
+    &-img {
+      width: 52%;
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media (max-width: $md) {
+  .meal-plan {
+    .container_reverse:last-child .container-wrapper {
+      padding-left: 50px;
+    }
+    .container-wrapper {
+      padding: 0 110px;
+    }
+
+    &__item {
+      &_reverse {
+        &.container-wrapper {
+          padding-left: 0;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: $sm) {
+  .meal-plan {
+    .container_reverse {
+      margin-left: 0;
+      padding-left: 0;
+
+      &:last-child {
+        .meal-plan__item-img {
+          width: 63%;
+          margin-left: 0;
+        }
+      }
+    }
+
+    .container-wrapper {
+      padding: 0;
+    }
+
+    &__block-title {
+      margin-left: 0;
+      margin-right: 0;
+    }
+
+    &__text {
+      text-align: center;
+    }
+
+    &__title {
+      font-size: 22px;
+      text-align: left;
+    }
+
+    &__item {
+      &-desc {
+        width: 48%;
+      }
+
+      &-img {
+        width: 45%;
+      }
+
+      &_reverse {
+        .meal-plan__item-desc {
+          width: 35%;
+        }
+
+        .meal-plan__item-img {
+          width: 70%;
+          margin-left: -40px;
+        }
+
+        &.container-wrapper {
+          padding-left: 0;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: $xs) {
+  .meal-plan {
+    padding-bottom: 20px;
+
+    .container_reverse {
+      padding-left: 15px !important;
+      margin-left: auto !important;
+
+      &:last-child {
+        .container-wrapper {
+          padding-left: 0;
+        }
+
+        .meal-plan__item-img {
+          width: 90%;
+        }
+      }
+    }
+
+    &__title {
+      font-size: 16px;
+    }
+
+    &__text {
+      margin-bottom: 0;
+    }
+
+    &__item {
+      flex-direction: column-reverse;
+
+      &_reverse {
+        flex-direction: column-reverse;
+
+        .meal-plan__item-desc {
+          width: 100%;
+        }
+
+        .meal-plan__item-img {
+          width: 90%;
+          margin-left: 0;
+        }
+      }
+
+      &-desc {
+        width: 100%;
+      }
+
+      &-img {
+        width: 90%;
+      }
+    }
+  }
+}

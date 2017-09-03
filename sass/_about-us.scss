@@ -1,0 +1,428 @@
+
+.about-top {
+  position: relative;
+  padding-top: 132px;
+  padding-bottom: 185px;
+
+  text-align: center;
+
+  background: url('../img/contactus-top-bg.png') no-repeat left center;
+  background-size: cover;
+
+  &::after {
+    @extend %skew__bottom;
+    background: $white;
+  }
+
+  &__title {
+    position: relative;
+    padding-bottom: 35px;
+    margin-bottom: 0;
+    font-family: 'EurostileExt-BlaIta';
+    font-size: 38px;
+    line-height: 1.41;
+    text-align: center;
+    color: $white;
+    -webkit-text-stroke: 1px $white;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      margin-left: -50px;
+      display: block;
+      width: 100px;
+      height: 1px;
+      background-color: rgba(255, 255, 255, 0.4);
+    }
+  }
+
+  &__text-small {
+    line-height: 1.73;
+  }
+
+  &__desc {
+    margin-bottom: 37px;
+    text-align: center;
+    color: $white;
+    font-size: 28px;
+  }
+
+  &__btn {
+    @extend %blue-button;
+    @extend .wave;
+
+    display: inline-block;
+    padding: 20px 40px;
+    margin: 0 auto;
+  }
+
+  &__btn:focus {
+    color: $white;
+    text-decoration: none;
+  }
+}
+
+.two-columns {
+  position: relative;
+
+  padding-top: 50px;
+  padding-bottom: 100px;
+
+  &::after {
+    @extend %skew__bottom;
+    background: $white;
+  }
+
+  &__inner::after {
+    position: absolute;
+    left: 50%;
+    top: -50px;
+    bottom: -50px;
+    z-index: 2;
+
+    width: 1px;
+    background: #e3e6e9;
+
+    content: '';
+   //border-left: solid 1px #e3e6e9;
+  }
+
+  &__title {
+    text-align: center;
+  }
+
+  &__desc {
+    margin-bottom: 18px;
+    color: $gunmetal;
+  }
+}
+
+.mission {
+  position: relative;
+  padding-top: 120px;
+  padding-bottom: 0;
+
+  text-align: center;
+  background-color: $pale-grey-three;
+
+  &::after {
+    @extend %skew__bottom;
+    background-color: $pale-grey-three;
+  }
+
+  &__title {
+    margin-bottom: 19px;
+  }
+
+  &__desc {
+    margin-bottom: 75px;
+    font-size: 24px;
+    color: $gunmetal;
+  }
+}
+
+.results {
+  position: relative;
+
+  padding-top: 180px;
+  padding-bottom: 152px;
+
+  background: $black url('../img/contactus-girl.jpg') no-repeat right center;
+  background-size: cover;
+  color: $white;
+
+  &::after {
+    @extend %skew__bottom;
+    background-color: $pale-grey-three;
+  }
+
+  &__title {
+    margin-bottom: 18px;
+  }
+
+  &__desc {
+    margin-bottom: 18px;
+    font-size: 24px;
+  }
+
+
+  &__btn {
+    display: inline-block;
+
+    margin-top: 30px;
+    padding: 21px 26px 18px 26px;
+
+    @extend %blue-button;
+    @extend .wave;
+  }
+
+}
+
+.about-bottom {
+  position: relative;
+  overflow-x: hidden;
+
+  padding-top: 67px;
+  padding-bottom: 53px;
+
+  background-color: $pale-grey-three;
+
+  &__img-wrapper {
+    position: absolute;
+    z-index: 2;
+    bottom: 0;
+    left: calc((100% - 1100px) / 2);
+
+    width: auto;
+    height: 90%;
+  }
+
+  &__img {
+    height: 100%;
+  }
+
+  &__inner {
+    padding: 37px 60px 47px 60px;
+    background-color: $white;
+    box-shadow: $shadow;
+  }
+
+  &__title {
+    margin-bottom: 15px;
+  }
+
+  &__desc {
+    margin-bottom: 18px;
+    font-size: 20px;
+  }
+
+  &__btn {
+    display: inline-block;
+    margin-top: 40px;
+    padding: 21px 106px;
+    width: 100%;
+
+    @extend %blue-button;
+    @extend .wave;
+  }
+}
+
+
+@media (max-width: $sm) {
+  .about-top {
+    padding-top: 93px;
+    padding-bottom: 170px;
+
+    &::after {
+      bottom: -24px;
+      height: 50px;
+    }
+
+    &__title {
+      margin-bottom: 27px;
+    }
+
+    &__desc {
+      margin-bottom: 45px;
+    }
+  }
+
+  .two-columns {
+    padding-top: 25px;
+    padding-bottom: 40px;
+
+    &::after {
+      bottom: -24px;
+      height: 50px;
+    }
+
+    &__inner::after {
+      top: -25px;
+      bottom: -25px;
+    }
+  }
+
+  .mission {
+    padding-top: 50px;
+
+    &::after {
+      bottom: -24px;
+      height: 50px;
+    }
+
+    &__title {
+      margin-bottom: 10px;
+    }
+
+    &__desc {
+      margin-bottom: 43px;
+      font-size: 18px;
+    }
+  }
+
+  .results {
+    padding-top: 100px;
+    padding-bottom: 81px;
+    background-position: 42% 100%;
+
+    &::after {
+      bottom: -24px;
+      height: 50px;
+    }
+
+    &__title {
+      margin-bottom: 12px;
+    }
+
+    &__desc {
+      font-size: 18px;
+    }
+
+    &__btn {
+      padding: 22px 55px 17px 55px;
+      font-size: 16px;
+      line-height: 1.13;
+    }
+  }
+
+  .about-bottom {
+    padding-top: 68px;
+    padding-bottom: 33px;
+
+    &__img-wrapper {
+      left: calc((100% - 1029px) / 2);
+    }
+
+    &__inner {
+      padding: 46px 56px;
+    }
+
+    &__desc {
+      font-size: 18px;
+    }
+
+    &__btn {
+      padding: 20px 54px;
+      margin-top: 22px;
+    }
+  }
+}
+
+
+@media (max-width: $xs) {
+  .about-top {
+    padding-top: 62px;
+    padding-bottom: 58px;
+
+    &__title {
+      margin-bottom: 4px;
+      font-size: 24px;
+      line-height: 1.6;
+      text-align: center;
+    }
+
+    &__text-small:first-child {
+      padding-left: 0;
+    }
+
+    &__desc {
+      margin-bottom: 23px;
+      font-size: 20px;
+    }
+
+    &__btn {
+      padding: 20px 30px;
+    }
+  }
+
+  .two-columns {
+    padding-top: 0;
+    padding-bottom: 0;
+
+    &__inner::after {
+      display: none;
+    }
+
+    &__column {
+      margin-bottom: 40px;
+    }
+  }
+
+  .mission {
+
+
+    &__title {
+      margin-bottom: 7px;
+      font-size: 34px;
+    }
+
+    &__desc {
+      margin-bottom: 37px;
+    }
+  }
+
+  .results {
+    padding-top: 78px;
+    padding-bottom: 56px;
+    text-align: center;
+    background-position: 59% 100%;
+
+    &::after {
+      background-color: $white;
+    }
+
+    &__title {
+      margin-bottom: 12px;
+
+      text-align: center;
+      font-size: 34px;
+    }
+
+    &__desc {
+      margin-bottom: 26px;
+      text-align: left;
+    }
+
+    &__btn {
+      padding: 22px 27px 17px;
+    }
+  }
+
+  .about-bottom {
+    padding-top: 44px;
+    padding-bottom: 58px;
+
+    text-align: center;
+
+    background: $white;
+    border-bottom: 1px solid $pale-grey-three;;
+
+    &__img-wrapper {
+      display: none;
+    }
+
+    &__inner {
+      padding: 0 15px;
+      box-shadow: none;
+    }
+
+    &__title {
+      margin-bottom: 6px;
+      font-size: 34px;
+    }
+
+    &__desc {
+      text-align: left;
+    }
+
+    &__btn {
+      margin-top: 5px;
+      padding: 20px 45px;
+
+      font-size: 16px;
+    }
+  }
+
+}

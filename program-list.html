@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Landing</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/normalize.min.css">
+    <link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap.min.css">
+    <link href="libs/mmenu/jquery.mmenu.css" type="text/css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/main.css">
+    <script src="https://use.typekit.net/pca4zir.js"></script>
+    <script>try{Typekit.load({ async: true });}catch(e){}</script>
+</head>
+<body>
+
+
+<div id="app">
+    <header class="header header_ind">
+        <a href="#" class="header__logo">
+            <picture>
+                <source srcset="img/logo-header.svg" media="(max-width: 991px)">
+                <source srcset="img/logo-header.svg">
+                <img class="header__logo-img" src="img/logo-header.svg" alt="">
+            </picture>
+        </a>
+
+        <div class="header__nav-wrapper">
+            <nav class="header__nav">
+                <a href="#" class="header__nav-link">About Us</a>
+                <a href="#" class="header__nav-link">Free tools</a>
+                <a href="#" class="header__nav-link">Program</a>
+                <a href="#" class="header__nav-link">Blog</a>
+                <div href="#" class="header__nav-link header__nav-link_login" @click="submenu.status = !submenu.status">
+                    <span>Login</span>
+                    <div class="header-submenu" v-if="submenu.status" v-cloak>
+                        <a href="#" class="header-submenu__link">30 Days to Optimal Gut Health</a>
+                        <a href="#" class="header-submenu__link">Type something something</a>
+                        <a href="#" class="header-submenu__link">Integrated BodyTransformation System</a>
+                    </div>
+                </div>
+            </nav>
+            <a href="#" class="header__btn">Start here</a>
+        </div>
+
+        <nav id="my-menu">
+            <ul>
+                <li><a href="#">About us</a></li>
+                <li><a href="#">Free tools</a></li>
+                <li><a href="#">Program</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Login</a></li>
+                <li><a href="#">Start here</a></li>
+            </ul>
+        </nav>
+
+        <a class="header__burger" href="#my-menu">
+            <div class="header__burger-dash header__burger-dash__top"></div>
+            <div class="header__burger-dash header__burger-dash__middle"></div>
+            <div class="header__burger-dash header__burger-dash__bottom"></div>
+        </a>
+    </header>
+
+    <article class="plist-top">
+        <div class="container plist-top__text-wrapper">
+            <h1 class="plist-top__title">Our Fitness Programs</h1>
+            <p class="plist-top__desc">Our mission is to cut straight through the noise and confusion that has taken over
+                the fitness and nutrition industry.</p>
+        </div>
+    </article>
+
+    <section class="plist-item" style="background-image: url('img/group-28-min@3x.png')">
+        <div class="container plist-item__wrapper">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-4 col-sm-6 col-sm-offset-6 col-xs-6 col-xs-offset-6">
+                   <h3 class="plist-item__title">30 Days To Optimal Gut Health</h3>
+                   <p class="plist-item__desc">Our mission is to cut straight through the noise and confusion that has
+                       taken over the fitness and nutrition industry. </p>
+                   <a href="" class="plist-item__btn">Start here →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="plist-item" style="background-image: url('img/group@3x.png')">
+        <div class="container plist-item__wrapper">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-4 col-sm-6 col-sm-offset-6 col-xs-6 col-xs-offset-6">
+                    <h3 class="plist-item__title">30 Day Sugar Detox</h3>
+                    <p class="plist-item__desc">Our mission is to cut straight through the noise and confusion that has
+                        taken over the fitness and nutrition industry. </p>
+                    <a href="" class="plist-item__btn">Start here →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="plist-item" style="background-image: url('img/group@3x.png')">
+        <div class="container plist-item__wrapper">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-4 col-sm-6 col-sm-offset-6 col-xs-6 col-xs-offset-6">
+                    <h3 class="plist-item__title">30 Days To Optimal Gut Health</h3>
+                    <p class="plist-item__desc">Our mission is to cut straight through the noise and confusion that has
+                        taken over the fitness and nutrition industry. </p>
+                    <a href="" class="plist-item__btn">Start here →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="plist-item" style="background-image: url('img/group@3x.png')">
+        <div class="container plist-item__wrapper plist-item__wrapper_last">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-4 col-sm-6 col-sm-offset-6 col-xs-6 col-xs-offset-6">
+                    <h3 class="plist-item__title">30 Day Sugar Detox</h3>
+                    <p class="plist-item__desc">Our mission is to cut straight through the noise and confusion that has
+                        taken over the fitness and nutrition industry. </p>
+                    <a href="" class="plist-item__btn">Start here →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <article class="trans-goals">
+        <div class="container">
+            <div class="trans-goals__wrapper">
+                <h3 class="trans-goals__title">Got transformation goals?</h3>
+                <p class="trans-goals__desc">Our mission is to cut straight through the noise and confusion that has taken over
+                    the fitness and nutrition industry.
+                </p>
+                <a href="#" class="trans-goals__btn">Start here</a>
+            </div>
+        </div>
+    </article>
+
+    <footer class="footer container">
+        <p class="footer__copy"></p>
+        <nav class="footer__nav">
+            <a href="#" class="footer__link">Terms</a>
+            <a href="#" class="footer__link">Privacy</a>
+            <a href="#" class="footer__link">About</a>
+            <a href="#" class="footer__link">Press</a>
+            <a href="#" class="footer__link">Jobs</a>
+            <a href="#" class="footer__link">Feedback</a>
+            <a href="#" class="footer__link">Site Map</a>
+            <a href="#" class="footer__link">Rss</a>
+        </nav>
+    </footer>
+</div>
+
+<script src="libs/jquery/dist/jquery.min.js"></script>
+<script src="libs/vue/dist/vue.min.js"></script>
+<script src="js/frombox.js"></script>
+<script src="libs/mmenu/jquery.mmenu.js" type="text/javascript"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("#my-menu").mmenu({
+            // options
+        }, {
+            // configuration
+            offCanvas: {
+                pageSelector: "#app"
+            }
+        });
+    });
+</script>
+<script src="js/scripts.js"></script>
+</body>
+</html>

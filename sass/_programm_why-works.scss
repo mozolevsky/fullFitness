@@ -1,0 +1,189 @@
+.why-works {
+  position: relative;
+  background-color: $ice-blue;
+
+  &::after {
+    @extend %skew__bottom;
+    background: $white;
+  }
+
+  &__container {
+    position: relative;
+    z-index: 2;
+    width: 60%;
+    margin: 0 auto;
+    padding-top: 40px;
+  }
+
+  &__title {
+    font-family: 'ff-tisa-web-pro', "Times New Roman", Times, serif;
+    font-size: 44px;
+    line-height: 1.2;
+    font-weight: 700;
+    text-align: center;
+  }
+
+  &__desc {
+    font-family: 'FreightSans Pro Book', Arial, sans-serif;
+    font-size: 24px;
+    line-height: 1.2;
+    text-align: center;
+  }
+
+  &__item {
+    position: relative;
+    padding-top: 90px;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 10px;
+      left: 50%;
+      display: block;
+      width: 1px;
+      height: 90px;
+      border-left: 1px dashed $gunmetal;
+      opacity: 0.4;
+    }
+  }
+
+  &__item-title {
+    margin-bottom: 20px;
+    font-family: 'ff-tisa-web-pro', "Times New Roman", Times, serif;
+    font-size: 28px;
+    line-height: 1.2;
+    text-align: center;
+  }
+
+  &__item-desc {
+    margin-bottom: 25px;
+    font-family: 'FreightSans Pro Book', Arial, sans-serif;
+    font-size: 20px;
+    line-height: 1.2;
+    text-align: center;
+  }
+
+  &__skew-block {
+    display: flex;
+    box-shadow: 0 15px 35px 0 rgba(0, 0, 0, 0.1), 0 5px 15px 0 rgba(0, 0, 0, 0.07);
+  }
+
+  &__skew-list {
+    margin: 0;
+    padding: 55px;
+    list-style: none;
+    width: 54%;
+
+    &_left {
+      background-color: $white;
+      padding-right: 45px;
+    }
+
+    &_right {
+      width: 46%;
+      background-color: $pale-grey-three;
+      padding-left: 45px;
+      position: relative;
+
+      &::before {
+        position: absolute;
+        z-index: 2;
+        top: 0;
+        bottom: 0;
+        left: -25px;
+        width: 50px;
+        content: "";
+        -webkit-transform: skewX(-10deg);
+        transform: skewX(-10deg);
+        background-color: #f6f9fc;
+      }
+    }
+
+    &-item {
+      padding-left: 18px;
+      font-family: 'FreightSans Pro Book', Arial, sans-serif;
+      font-size: 20px;
+      line-height: 32px;
+      background-image: url("../img/check.svg");
+      background-repeat: no-repeat;
+      background-position: 0 9px;
+      background-size: 12px;
+    }
+  }
+}
+
+
+@media (max-width: $sm) {
+  .why-works {
+
+    &::after {
+      height: 50px;
+      bottom: -24px;
+    }
+
+    &__container {
+      width: 750px;
+    }
+
+    &__title {
+      font-size: 30px;
+    }
+
+    &__desc {
+      font-size: 20px;
+    }
+
+    &__item-title {
+      font-size: 22px;
+      font-weight: 700;
+    }
+
+    &__skew-list-item {
+      font-size: 18px;
+    }
+  }
+}
+
+
+@media (max-width: $xs) {
+  .why-works {
+
+    &__container {
+      width: 100%;
+      padding-left: 30px;
+      padding-right: 30px;
+      padding-top: 10px;
+    }
+
+    &__desc {
+      font-size: 18px;
+    }
+
+    &__item-desc {
+      font-size: 18px;
+    }
+
+    &__skew-list {
+      padding: 32px;
+      width: 50%;
+
+      &_left {
+        padding-right: 20px;
+      }
+
+      &_right {
+        background-color: $white;
+        padding-left: 20px;
+
+        &::before {
+          display: none;
+        }
+      }
+
+      &-item {
+        line-height: 26px;
+        margin-bottom: 8px;
+      }
+    }
+  }
+}

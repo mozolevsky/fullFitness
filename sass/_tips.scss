@@ -1,0 +1,115 @@
+.tips {
+  padding-top: 48px;
+  padding-bottom: 34px;
+  background: url('../img/busy@3x.png') no-repeat;
+  background-position: calc(50% - 250px) bottom;
+  background-size: 847px auto;
+
+  &__title {
+    margin-top: 0;
+    margin-bottom: 15px;
+    text-align: center;
+  }
+
+  &__subtitle {
+    margin-bottom: 33px;
+    text-align: center;
+    color: var(--slate);
+  }
+
+  &__text {
+    color: var(--slate);
+
+    &_bold {
+      color: var(--black);
+      font-weight: bold;
+    }
+  }
+
+  &__btn-wrapper {
+    position: relative;
+
+    &::after {
+      position: absolute;
+      content: '';
+      left: -119px;
+      top: -56px;
+      width: 100px;
+      min-height: 100px;
+      background: url('../img/arrow2.png') no-repeat center;
+      background-size: contain;
+    }
+  }
+
+  &__btn {
+    padding: 21px 40px;
+    display: inline-block;
+    @extend %blue-button;
+    @extend .wave;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.13;
+    letter-spacing: 1px;
+  }
+}
+
+@media(max-width: $sm) {
+  .tips {
+    background: none;
+
+    &__first-section {
+      padding-bottom: 100px;
+      margin-bottom: 18px;
+      background: url('../img/busy@3x.png') no-repeat;
+      background-position: calc(50% - 108px) bottom;
+      background-size: 457px auto;
+    }
+
+    &__list {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    &__list-item {
+      width: 45%;
+      margin-right: 20px;
+      margin-left: 20px;
+
+      &:nth-child(2n) {
+        margin-right: 0;
+      }
+    }
+
+    &__btn-wrapper {
+      &::after {
+        content: none;
+      }
+    }
+  }
+}
+
+@media(max-width: $xs) {
+  .tips {
+
+    &__subtitle {
+      margin-bottom: 10px;
+    }
+
+    &__first-section {
+      padding-top: 267px;
+      padding-bottom: 0;
+      margin-bottom: 18px;
+      background-position: calc(50% + 28px) top;
+      background-size: 375px auto;
+    }
+
+    &__list-item {
+      width: 100%;
+      margin-right: 0;
+    }
+
+    &__btn {
+      width: 100%;
+    }
+  }
+}

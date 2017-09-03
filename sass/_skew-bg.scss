@@ -1,0 +1,133 @@
+.skew-bg {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  box-shadow: $shadow;
+  background: $white;
+  text-align: left;
+
+  &_mission {
+    margin-bottom: -90px;
+  }
+
+  &__list-block {
+    position: relative;
+    padding: 50px 60px;
+    width: 50%;
+  }
+
+  &__list-block_skew {
+    background-color: $pale-grey-three;
+  }
+
+  &__list-block_skew::before {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: -25px;
+    z-index: 2;
+
+    width: 50px;
+    content: '';
+    background-color: $pale-grey-three;
+    transform: skewX(-5deg);
+  }
+
+  &__title {
+    margin-bottom: 22px;
+    font-weight: bold;
+    letter-spacing: 0.6px;
+    opacity: 0.9;
+  }
+
+  &__txt-marked {
+    color: $carnation;
+    text-transform: uppercase;
+  }
+
+  &__list {
+    padding-left: 0;
+
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.6;
+    color: $charcoal-grey-two;
+    list-style-type: none;
+  }
+
+  &__item {
+    position: relative;
+    padding-left: 22px;
+  }
+
+  &__item::before {
+    position: absolute;
+    top: 10px;
+    left: 0;
+
+    width: 12px;
+    height: 11px;
+    content: '';
+  }
+
+  &__item_yes::before {
+    background: url('../img/tick_icon.svg') no-repeat center;
+    background-size: 12px 11px;
+  }
+
+  &__item_no::before {
+    background: url('../img/list-crossed.svg') no-repeat center;
+    background-size: 11px 12px;
+  }
+}
+
+
+@media (max-width: $sm) {
+  .skew-bg {
+    margin-bottom: -20px;
+
+    &__list-block {
+      padding: 30px 40px 30px 20px;
+    }
+
+    &__list-block_skew {
+      padding: 30px 20px 30px 40px;
+    }
+
+    &__list {
+      font-size: 16px;
+    }
+
+    &__item {
+      margin-bottom: 10px;
+    }
+  }
+}
+
+@media (max-width: $xs) {
+  .skew-bg {
+    flex-direction: column;
+
+    &__list-block {
+      padding: 23px 38px 46px 40px;
+      width: 100%;
+    }
+
+    &__list-block_skew::before {
+      left: 0;
+      top: -25px;
+      bottom: 100%;
+
+      height: 50px;
+      width: 100%;
+      transform: skew(0deg, -3.5deg);
+    }
+
+    &__title {
+      font-size: 22px;
+      text-align: center;
+    }
+
+
+  }
+}

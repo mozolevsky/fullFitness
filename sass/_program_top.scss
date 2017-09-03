@@ -1,0 +1,200 @@
+
+.program-top {
+  position: relative;
+  height: 100vh;
+
+  &::after {
+    @extend %skew__bottom;
+    content: none;
+  }
+
+  &__left {
+    position: relative;
+    margin-top: 20vh;
+    background-color: $white;
+  }
+
+  &__title {
+    margin-bottom: 27px;
+  }
+
+  &__desc {
+    margin-bottom: 46px;
+    font-size: 24px;
+    line-height: 28px;
+    color: $gunmetal;
+  }
+
+  &__btn {
+    display: inline-block;
+    padding: 0 52px;
+    height: 57px;
+    color: $white;
+    border-radius: 3px;
+    background-image: linear-gradient(118deg, $azure, rgb(10, 85, 247));
+    box-shadow: 0 38px 24px 0 rgba(0, 0, 0, 0.11);
+    @extend .wave;
+  }
+
+
+  &__right {
+    position: absolute;
+    top: 0;
+    left: 45%;
+    width: 55%;
+    height: 100%;
+    overflow: hidden;
+
+    background: url('../img/program-top-girl.png') no-repeat center;
+    background-size: cover;
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: -105px;
+      top: 0;
+      width: 212px;
+      height: 100%;
+      background: $white;
+      transform: skewX(6deg);
+    }
+  }
+
+  &__text-right {
+    padding-top: 190px;
+    font-family: 'EurostileExt-BlaIta';
+    font-size: 3.4vw;
+    line-height: 60px;
+    text-align: left;
+    color: $white;
+    text-transform: uppercase;
+
+  }
+
+  &__tagline {
+    display: inline-block;
+    margin-bottom: 10.5px;
+    padding-right: 10px;
+    background: rgba(0, 0, 0, 0.4);
+    transform: skew(-15deg);
+
+    &_small {
+      font-size: 22px;
+    }
+
+    &_first {
+      padding-left: 60px;
+    }
+
+    &_second {
+      padding-left: 75px;
+    }
+
+    &_third {
+      padding-left: 100px;
+    }
+  }
+
+  &__video-wrapper {
+    width: 100%;
+    height: 100%;
+  }
+
+  &__video {
+    right: 0;
+    top: 0;
+    bottom: 0;
+    min-width: 150%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    transform: translate(-25%, 0);
+  }
+}
+
+
+@media (max-width: 1200px) {
+  .program-top {
+    &__right {
+      &::after {
+        width: 100px;
+        left: -50px;
+        transform: skewX(4deg);
+      }
+    }
+  }
+}
+
+@media (max-width: $sm) {
+
+  .program-top {
+    background-image: linear-gradient(61deg, $purplish-blue, rgb(66, 151, 229) 50%, rgb(0, 255, 212));
+
+
+    &::after {
+      content: '';
+      height: 50px;
+      bottom: -24px;
+      background: $white;
+    }
+
+    &__left {
+      padding-top: 113px;
+      padding-bottom: 105px;
+      background: transparent;
+      text-align: center;
+    }
+
+    &__title {
+      margin-bottom: 14px;
+
+      font-family: 'EurostileExt-BlaIta';
+      font-size: 24px;
+      line-height: 1.17;
+      text-align: center;
+      color: $white;
+      text-transform: uppercase;
+    }
+
+    &__desc {
+      margin-bottom: 28px;
+      font-size: 18px;
+      line-height: 22px;
+      text-align: center;
+      color: $white;
+    }
+
+    &__btn {
+      margin: 0 auto;
+      padding: 0 110px;
+    }
+
+    &__right {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: $xs) {
+  .program-top {
+    &__left {
+      padding-top: 73px;
+      padding-bottom: 49px;
+    }
+
+    &__title {
+      margin-bottom: 18px;
+      text-align: left;
+    }
+
+    &__desc {
+      margin-bottom: 21px;
+      text-align: left;
+    }
+
+    &__btn {
+      padding: 0 95px;
+    }
+  }
+}

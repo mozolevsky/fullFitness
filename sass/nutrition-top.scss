@@ -1,0 +1,160 @@
+.nutrition-top {
+  padding-top: 60px;
+  padding-bottom: 40px;
+
+  &__text-promo {
+    margin-bottom: 25px;
+  }
+
+  &__promo {
+    display: flex;
+    justify-content: flex-start;
+    margin-left: 10%;
+
+    &-text {
+      width: 25%;
+      margin-right: 10%;
+      margin-left: 10%;
+
+      &_second {
+        width: 30%;
+        margin-right: 0;
+      }
+    }
+
+    &-img {
+      position: relative;
+      width: 55%;
+      padding-bottom: 40px;
+
+      &::after {
+        position: absolute;
+        content: '';
+        width: 238px;
+        min-height: 72px;
+        bottom: 46px;
+        left: 9%;
+        background: url('../img/instant-access.png') no-repeat center;
+        background-size: contain;
+      }
+
+      &_second {
+        padding-bottom: 0;
+
+        &::after {
+          left: 20%;
+          background: url('../img/instant-access2.png') no-repeat center;
+          background-size: contain;
+        }
+      }
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  &__btn {
+    padding: 10px 20px;
+    @include borderButton(var(--electric-blue));
+
+    &:hover {
+      @include borderButtonHover(var(--electric-blue));
+    }
+
+    &_green {
+      @include borderButton(var(--soft-green));
+
+      &:hover {
+        @include borderButtonHover(var(--soft-green));
+      }
+    }
+  }
+}
+
+@media (max-width: $sm) {
+  .nutrition-top {
+    padding-top: 20px;
+
+    &__text-promo {
+      text-align: center;
+      font-size: 20px;
+    }
+
+    &__promo {
+      flex-wrap: wrap;
+
+      &-title {
+        text-align: center;
+      }
+
+      &-text {
+        width: 100%;
+        margin: 0;
+        margin-right: 10%;
+        margin-bottom: 10px;
+      }
+
+      &-img {
+        width: 100%;
+        margin-left: 5%;
+
+        &::after {
+          bottom: 16px;
+          left: calc(50% - 205px);
+        }
+      }
+    }
+
+    &__text-block {
+      padding: 0;
+
+      .nutrition-page__text {
+        text-align: left;
+      }
+    }
+
+    &__btn {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: $xs) {
+  .nutrition-top {
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    &__promo {
+      margin-left: 15px;
+      padding-bottom: 37px;
+
+      &-title {
+        font-size: 22px;
+      }
+
+      &-text {
+        margin-right: 15px;
+        margin-bottom: 0;
+      }
+
+      &-img {
+        &::after {
+          bottom: -7px;
+          left: calc(50% - 151px);
+        }
+      }
+
+      &-img_second {
+        margin-left: -5%;
+      }
+    }
+
+    &__text-block {
+      .nutrition-page__text {
+        font-size: 16px;
+        line-height: 1.2;
+      }
+    }
+  }
+}

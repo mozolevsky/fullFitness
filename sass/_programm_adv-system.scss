@@ -1,0 +1,297 @@
+.adv-system {
+  position: relative;
+  margin-top: -100px;
+  padding-top: 150px;
+  padding-bottom: 100px;
+  background-image: url("../img/unused_program/group-14.png");
+  background-size: cover;
+
+  &::after {
+    @extend %skew__bottom;
+    background: $ice-blue;
+    bottom: -60px;
+  }
+
+  &__text-block {
+    width: 35%;
+    color: $white;
+  }
+
+  &__text-block-title {
+    margin-bottom: 25px;
+    font-family: 'ff-tisa-web-pro', "Times New Roman", Times, serif;
+    font-size: 44px;
+    line-height: 1.1;
+    font-weight: 700;
+  }
+
+  &__text {
+    font-family: 'FreightSans Pro Book', Arial, sans-serif;
+    font-size: 24px;
+    line-height: 1.2;
+  }
+
+  &__graph {
+    position: relative;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+  }
+
+  &__graph-arrow {
+    position: absolute;
+    top: -250px;
+    right: 100px;
+  }
+
+  &__graph-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+  }
+
+  &__graph-line {
+    display: block;
+    height: calc(100% - 10px);
+    width: 2px;
+    margin: 0 auto;
+    margin-top: 10px;
+    background: rgba(255, 255, 255, 0.25);
+    position: relative;
+
+      &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      margin-left: -14px;
+      display: block;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background-color: $white;
+      box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.2);
+      font-family: 'FreightSans Pro Book', Arial, sans-serif;
+      font-size: 18px;
+      line-height: 30px;
+      font-style: normal;
+      text-align: center;
+      font-weight: 700;
+      color: $electric-blue;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      margin-left: -3px;
+      display: block;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background-color: $white;
+      box-shadow: 0 0 0 6px rgba(255, 255, 255, 0.3);
+    }
+
+    &_1::before {
+      content: '1';
+    }
+
+    &_2::before {
+      content: '2';
+    }
+
+    &_3::before {
+      content: '3';
+    }
+
+    &_4::before {
+      content: '4';
+    }
+
+    &_5::before {
+      content: '5';
+    }
+
+    &_6::before {
+      content: '6';
+    }
+  }
+
+  &__graph-item {
+    width: 12%;
+    position: relative;
+
+
+    &_1 {
+      height: 130px;
+    }
+    &_2 {
+      height: 170px;
+    }
+    &_3 {
+      height: 210px;
+    }
+    &_4 {
+      height: 250px;
+    }
+    &_5 {
+      height: 290px;
+    }
+    &_6 {
+      height: 330px;
+    }
+  }
+
+  &__graph-text {
+    position: absolute;
+    bottom: 105%;
+    margin-bottom: 0;
+    font-family: 'FreightSans Pro Book', Arial, sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: $white;
+    text-align: center;
+  }
+}
+
+@media (max-width: $sm) {
+  .adv-system {
+    margin-top: -10px;
+    padding: 0;
+
+    &::after {
+      bottom: -30px;
+      height: 70px;
+    }
+
+    &__text-block-title {
+      font-size: 30px;
+      text-align: center;
+    }
+
+    &__text {
+      font-size: 18px;
+      text-align: center;
+    }
+
+    &__row {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 100%;
+      margin: 0 auto;
+      padding-left: 30px;
+      padding-right: 30px;
+    }
+
+    &__container {
+      width: 100%;
+      padding-top: 100px;
+      padding-bottom: 30px;
+    }
+
+    &__graph {
+      width: 100%;
+      border-bottom: 0;
+      position: relative;
+
+      &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        width: 2px;
+        height: 100%;
+        background-color: rgba(255, 255, 255, 0.3);
+      }
+    }
+
+    &__graph-container {
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      padding-top: 0;
+      padding-bottom: 50px;
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    &__graph-arrow {
+      display: none;
+    }
+
+    &__text-block {
+      width: 100%;
+    }
+
+    &__graph-text {
+      font-size: 16px;
+      top: 30px;
+    }
+
+    &__graph-item {
+      width: 30%;
+      height: 120px;
+
+      &_1, &_3, &_5 {
+        margin-right: 30%;
+      }
+
+      &_2, &_4, &_6 {
+        margin-left: 30%;
+      }
+
+      &_1 .adv-system__graph-text,
+      &_3 .adv-system__graph-text,
+      &_5 .adv-system__graph-text {
+        left: -50%;
+        width: 100%;
+      }
+
+      &_2 .adv-system__graph-text,
+      &_4 .adv-system__graph-text,
+      &_6 .adv-system__graph-text {
+        width: 100%;
+        right: -50%;
+      }
+    }
+
+    &__graph-line {
+      width: 100%;
+      height: 2px;
+
+      &_1::before,
+      &_3::before,
+      &_5::before {
+        font-size: 16px;
+        right: -15px;
+        top: -15px;
+      }
+
+      &_2::before,
+      &_4::before,
+      &_6::before {
+        font-size: 16px;
+        top: -15px;
+      }
+
+      &::after {
+        top: -3px;
+      }
+
+      &_2::after,
+      &_4::after,
+      &_6::after {
+        right: 0;
+      }
+    }
+  }
+}
+
+@media (max-width: $xs) {
+  .adv-system {
+    &__graph-text {
+      font-size: 14px;
+    }
+  }
+}

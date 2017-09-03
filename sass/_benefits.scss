@@ -1,0 +1,75 @@
+.benefits {
+  padding-bottom: 35px;
+
+  &__title {
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 13px;
+    margin-top: 0;
+    width: 702px;
+    @include fontSH(44px, 48px);
+    font-weight: bold;
+    text-align: center;
+  }
+
+  &__desc {
+    margin-bottom: 40px;
+    margin-right: auto;
+    margin-left: auto;
+    width: 545px;
+    @include fontSH(22px, 26px);
+    color: var(--slate);
+    text-align: center;
+  }
+}
+
+.benefit {
+  margin-bottom: 35px;
+
+  &__title {
+    margin-bottom: 17px;
+    padding-left: 37px;
+    @include fontSH(24px, 29px);
+    font-weight: bold;
+    background: url('../img/group-41.svg') no-repeat left center;
+    background-size: 20px 21px;
+  }
+
+  &__desc {
+    padding-left: 37px;
+    color: var(--slate);
+  }
+}
+
+@media (max-width: $sm) {
+  .benefits {
+    &__title {
+      @include fontSH(28px, 31px);
+    }
+  }
+}
+
+@media (max-width: $xs) {
+  .benefits {
+    &__title {
+      width: 90%;
+      @include fontSH(22px, 24px);
+    }
+
+    &__desc {
+      margin-bottom: 13px;
+      width: 90%;
+      @include fontSH(16px, 18px);
+    }
+  }
+
+  .benefit {
+    margin-bottom: 18px;
+    padding-bottom: 0;
+
+    &__title {
+      margin-bottom: 4px;
+      @include fontSH(16px, 19px);
+    }
+  }
+}

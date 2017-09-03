@@ -1,0 +1,238 @@
+/* common styles here, can extend other elements using these */
+
+@font-face {
+  font-family: 'EurostileExt-BlaIta';
+  font-weight: bold;
+  src: url("../fonts/EurostileExt-BlaIta.otf") format("opentype");
+}
+
+
+body {
+  font-family: 'freight-sans-pro', Arial, sans-serif;
+  font-size: 22px;
+  line-height: 24px;
+  color: var(--black);
+}
+
+h1 {
+  font-family: 'ff-tisa-web-pro', "Times New Roman", Times, serif;
+  font-size: 44px;
+  font-weight: bold;
+  line-height: 1.05;
+  margin-bottom: 11px;
+}
+
+h3 {
+  font-family: 'ff-tisa-web-pro', "Times New Roman", Times, serif;;
+  font-size: 34px;
+  font-weight: bold;
+  margin-bottom: 25px;
+}
+
+h4 {
+  font-family: 'ff-tisa-web-pro', "Times New Roman", Times, serif;;
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 25px;
+}
+
+h5 {
+  font-family: 'ff-tisa-web-pro', "Times New Roman", Times, serif;;
+  font-size: 24px;
+}
+
+.block-title {
+  @include block-title();
+  margin-top: 0;
+  margin-bottom: 25px;
+
+  &_white {
+    margin-bottom: 25px;
+    color: var(--white);
+    font-weight: 400;
+  }
+}
+
+.block-subtitle {
+  font-family: 'ff-tisa-web-pro', "Times New Roman", Times, serif;;
+  font-size: 22px;
+  color: var(--slate-two);
+  font-weight: 700;
+  text-align: center;
+}
+
+button {
+  border: none;
+  outline: none;
+}
+
+.show-sm {
+  display: none;
+}
+
+
+/* Ripple magic */
+.wave {
+  position: relative;
+  overflow: hidden;
+  @include trans();
+}
+
+.wave:hover {
+  transform: scale(1.03);
+  text-decoration: none;
+}
+
+.wave:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 5px;
+  height: 5px;
+  background: rgba(255, 255, 255, .5);
+  opacity: 0;
+  border-radius: 100%;
+  transform: scale(1, 1) translate(-50%);
+  transform-origin: 50% 50%;
+}
+
+%skew__bottom {
+  content: '';
+  position: absolute;
+  left: 0;
+  z-index: 1;
+
+  width: 100%;
+  height: 100px;
+  bottom: -50px;
+
+  background: lightyellow;
+  transform: skewY(-2.3deg);
+}
+
+%skew__top {
+  content: '';
+  position: absolute;
+  left: 0;
+  z-index: 1;
+
+  width: 100%;
+  height: 100px;
+  top: -50px;
+
+  background: lightyellow; // right $white;
+  transform: skewY(-2.3deg);
+}
+
+
+%skew__top_tablet {
+  top: -25px;
+  height: 50px;
+}
+
+%skew__bottom_tablet {
+  bottom: -25px;
+  height: 50px;
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(0, 0);
+    opacity: 1;
+  }
+  20% {
+    transform: scale(25, 25);
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(100, 40);
+  }
+}
+
+.wave:focus:not(:active)::after {
+  animation: ripple 1s ease-out;
+}
+
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+  40% {transform: translateY(-30px);}
+  60% {transform: translateY(-15px);}
+}
+
+@keyframes gradient {
+  0%{background-position:61% 0%}
+  50%{background-position:40% 100%}
+  100%{background-position:61% 0%}
+}
+
+[v-cloak] {
+  display: none;
+}
+
+#my-menu:not( .mm-menu ) {
+  display: none;
+}
+
+
+@media(max-width: $sm) {
+  body {
+    font-size: 18px;
+  }
+
+  h1 {
+    font-size: 34px;
+    line-height: 1.35;
+  }
+
+  h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  h5 {
+    font-size: 20px;
+  }
+
+  .block-title {
+    font-size: 28px;
+
+    &_white {
+      margin-bottom: 25px;
+      font-weight: 700;
+    }
+  }
+
+  .show-sm {
+    display: block;
+  }
+
+  .show-lg {
+    display: none;
+  }
+}
+
+
+@media(max-width: $xs) {
+  h1 {
+    font-size: 28px;
+    line-height: 1.18;
+  }
+
+  h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  h5 {
+    font-size: 18px;
+  }
+
+  .block-title {
+    margin-bottom: 20px;
+    font-size: 22px;
+
+  }
+}

@@ -1,0 +1,75 @@
+.home-bottom {
+  padding-top: 106px;
+  padding-bottom: 230px;
+  background: var(--pale-grey) url('../img/group-22@3x.png') no-repeat;
+  background-position: calc(50% + 250px) center;
+  background-size: 1000px auto;
+
+  &__title {
+    margin-bottom: 16px;
+  }
+
+  &__desc {
+    margin-bottom: 25px;
+    color: var(--slate);
+  }
+
+  &__btn-wrapper {
+    position: relative;
+
+    &::after {
+      position: absolute;
+      content: '';
+      right: -24px;
+      top: -2px;
+      width: 150px;
+      min-height: 150px;
+      background: url('../img/arrow1.png') no-repeat center;
+      background-size: contain;
+    }
+  }
+
+  &__btn {
+    display: inline-block;
+    padding: 21px 28px;
+    @extend %blue-button;
+    @extend .wave;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.13;
+    letter-spacing: 1px;
+  }
+}
+
+@media (max-width: $sm) {
+  .home-bottom {
+    padding-bottom: 45px;
+    padding-top: 450px;
+    background-position: calc(50%) -80px;
+    background-size: 700px auto;
+
+    &__btn-wrapper {
+      &::after {
+        content: none;
+      }
+    }
+
+    &__btn {
+      margin: 0 34%;
+    }
+  }
+}
+
+@media (max-width: $xs) {
+  .home-bottom {
+    padding-top: 240px;
+    padding-bottom: 41px;
+    background-position: calc(50%) -30px;
+    background-size: 350px auto;
+
+    &__btn {
+      margin: 0 auto;
+      width: 100%;
+    }
+  }
+}

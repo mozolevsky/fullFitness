@@ -1,0 +1,133 @@
+
+$diam: 150px;
+$color: rgb(10, 85, 247);
+
+
+.bmr__circle {
+  display: flex;
+  justify-content: center;
+
+  &-item {
+    position: relative;
+    margin-bottom: 80px;
+    height: $diam;
+    width: $diam;
+    background: $color;
+    border-radius: 100%;
+    border: 15px solid $color;
+
+    &_inner {
+      height: $diam;
+      width: $diam;
+      background: transparent;
+
+      &:before {
+        border: 15px solid $color;
+        content: "";
+        width: 100%;
+        display: block;
+        position: absolute;
+        height: auto;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        border-radius: 100%;
+        transform-origin: center center;
+        opacity: 0;
+        box-sizing: border-box;
+
+        animation: 1.8s pulse3 infinite linear;
+      }
+    }
+
+
+    &:before,  &:after {
+      border: 15px solid $color;
+      content: "";
+      width: 100%;
+      display: block;
+      position: absolute;
+      height: auto;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      border-radius: 100%;
+      transform-origin: center center;
+      opacity: 0;
+      box-sizing: border-box;
+    }
+
+    &:before {
+      animation: 1.8s 1.8s pulse2 infinite linear;
+
+    }
+
+    &::after {
+      animation: 1.8s 3.6s pulse infinite linear;
+    }
+  }
+
+  &-title {
+    position: absolute;
+    top: 37%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    font-size: 44px;
+    font-weight: bold;
+    color: $white;
+  }
+
+  &-desc {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 100%;
+
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    color: $white;
+  }
+
+}
+
+// outer circle
+
+@keyframes pulse {
+  0% {
+    transform: scale(1.7);
+    opacity: .3;
+  }
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+// inner circle
+@keyframes pulse2 {
+  0% {
+    transform: scale(1.5);
+    opacity: .6;
+  }
+  100% {
+    transform: scale(1.7);
+    opacity: 0.3;
+  }
+}
+
+@keyframes pulse3 {
+  0% {
+    transform: scale(1.2);
+    opacity: .8;
+  }
+  100% {
+    transform: scale(1.5);
+    opacity: 0.6;
+  }
+}

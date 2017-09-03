@@ -1,0 +1,50 @@
+.trans-goals {
+  padding-top: 85px;
+  padding-bottom: 85px;
+  background-color: var(--pale-grey);
+
+  &__wrapper {
+    margin: 0 auto;
+    width: 561px;
+    text-align: center;
+  }
+
+  &__title {
+    margin-top: 0;
+    margin-bottom: 13px;
+  }
+
+  &__desc {
+    margin-bottom: 24px;
+    color: var(--slate);
+  }
+
+  &__btn {
+    display: inline-block;
+    padding: 21px 69px 15px;
+    @extend %blue-button;
+    @extend .wave;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.13;
+    letter-spacing: 1px;
+  }
+}
+
+@media (max-width: $sm) {
+  .trans-goals {
+    padding-top: 40px;
+    padding-bottom: 47px;
+  }
+}
+
+@media (max-width: $xs) {
+  .trans-goals {
+    padding-top: 26px;
+    padding-bottom: 33px;
+
+    &__wrapper {
+      width: 90%;
+    }
+  }
+}

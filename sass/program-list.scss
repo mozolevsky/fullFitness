@@ -1,0 +1,120 @@
+.plist-top {
+  padding-top: 130px;
+  padding-bottom: 150px;
+  background: url('../img/group@3x.jpg') no-repeat center;
+  background-size: cover;
+
+  &__text-wrapper {
+    margin: 0 auto;
+    width: 618px;
+    text-align: center;
+  }
+
+  &__title {
+    margin-top: 0;
+    font-size: 36px;
+    color: var(--electric-blue);
+  }
+
+  &__desc {
+    color: var(--slate);
+  }
+}
+
+.plist-item {
+  background-repeat: no-repeat;
+  background-position: calc(50% - 295px) center;
+  background-size: auto 350px;
+
+  &__wrapper {
+    position: relative;
+    padding-top: 66px;
+    padding-bottom: 160px;
+
+    &:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 5%;
+      width: 90%;
+      height: 1px;
+      background-color: rgba(88, 99, 122, 0.2);
+    }
+
+    &_last {
+      &::after {
+        content: none;
+      }
+    }
+  }
+
+  &__title {
+    margin-top: 0;
+    margin-bottom: 25px;
+  }
+
+  &__desc {
+    margin-bottom: 28px;
+    color: var(--slate);
+  }
+
+  &__btn {
+    padding: 17px 57px;
+    @include borderButton(var(--electric-blue));
+
+    &:hover {
+      @include borderButtonHover(var(--electric-blue));
+    }
+  }
+}
+
+
+@media (max-width: $sm) {
+  .plist-top {
+    padding-top: 98px;
+    padding-bottom: 117px;
+
+    &__text-wrapper {
+      width: 74%;
+    }
+  }
+
+  .plist-item {
+    background-position: calc(50% - 93px) center;
+    background-size: auto 300px;
+
+    &__wrapper {
+      padding-top: 47px;
+      padding-bottom: 83px;
+    }
+  }
+}
+
+@media (max-width: $xs) {
+  .plist-top {
+    padding-top: 47px;
+    padding-bottom: 53px;
+
+    &__text-wrapper {
+      width: 89%;
+    }
+  }
+
+  .plist-item {
+    background-position: calc(50% - 41px) center;
+    background-size: auto 210px;
+
+    &__wrapper {
+      padding-top: 33px;
+      padding-bottom: 26px;
+    }
+
+    &__title {
+      font-size: 18px;
+    }
+
+    &__btn {
+      padding: 12px 23px;
+    }
+  }
+}

@@ -1,0 +1,510 @@
+.info {
+  position: relative;
+  margin-bottom: -110px;
+
+  &::after {
+    @extend %skew__bottom;
+    background-color: $white;
+    bottom: 70px;
+  }
+
+  &__content_margin {
+    margin-top: 140px;
+    padding-left: 45px;
+  }
+
+  &__title-img {
+    display: none;
+  }
+
+  &__img {
+    width: 100%;
+  }
+
+  &__title {
+    font-size: 44px;
+    margin-bottom: 30px;
+  }
+
+  &__desc {
+    font-size: 24px;
+    line-height: 26px;
+  }
+
+  &__img-block {
+    position: relative;
+    z-index: 2;
+  }
+
+  /*second block*/
+  &__blue-bg {
+    margin-bottom: 0;
+    padding: 130px 0;
+    background: linear-gradient(229deg, #85d4f0, #3b12f8);
+
+    &::before {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      content: "";
+      opacity: .2;
+      background: url('../img/desktop_7_bg-texture.jpg');
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    &::after {
+      bottom: -70px;
+      background-color: $pale-grey-three;
+    }
+  }
+  
+  &__content_white {
+    color: $white;
+  }
+
+  &__img-block_margin {
+    padding-left: 45px;
+  }
+
+  &__img-content {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+  }
+
+  &__img-about {
+    width: 27%;
+    margin-right: 25px;
+    color: $white;
+    font-size: 17px;
+    text-align: center;
+  }
+
+  &__img-about:last-child {
+    margin-right: 0;
+  }
+
+  &__stars {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 18px;
+    margin-bottom: 10px;
+  }
+
+  &__star-item {
+    display: block;
+    width: 18px;
+    height: 18px;
+    margin-right: 5px;
+    background-image: url("../img/unused_program/star.svg");
+    background-repeat: no-repeat;
+  }
+
+  &__star-item:last-child {
+    margin-right: 0;
+  }
+
+  &__img-about_2 {
+    flex-grow: 1;
+    padding-left: 60px;
+    text-align: left;
+    background-image: url("../img/unused_program/5building blocks@2x.png");
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-size: 60px auto;
+  }
+
+  &__img-about_3 {
+    padding-top: 70px;
+    background-image: url("../img/unused_program/award@2x.png");
+    background-repeat: no-repeat;
+    background-position: center 0;
+  }
+}
+
+/*===== ROUND-DIAGRAM =====*/
+.round-diagram {
+  position: relative;
+
+  &::after {
+    @extend %skew__bottom;
+    background: $pale-grey-three;
+    bottom: -30px;
+    height: 120px;
+  }
+
+  &__title {
+    width: 60%;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    padding-top: 70px;
+    text-align: center;
+  }
+
+  /*img-block*/
+  &__img-block {
+    position: relative;
+  }
+
+  &__img-main {
+    position: relative;
+    z-index: 2;
+    //width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+
+  /*text-block*/
+  &__text-block {
+    margin-top: 50px;
+  }
+
+  &__text-title {
+    padding-left: 5px;
+    font-family: 'ff-tisa-web-pro', "Times New Roman", Times, serif;
+    font-size: 24px;
+    line-height: 1.2;
+    font-weight: 700;
+    text-align: left;
+  }
+
+  &__text {
+    font-size: 20px;
+    line-height: 1.2;
+    color: $gunmetal;
+    text-align: justify;
+  }
+}
+
+/*===== HORIZONTAL-DIAGRAM =====*/
+.horizontal-diagram {
+  background-color: $pale-grey-three;
+  position: relative;
+  padding-top: 40px;
+
+  &::after {
+    @extend %skew__bottom;
+    background: $pale-grey-three;
+    bottom: 45px;
+  }
+
+  &::before {
+    @extend %skew__top;
+    background: $white;
+    bottom: 70px;
+    display: none;
+  }
+
+  /*text-block*/
+  &__text-block {
+    position: relative;
+    z-index: 2;
+  }
+
+  &__text-block-title {
+    margin-bottom: 20px;
+    font-family: 'ff-tisa-web-pro', "Times New Roman", Times, serif;
+    font-size: 24px;
+    line-height: 1.2;
+    font-weight: 700;
+    text-align: left;
+  }
+
+  &__text {
+    font-size: 19px;
+    line-height: 1.2;
+    color: $gunmetal;
+  }
+
+  /*img-block*/
+  &__img-block {
+    position: relative;
+    z-index: 2;
+  }
+
+  &__img {
+    width: 100%;
+    margin-top: -50px;
+  }
+}
+
+
+@media (max-width: $md) {
+  .info {
+
+    &__title {
+      font-size: 40px;
+    }
+
+    &__desc {
+      font-size: 20px;
+    }
+
+    &__content_margin {
+      margin-top: 100px;
+      position: relative;
+      z-index: 2;
+    }
+  }
+}
+
+@media (max-width: $sm) {
+  .info {
+    margin-bottom: 0;
+    padding-top: 40px;
+
+    &::after {
+      bottom: -40px;
+    }
+
+    &__content_margin {
+      margin-top: 70px;
+    }
+
+    &__title {
+      font-size: 30px;
+      margin-bottom: 20px;
+    }
+
+    &__desc {
+      font-size: 18px;
+      line-height: 21px;
+    }
+
+    /*second block*/
+    &__blue-bg {
+      padding: 100px 0;
+    }
+
+
+    &__img-block_margin {
+      padding-left: 20px;
+    }
+
+    &__img-content {
+      flex-wrap: wrap;
+      margin-top: 30px;
+    }
+
+    &__img-about {
+      width: 50%;
+      margin: 0;
+      font-size: 13px;
+    }
+
+    &__img-about_1 {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border-right: 1px solid rgba(255, 255, 255, 0.4);
+      padding-right: 5px;
+    }
+
+    &__img-about_2 {
+      width: 100%;
+      order: 1;
+      margin-top: 30px;
+      padding-left: 50px;
+      background-size: auto 100%;
+    }
+
+    &__stars {
+      padding-top: 20px;
+    }
+  }
+
+  /*===== ROUND-DIAGRAM =====*/
+  .round-diagram {
+
+    &__title {
+      padding-top: 40px;
+    }
+
+    /*text-block*/
+    &__text-block {
+      margin-top: 60px;
+    }
+
+    &__text-title {
+      padding-left: 0;
+      margin-bottom: 15px;
+      font-size: 22px;
+    }
+
+    &__text {
+      font-size: 16px;
+    }
+
+    /*img-block*/
+    &__img-main {
+      width: 110%;
+      margin-left: -40px;
+    }
+
+    &__img-text-block {
+      display: none;
+    }
+  }
+
+  /*===== HORIZONTAL-DIAGRAM =====*/
+  .horizontal-diagram {
+    padding-top: 0;
+
+    &::after {
+      bottom: -35px;
+    }
+
+    /*text-block*/
+    &__text-block-title {
+      margin-bottom: 15px;
+      font-size: 22px;
+    }
+
+    &__text {
+      font-size: 16px;
+    }
+
+    /*img-block*/
+    &__img {
+      margin-top: 0;
+    }
+  }
+}
+
+@media (max-width: $xs) {
+  .info {
+
+    &::after {
+      height: 70px;
+    }
+
+    &__container {
+      padding-left: 30px;
+      padding-right: 30px;
+    }
+
+    &__content_margin {
+      margin-top: 10px;
+      padding-left: 15px;
+    }
+
+    &__title-img {
+      display: block;
+      text-align: center;
+    }
+
+    &__title-text {
+      display: none;
+    }
+
+    /*second block*/
+    &__blue-bg {
+      padding-top: 75px;
+      padding-bottom: 90px;
+    }
+
+    &__row {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &__content {
+      order: 1;
+    }
+
+    &__title_white {
+      color: $white;
+    }
+
+    &__img-content {
+      margin-bottom: 30px;
+    }
+
+    &__img-about_1 {
+      border-right: none;
+    }
+
+    &__stars {
+      margin-bottom: 50px;
+    }
+  }
+
+  /*===== ROUND-DIAGRAM =====*/
+  .round-diagram {
+    padding-bottom: 70px;
+    padding-top: 28px;
+
+    &::after {
+      display: none;
+    }
+
+    &__container {
+      padding-left: 30px;
+      padding-right: 30px;
+    }
+
+    &__title {
+      width: 100%;
+      padding-top: 20px;
+      margin-bottom: 0;
+    }
+
+    /*text-block*/
+    &__text-block {
+      margin-top: 0;
+    }
+
+    &__text-title {
+      margin-top: 0;
+    }
+
+    &__text {
+      font-size: 18px;
+    }
+
+    /*img-block*/
+    &__img-main {
+      width: 100%;
+      margin-left: 0;
+    }
+
+    &__img-arrow_tablet {
+      width: 50%;
+    }
+  }
+
+  /*===== HORIZONTAL-DIAGRAM =====*/
+  .horizontal-diagram {
+    &::before {
+      display: block;
+    }
+
+    &__container {
+      padding-left: 30px;
+      padding-right: 30px;
+    }
+
+    &__row {
+      display: flex;
+      flex-direction: column;
+    }
+
+    /*text-block*/
+    &__text-block-title {
+      margin-top: 0;
+    }
+
+    /*img-block*/
+    &__img-block {
+      order: -1;
+    }
+
+    &__img {
+      margin-top: -65px;
+    }
+  }
+}

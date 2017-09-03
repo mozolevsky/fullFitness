@@ -1,0 +1,216 @@
+
+/* breakpoints */
+$xs: 767px;
+$sm: 991px;
+$md: 1199px;
+
+/* Color palette */
+$white: #ffffff;
+$slate: #58637a;
+$electric-blue: #0a55f7;
+$dark: #191b1f;
+$black: #000000;
+$battleship-grey: #6c7382;
+$pale-grey: #f3f1f2;
+$charcoal-grey: #404348;
+$black-two: #020101;
+$white-two: #eeeeee;
+$dark-two: #150e17;
+$beige: #fbf0ee;
+$light-pink: #fff6f9;
+$pinkish-grey: #c0c0c0;
+$aqua-marine: #50e3c2;
+$pale-grey-two: #ebeff3;
+$transparent: rgba(0, 0, 0, 0);
+$purplish-blue: #852ef6;
+$dark-sky-blue: #4297e5;
+$bright-teal: #00ffd4;
+$gunmetal: #4c515b;
+$pale-grey-three: #f6f9fc;
+$sapphire: #3023ae;
+$white-three: #e1e1e1;
+$white-four: #ededed;
+$ice-blue: #f5faff;
+$charcoal-grey-two: #2b2e34;
+$transparent-2: rgba(0, 0, 0, 0.1);
+$white-five: #f5f5f5;
+$white-six: #e8e8e8;
+$azure: #008cff;
+$cerulean-blue: #0076f5;
+$white-seven: #d4d4d4;
+$tiffany-blue: #82f1e1;
+$aqua-marine-two: #4bdebe;
+$transparent-3: rgba(117, 237, 215, 0);
+$greeny-blue: #55beab;
+$darkish-pink: #e052a0;
+$dusty-orange: #f15c41;
+$cool-grey: #8a92a1;
+$soft-blue: #6772e5;
+$white-eight: #fbfbfb;
+$lightblue: #5bd0f6;
+$white-nine: #dfdfdf;
+$transparent-4: rgba(0, 0, 0, 0.21);
+$lavender-pink: #c96dd8;
+$dodger-blue: #53a5f9;
+$dark-three: #222c37;
+$white-ten: #e0e0e0;
+$bluey-purple: #6d37bc;
+$easter-purple: #b76aff;
+$bluish-purple: #8645e8;
+$transparent-5: rgba(178, 102, 252, 0);
+$darkish-purple: #4d2786;
+$red: #ff0000;
+$dusk: #525f7f;
+$dark-grey-blue: #2c414d;
+$red-pink: #f0425e;
+$blue-blue: #1e69cd;
+$sky-blue: #68b9ff;
+$azul: #1f75eb;
+$sky-blue-two: #62b3fd;
+$azul-two: #2378ec;
+$transparent-6: rgba(118, 146, 179, 0.4);
+$white-eleven: #d8d8d8;
+$light-gold: #ffdd42;
+$blue-grey: #7786a6;
+$butterscotch: #ffbf42;
+$greeny-blue-two: #4fc8af;
+$sea: #359682;
+$tiffany-blue-two: #7eefde;
+$white-twelve: #dddddd;
+$dark-pink: #c93c56;
+$grape-purple: #842637;
+$warm-pink: #fa647f;
+$dusty-orange-two: #f58a44;
+$apricot: #ffc868;
+$orangeish: #ff8d45;
+$milk-chocolate: #6d3d1d;
+$apricot-0: rgba(255, 192, 98, 0);
+$carnation: #fd6882;
+$darkish-pink-two: #e3405d;
+$pale-grey-three-35: rgba(246, 249, 252, 0.35);
+$pale-grey-three-54: rgba(246, 249, 252, 0.54);
+$lightish-blue: #3875f9;
+$soft-blue-two: #5875eb;
+$darkish-pink-three: #e94a66;
+$pale-grey-four: #eff2f5;
+$steel-blue: #5a72a7;
+$light-navy-blue: #324b82;
+$cerulean-blue-10: rgba(0, 120, 246, 0.1);
+$seafoam-blue: #63dbc1;
+$duck-egg-blue: #fafbfe;
+$electric-blue-35: rgba(9, 84, 247, 0.35);
+$silver: #dfe1e2;
+
+
+/* other params */
+$borderRad: 3px;
+$shadow: 0 15px 35px 0 rgba(0, 0, 0, 0.1), 0 5px 15px 0 rgba(0, 0, 0, 0.07);
+
+:root {
+  /* Color palette */
+  --white: #ffffff;
+  --pale-grey: #f6f9fc;
+  --black: #000000;
+  --electric-blue: #0a55f7;
+  --slate-grey: #65676e;
+  --warm-grey: #727272;
+  --slate-grey-two: #676970;
+  --blue: #0740ba;
+  --marine: #052a7b;
+  --slate: #58637a;
+  --white-two: #d8d8d8;
+  --dark-grey-blue: #2c3852;
+  --white-78: rgba(255, 255, 255, 0.78);
+  --red: #ff0000;
+  --white-three: #fbfbfb;
+  --white-four: #f5f5f5;
+  --gunmetal: #4c515b;
+  --slate-two: #424b5d;
+  --sun-yellow: #f8e81c;
+  --butterscotch: #ffbf42;
+  --pale-blue: #eff4fe;
+  --carnation: #fd6882;
+  --darkish-pink: #e3405d;
+  --white-five: #fdfdfd;
+  --white-0: rgba(255, 255, 255, 0);
+  --warm-grey-two: #979797;
+  --soft-green: #81c784;
+  --bluey-grey: #97a0b3;
+  --aqua-marine: #50e3c2;
+  --electric-blue-20: rgba(9, 84, 247, 0.2);
+
+  /* other params */
+  --borderRad: 3px;
+  --shadow: 0 15px 35px 0 rgba(0, 0, 0, 0.1), 0 5px 15px 0 rgba(0, 0, 0, 0.07);
+  --buttonShadow: 0 12px 18px 0 rgba(200, 200, 200, 0.5);
+}
+
+
+/* mixins */
+@mixin fontSH($size, $height) {
+  font-size: $size;
+  line-height: $height;
+}
+
+@mixin trans($duration: 0.5s) {
+  transition: all $duration ease-in-out;
+}
+
+@mixin borderButton($color) {
+  display: inline-block;
+  border-radius: var(--borderRad) ;
+  border: solid 1px $color;
+  background: transparent;
+
+  font-size: 18px;
+  line-height: 18px;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  text-align: center;
+  color: $color;
+
+  transition: all .5s ease-in-out;
+}
+
+@mixin borderButtonHover ($color) {
+  color: var(--white);
+  background: $color;
+  text-decoration: none;
+}
+
+
+/* selectors gain */
+%blue-button {
+  border-radius: var(--borderRad);
+  background-image: linear-gradient(98deg, #008cff, #0076f5);
+  color: var(--white);
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+
+}
+
+%blue-button:hover {
+  text-decoration: none;
+  color: var(--white);
+}
+
+@mixin block-title() {
+  font-family: 'ff-tisa-web-pro', "Times New Roman", Times, serif;
+  font-size: 44px;
+  font-weight: bold;
+  line-height: 1.05;
+  margin-bottom: 11px;
+  color: var(--black);
+  text-align: center;
+}
+
+@mixin block-text() {
+  font-family: 'freight-sans-pro', Arial, sans-serif;
+  font-size: 22px;
+  line-height: 24px;
+  color: var(--black);
+}
+
+
+

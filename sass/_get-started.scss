@@ -1,0 +1,338 @@
+
+.blog-top {
+  position: relative;
+  z-index: 0;
+  width: 100%;
+  height: 690px;
+  margin-bottom: -15px;
+  background: linear-gradient(to right, #ffffff 1%, #ebeff3 100%);
+
+  &::after {
+    @extend %skew__bottom;
+    bottom: -45px;
+    background: $white;
+  }
+
+  &__bg {
+    width: 100%;
+    height: 100%;
+    background-image: url('../img/getstarted-top.png');
+    background-repeat: no-repeat;
+    background-position: calc(50% + 400px) 60%;
+    background-size: 506px 550px;
+  }
+
+  &__title {
+    padding-top: 205px;
+  }
+
+  &__sub-title {
+    margin-bottom: 22px;
+
+    @include fontSH(28px, 32px);
+    color: $battleship-grey;
+  }
+
+  &__btn {
+    padding: 16px 34px;
+    @include borderButton($electric-blue);
+  }
+
+  &__btn:hover {
+    @include borderButtonHover($electric-blue);
+  }
+
+}
+
+.text p {
+  margin-bottom: 18px;
+}
+
+.promo {
+  margin-bottom: 18px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  min-height: 600px;
+
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  &_right {
+    background-position: right center;
+  }
+
+  &_left {
+    background-position: left center;
+  }
+
+  &_min {
+    width: 80%;
+  }
+
+  &__info {
+    margin-top: 23%;
+
+    &_bottom {
+      margin-top: 60%;
+    }
+  }
+
+  &__title_big {
+    font-size: 44px;
+  }
+
+  &__title_big_light {
+    color: $white;
+  }
+
+  &__btn {
+    padding: 15px 27px;
+    @include borderButton($black);
+    line-height: 18px;
+  }
+
+  &__btn:hover {
+    @include borderButtonHover($black);
+  }
+
+  &__btn_light {
+    padding: 15px 27px;
+    @include borderButton($white);
+    line-height: 18px;
+  }
+
+  &__btn_light:hover {
+    @include borderButtonHover($white);
+    color: $black;
+  }
+
+}
+
+.promo-block {
+
+  &__title {
+    font-size: 34px;
+    margin-top: 0;
+  }
+
+  &__title_light {
+    color: $white;
+  }
+
+  &__btn {
+    padding: 15px 27px;
+    @include borderButton($black);
+  }
+
+  &__btn:hover {
+    @include borderButton($black);
+  }
+
+  &__btn_light {
+    @include borderButton($white);
+  }
+
+  &__btn_light:hover {
+    @include borderButton($white);
+  }
+}
+
+.text-marked {
+
+  &_blue {
+    font-weight: bold;
+    border-radius: 1em 0 1em 0;
+    background-image: linear-gradient(-100deg, rgba(187,245,255,0.3), rgba(187,245,255,0.7) 95%, rgba(187,245,255,0.1));
+  }
+
+  &_pink {
+    font-weight: bold;
+    border-radius: 1em 0 1em 0;
+    background-image: linear-gradient(-100deg, rgba(254,214,253,0.3), rgba(254,214,253,0.7) 95%, rgba(254,214,253,0.1));
+  }
+}
+
+
+@media (max-width: 1199px) {
+  .promo {
+    min-height: 400px;
+
+    &__info {
+      margin-top: 10%;
+
+      &_bottom {
+        margin-top: 50%;
+      }
+    }
+  }
+}
+
+@media (max-width: $sm) {
+  .blog-top {
+    height: 570px;
+    margin-bottom: 0;
+
+    &::after {
+      height: 50px;
+      bottom: -25px;
+    }
+
+    &__bg {
+      background-position: calc(50% + 250px) 86%;
+      background-size: 406px 450px;
+    }
+
+    &__title {
+      padding-top: 131px;
+    }
+
+    &__sub-title {
+      font-size: 22px;
+    }
+  }
+
+  .promo {
+    &_min {
+      width: 100%;
+    }
+
+    &__img {
+      height: 353px;
+    }
+
+    &__info {
+      margin-top: 23%;
+
+      &_bottom {
+        margin-top: 60%;
+      }
+    }
+
+    &__title_big {
+      font-size: 24px;
+    }
+
+    &__title_big_light {
+      color: $white;
+    }
+
+    &__btn {
+      padding: 14px 18px;
+    }
+
+  }
+
+  .promo-block {
+    &__pic {
+      width: 100%;
+    }
+
+    &__img {
+      width: 100%;
+    }
+
+    &__info {
+      width: 273px;
+    }
+
+    &__info_left {
+      left: 12%;
+    }
+
+    &__title {
+      font-size: 24px;
+      margin-bottom: 15px;
+    }
+  }
+}
+
+@media (max-width: $xs) {
+  .blog-top {
+    height: 450px;
+    text-align: center;
+
+    &__bg {
+      background-position: 50% 152px;
+      background-size: 374px 400px;
+    }
+
+    &__title {
+      padding-top: 68px;
+      margin: 0 -15px;
+    }
+
+    &__sub-title {
+      display: none;
+    }
+
+    &__btn {
+      display: none;
+    }
+  }
+
+  .promo {
+   margin-bottom: 85px;
+
+    &__info {
+      position: relative;
+      bottom: -372px;
+      margin-top: 0;
+      padding: 1px 20px 16px;
+      opacity: .9;
+      background: #fff;
+      text-align: left;
+
+      &_bottom {
+        margin-top: 0;
+      }
+    }
+
+
+    &__title_big {
+      margin-bottom: 0;
+      margin-top: 10px;
+    }
+
+    &__title_big_light {
+      color: $black;
+    }
+
+    &__btn {
+      border: none;
+      padding: 0;
+      font-size: 16px;
+    }
+
+    &__btn_light {
+      color: $black;
+    }
+  }
+
+  .promo-block {
+
+    &__title {
+      margin-top: 10px;
+      margin-bottom: 0;
+    }
+
+    &__title_light {
+      color: $black;
+    }
+
+    &__title_big_light {
+      margin-top: 10px;
+      color: $black;
+    }
+
+    &__btn {
+      font-size: 16px;
+      padding: 0;
+      border: none;
+    }
+
+    &__btn_light {
+      color: $black;
+    }
+  }
+}

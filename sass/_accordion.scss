@@ -1,0 +1,74 @@
+@import "features/accordion";
+
+.faq {
+  position: relative;
+  padding-top: 80px;
+  background-color: $pale-grey-three;
+
+  &_two {
+    padding-top: 20px;
+
+    &::after {
+      content: none;
+    }
+  }
+
+  &::after {
+    @extend %skew__bottom;
+    bottom: -50px;
+    background-color: $pale-grey-three;
+  }
+
+  &__title {
+    margin-bottom: 30px;
+    text-align: center;
+  }
+
+  &__see-more {
+    display: block;
+    margin-top: 23px;
+    margin-bottom: 70px;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.39;
+    text-align: center;
+    color: $gunmetal;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    &_two {
+      margin-bottom: 50px;
+    }
+  }
+}
+
+@media (max-width: $sm) {
+  .faq {
+    padding-top: 60px;
+
+    &_crawled {
+      margin-top: -160px;
+    }
+
+    &::after {
+      height: 50px;
+      bottom: -24px;
+    }
+
+    &__title {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+
+    &__accordion {
+      margin: 0 auto;
+      width: 80%;
+    }
+
+    &__see-more {
+      display: block;
+    }
+  }
+}

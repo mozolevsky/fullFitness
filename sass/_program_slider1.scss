@@ -1,0 +1,329 @@
+.slider1 {
+  position: relative;
+  padding-top: 70px;
+  background-color: $pale-grey-three;
+
+  &::after {
+    @extend %skew__bottom;
+    background-color: $white;
+    bottom: -70px;
+    z-index: 0;
+  }
+
+  &__wrapper {
+    min-height: 160px;
+  }
+
+  & .swiper-container {
+    min-height: 160px;
+  }
+
+  & .swiper-pagination {
+    width: 80% !important;
+    height: auto !important;
+    left: 50% !important;
+    top: 0;
+    margin-left: -40%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  & .swiper-pagination-bullet {
+    position: relative;
+    height: 113px;
+    width: 20%;
+    background-color: transparent !important;
+    background-image: url("../img/unused_program/combined-shape.png");
+    background-repeat: no-repeat;
+    background-size: 83px auto;
+    background-position: center;
+    opacity: 1 !important;
+    transition: background-position 0.5s ease-in-out;
+
+    &::after {
+      content: 'Fitness';
+      position: absolute;
+      left: 50%;
+      transform: translate(-50%, 0);
+      bottom: -25px;
+      font-family: 'FreightSans Pro Book', Arial, sans-serif;
+      text-transform: uppercase;
+      font-size: 14px;
+      line-height: 30px;
+      font-weight: bold;
+      border-bottom: 2px solid transparent;
+      @include trans();
+    }
+  }
+
+  & .swiper-pagination-bullet:nth-child(2) {
+    background-image: url("../img/unused_program/combined-shape2.png");
+
+    &::after {
+      content: 'Nutrition';
+    }
+  }
+
+  & .swiper-pagination-bullet:nth-child(3) {
+    background-image: url("../img/unused_program/combined-shape3.png");
+
+    &::after {
+      content: 'Motivation';
+    }
+  }
+
+  & .swiper-pagination-bullet:nth-child(4) {
+    background-image: url("../img/unused_program/combined-shape.png");
+
+    &::after {
+      content: 'Tracking';
+    }
+  }
+
+  & .swiper-pagination-bullet:nth-child(5) {
+    background-image: url("../img/unused_program/group-16.png");
+
+    &::after {
+      content: 'Guidance';
+    }
+  }
+
+  & .swiper-pagination-bullet .swiper-pagination-bullet-active {
+    background-size: 102px auto;
+    background-position-y: 2px;
+  }
+
+  & .swiper-pagination-bullet .swiper-pagination-bullet-active::after {
+      content: 'Fitness !';
+      bottom: -20px;
+      padding-bottom: 13px;
+      border-bottom: 2px solid black;
+  }
+
+  & .swiper-pagination-bullet:nth-child(1).swiper-pagination-bullet-active,
+  & .swiper-pagination-bullet:nth-child(1).swiper-pagination-bullet:hover {
+    background-image: url("../img/fitness_icon.svg");
+    background-size: 102px auto;
+    background-position-y: 2px;
+
+    &:after {
+      color: #5DD6BD;
+      border-bottom: 2px solid #5DD6BD;
+    }
+  }
+
+  & .swiper-pagination-bullet:nth-child(2).swiper-pagination-bullet-active,
+  & .swiper-pagination-bullet:nth-child(2).swiper-pagination-bullet:hover {
+    background-image: url("../img/nutrition_icon.svg");
+    background-size: 102px auto;
+    background-position-y: 2px;
+
+    &:after {
+      color: #E34964;
+      border-bottom: 2px solid #E34964;
+    }
+  }
+
+  & .swiper-pagination-bullet:nth-child(3).swiper-pagination-bullet-active,
+  & .swiper-pagination-bullet:nth-child(3).swiper-pagination-bullet:hover {
+    background-image: url("../img/motivation_icon.svg");
+    background-size: 102px auto;
+    background-position-y: 2px;
+
+    &:after {
+      color: #FFBC61;
+      border-bottom: 2px solid #FFBC61;
+    }
+  }
+
+  & .swiper-pagination-bullet:nth-child(4).swiper-pagination-bullet-active,
+  & .swiper-pagination-bullet:nth-child(4).swiper-pagination-bullet:hover {
+    background-image: url("../img/tracking_icon.svg");
+    background-size: 102px auto;
+    background-position-y: 2px;
+
+    &:after {
+      color: #58AAFB;
+      border-bottom: 2px solid #58AAFB;
+    }
+  }
+
+  & .swiper-pagination-bullet:nth-child(5).swiper-pagination-bullet-active,
+  & .swiper-pagination-bullet:nth-child(5).swiper-pagination-bullet:hover {
+    background-image: url("../img/guidance_icon.svg");
+    background-size: 102px auto;
+    background-position-y: 2px;
+
+    &:after {
+      color: #B065FC;
+      border-bottom: 2px solid #B065FC;
+    }
+  }
+
+  &__title {
+    margin-bottom: 21px;
+    font-size: 44px;
+    font-weight: bold;
+    text-align: center;
+    color: $black;
+  }
+
+  &__desc {
+    margin: 0 auto;
+    margin-bottom: 70px;
+    width: 682px;
+    font-size: 24px;
+    line-height: 1.17;
+    text-align: center;
+    color: $gunmetal;
+  }
+
+  &__slide-wrapper {
+    margin-top: 250px;
+  }
+
+  &__text-block {
+    position: relative;
+    z-index: 2;
+    margin-left: auto;
+    margin-right: 80px;
+    margin-bottom: 34px;
+    width: 571px;
+    padding: 26px 52px 60px 33px;
+    border-radius: 3px;
+    background-color: $white;
+    box-shadow: 0 15px 35px 0 $transparent-2, 0 5px 15px 0 rgba(0, 0, 0, 0.07);
+  }
+
+  &__slide-title {
+    margin-bottom: 0;
+    font-family: eurostile-extended;
+    font-size: 32px;
+    line-height: 1.69;
+    color: $black;
+    text-transform: uppercase;
+  }
+
+  &__slide-subtitle {
+    margin-bottom: 0;
+    height: 54px;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 3.86;
+    color: $aqua-marine;
+    text-transform: uppercase;
+  }
+
+  &__slide-desc {
+    font-size: 20px;
+    line-height: 1.2;
+    letter-spacing: 0.5px;
+    color: $gunmetal;
+  }
+
+  &__slide-img {
+    position: absolute;
+    z-index: 0;
+    right: 50%;
+    bottom: 90px;
+    width: 457px;
+    height: 305px;
+  }
+}
+
+@media (max-width: $sm) {
+  .swiper-slide.slider1__slide-wrapper {
+    width: 60%;
+  }
+
+  .slider1 {
+    padding-top: 20px;
+
+    &__desc {
+      margin-bottom: 50px;
+    }
+
+    &__slide-img {
+      display: none;
+    }
+
+    &__slide-wrapper {
+      margin-top: 180px;
+      margin-right: 20px;
+    }
+
+    &__text-block {
+      margin-right: auto;
+      padding: 26px 59px 50px 59px;
+      text-align: center;
+    }
+  }
+}
+
+@media (max-width: $xs) {
+  .slider1 {
+    & .swiper-pagination {
+      margin-left: 0;
+      left: 5%!important;
+      width: 90%!important;
+    }
+
+    & .swiper-pagination-bullet {
+      height: 70px;
+      background-size: 48px auto;
+
+      &::after {
+        bottom: -20px;
+        font-size: 10px;
+      }
+    }
+
+    & .swiper-pagination-bullet:nth-child(1).swiper-pagination-bullet-active,
+    & .swiper-pagination-bullet:nth-child(1).swiper-pagination-bullet:hover {
+      background-size: 60px auto;
+      background-position-y: 4px;
+    }
+
+    & .swiper-pagination-bullet:nth-child(2).swiper-pagination-bullet-active,
+    & .swiper-pagination-bullet:nth-child(2).swiper-pagination-bullet:hover {
+      background-size: 60px auto;
+      background-position-y: 4px;
+    }
+
+    & .swiper-pagination-bullet:nth-child(3).swiper-pagination-bullet-active,
+    & .swiper-pagination-bullet:nth-child(3).swiper-pagination-bullet:hover{
+      background-size: 60px auto;
+      background-position-y: 4px;
+    }
+
+    & .swiper-pagination-bullet:nth-child(4).swiper-pagination-bullet-active,
+    & .swiper-pagination-bullet:nth-child(4).swiper-pagination-bullet:hover {
+      background-size: 60px auto;
+      background-position-y: 4px;
+    }
+
+    & .swiper-pagination-bullet:nth-child(5).swiper-pagination-bullet-active,
+    & .swiper-pagination-bullet:nth-child(5).swiper-pagination-bullet:hover {
+      background-image: url("../img/guidance_icon.svg");
+      background-size: 60px auto;
+      background-position-y: 4px;
+    }
+
+    &__desc {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+
+    &__slide-wrapper {
+      margin-top: 120px;
+      margin-right: 0;
+      margin-left: 0;
+      width: 85%!important;
+    }
+
+    &__text-block {
+      padding: 19px 18px 30px;
+      width: 100%;
+    }
+  }
+}

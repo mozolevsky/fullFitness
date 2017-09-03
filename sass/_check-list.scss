@@ -1,0 +1,29 @@
+.check-list {
+  margin-bottom: 20px;
+  position: relative;
+  padding-left: 0;
+  list-style-type: none;
+
+  &__item {
+    position: relative;
+    margin-bottom: 20px;
+
+    &::before {
+      position: absolute;
+      top: 6px;
+      left: -20px;
+      width: 11px;
+      height: 11px;
+      content: "";
+      background: url(../img/check.svg) no-repeat 50%;
+      background-size: 10.7px 11px;
+    }
+  }
+
+  &__item-title {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 24px;
+    margin-bottom: 5px;
+  }
+}
