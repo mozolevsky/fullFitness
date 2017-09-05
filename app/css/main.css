@@ -5664,10 +5664,11 @@ body {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-      -ms-flex-pack: center;
-          justify-content: center; }
+  -webkit-justify-content: space-around;
+      -ms-flex-pack: distribute;
+          justify-content: space-around; }
+  .bmr__circle_small {
+    padding: 0 35px; }
   .bmr__circle-item {
     position: relative;
     margin-bottom: 80px;
@@ -5677,10 +5678,17 @@ body {
     -webkit-border-radius: 100%;
             border-radius: 100%;
     border: 15px solid #0a55f7; }
+    .bmr__circle-item_small {
+      height: 107px;
+      width: 107px;
+      margin-bottom: 0; }
     .bmr__circle-item_inner {
       height: 150px;
       width: 150px;
       background: transparent; }
+      .bmr__circle-item_inner-small {
+        height: 107px;
+        width: 107px; }
       .bmr__circle-item_inner:before {
         border: 15px solid #0a55f7;
         content: "";
@@ -5810,6 +5818,22 @@ body {
     -webkit-transform: scale(1.5);
             transform: scale(1.5);
     opacity: 0.6; } }
+
+@media (max-width: 991px) {
+  .bmr__circle_small {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center; }
+  .bmr__circle-item_small {
+    margin-bottom: 50px; }
+    .bmr__circle-item_small:last-child {
+      margin-bottom: 30px; } }
 
 .relative {
   position: relative; }
@@ -6000,6 +6024,9 @@ body {
       padding-left: 0;
       margin-left: 35px;
       margin-right: 94px; }
+    .calc-form__area_last {
+      border-bottom: none;
+      padding-bottom: 15px; }
   .calc-form__checkbox-label {
     font-size: 16px;
     letter-spacing: 0.4px;
@@ -6008,6 +6035,8 @@ body {
   .calc-form__input-group {
     position: relative;
     width: 361.3px; }
+    .calc-form__input-group_laptop {
+      width: 100%; }
   .calc-form__input-title {
     font-size: 16px;
     font-weight: bold;
@@ -6101,6 +6130,17 @@ body {
     right: 0;
     top: 11px;
     width: 95px; }
+    .calc-form__switch_laptop {
+      top: 45px;
+      width: 120px; }
+      .calc-form__switch_laptop label {
+        border-left: solid 1px #ecf0f4; }
+  .calc-form__switch-info {
+    margin-left: 5px;
+    font-family: IdealSans;
+    font-size: 16px;
+    line-height: 1.38;
+    color: #a5a9b2; }
   .calc-form__btn {
     width: 361px;
     height: 54px;

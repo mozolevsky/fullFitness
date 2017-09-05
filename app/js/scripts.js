@@ -30,7 +30,7 @@ let app = new Vue({
     el: "#app",
     data: {
         formHelpers: {
-            formStepOne: true,
+            formStepOne: false,
             calcOverlay: false,
             weightUnitChecked: false,
             heightUnitChecked: false,
@@ -52,7 +52,10 @@ let app = new Vue({
             oneRm70: '',
             oneRm65: '',
             oneRm60: '',
-            oneRm55: ''
+            oneRm55: '',
+            skinfold1: '',
+            skinfold2: '',
+            skinfold3: ''
         }
     },
    methods: {
@@ -105,6 +108,9 @@ let app = new Vue({
     computed: {
         weightUnit() {
             return this.formHelpers.weightUnitChecked ? 'kg' : 'lbs';
+        },
+        weightUnitReverse() {
+            return this.formHelpers.weightUnitChecked ? 'lbs' : 'kg';
         },
         heightUnit() {
             return this.formHelpers.heightUnitChecked ? 'cm' : 'ft';

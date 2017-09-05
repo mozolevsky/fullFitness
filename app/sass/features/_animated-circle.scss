@@ -1,11 +1,17 @@
 
+$smallDiam: 107px;
 $diam: 150px;
 $color: rgb(10, 85, 247);
 
 
 .bmr__circle {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
+
+  &_small {
+    padding: 0 35px;
+  }
+
 
   &-item {
     position: relative;
@@ -16,10 +22,21 @@ $color: rgb(10, 85, 247);
     border-radius: 100%;
     border: 15px solid $color;
 
+    &_small {
+      height: $smallDiam;
+      width: $smallDiam;
+      margin-bottom: 0;
+    }
+
     &_inner {
       height: $diam;
       width: $diam;
       background: transparent;
+
+      &-small {
+        height: $smallDiam;
+        width: $smallDiam;
+      }
 
       &:before {
         border: 15px solid $color;
@@ -129,5 +146,26 @@ $color: rgb(10, 85, 247);
   100% {
     transform: scale(1.5);
     opacity: 0.6;
+  }
+}
+
+@media (max-width: $sm) {
+  .bmr {
+    &__circle {
+      &_small {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      &-item {
+        &_small {
+          margin-bottom: 50px;
+
+          &:last-child {
+            margin-bottom: 30px;
+          }
+        }
+      }
+    }
   }
 }

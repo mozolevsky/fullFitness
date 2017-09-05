@@ -123,6 +123,11 @@
       margin-left: 35px;
       margin-right: 94px;
     }
+
+    &_last {
+      border-bottom: none;
+      padding-bottom: 15px;
+    }
   }
 
   &__checkbox-label {
@@ -135,6 +140,10 @@
   &__input-group {
     position: relative;
     width: 361.3px;
+
+    &_laptop {
+      width: 100%;
+    }
   }
 
   &__input-title {
@@ -247,6 +256,23 @@
     right: 0;
     top: 11px;
     width: 95px;
+
+    &_laptop {
+      top: 45px;
+      width: 120px;
+
+      & label {
+        border-left: solid 1px #ecf0f4;
+      }
+    }
+  }
+
+  &__switch-info {
+    margin-left: 5px;
+    font-family: IdealSans;
+    font-size: 16px;
+    line-height: 1.38;
+    color: #a5a9b2;
   }
 
   &__btn {
