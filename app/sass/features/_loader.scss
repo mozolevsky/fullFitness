@@ -1,0 +1,56 @@
+@import "../../libs/compass-sass-mixins/lib/compass";
+
+$loader-ring-size: 80px;
+$loader-ring-border-size: 4px;
+
+.relative {
+  position: relative;
+}
+
+.loader-logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 21px;
+  height: 21px;
+  background: url('../../img/logo-loader.png') no-repeat center;
+  background-size: 21px;
+}
+
+.loader-ring {
+  position: absolute;
+  top: 33%;
+  left: 50%;
+  margin: $loader-ring-size/-2 0 0 $loader-ring-size/-2;
+  width: $loader-ring-size;
+  height: $loader-ring-size;
+}
+
+.loader-ring-light {
+  width: $loader-ring-size;
+  height: $loader-ring-size;
+  @include border-radius($loader-ring-size);
+  @include box-shadow(0 $loader-ring-border-size 0 lighten(#0a55f7, 10%) inset);
+  animation: rotate-360 2s linear infinite;
+}
+
+
+.loader-ring-track {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: $loader-ring-size;
+  height: $loader-ring-size;
+  @include border-radius($loader-ring-size);
+  @include box-shadow( 0 0 10px $loader-ring-border-size rgba(black, .3) inset );
+}
+
+@keyframes rotate-360 {
+  from {
+    @include rotate(0);
+  }
+  to {
+    @include rotate(360deg);
+  }
+}
