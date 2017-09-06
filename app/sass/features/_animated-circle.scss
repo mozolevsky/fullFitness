@@ -1,5 +1,5 @@
 
-$smallDiam: 107px;
+$smallDiam: 120px;
 $diam: 150px;
 $color: rgb(10, 85, 247);
 
@@ -12,6 +12,18 @@ $color: rgb(10, 85, 247);
     padding: 0 35px;
   }
 
+  &-name {
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    color: #000000;
+    width: 190px;
+    position: relative;
+    top: -80px;
+    transform: translate(-50%);
+    left: 50%;
+    text-transform: uppercase;
+  }
 
   &-item {
     position: relative;
@@ -163,7 +175,7 @@ $color: rgb(10, 85, 247);
 
       &-item {
         &_small {
-          margin-bottom: 50px;
+          margin-bottom: 115px;
 
           &:last-child {
             margin-bottom: 30px;

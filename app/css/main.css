@@ -5669,6 +5669,19 @@ body {
           justify-content: space-around; }
   .bmr__circle_small {
     padding: 0 35px; }
+  .bmr__circle-name {
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    color: #000000;
+    width: 190px;
+    position: relative;
+    top: -80px;
+    -webkit-transform: translate(-50%);
+        -ms-transform: translate(-50%);
+            transform: translate(-50%);
+    left: 50%;
+    text-transform: uppercase; }
   .bmr__circle-item {
     position: relative;
     margin-bottom: 80px;
@@ -5681,16 +5694,16 @@ body {
     .bmr__circle-item_low {
       margin-bottom: 20px; }
     .bmr__circle-item_small {
-      height: 107px;
-      width: 107px;
+      height: 120px;
+      width: 120px;
       margin-bottom: 0; }
     .bmr__circle-item_inner {
       height: 150px;
       width: 150px;
       background: transparent; }
       .bmr__circle-item_inner-small {
-        height: 107px;
-        width: 107px; }
+        height: 120px;
+        width: 120px; }
       .bmr__circle-item_inner:before {
         border: 15px solid #0a55f7;
         content: "";
@@ -5833,7 +5846,7 @@ body {
         -ms-flex-align: center;
             align-items: center; }
   .bmr__circle-item_small {
-    margin-bottom: 50px; }
+    margin-bottom: 115px; }
     .bmr__circle-item_small:last-child {
       margin-bottom: 30px; } }
 
@@ -6153,7 +6166,7 @@ body {
       content: '';
       position: absolute;
       top: 5.5px;
-      left: 26px;
+      left: 5px;
       width: 12px;
       height: 12px;
       background-color: #0a55f7;
@@ -6163,7 +6176,7 @@ body {
     position: relative;
     margin: 0;
     clear: none;
-    padding: 0 0 0 31px;
+    padding: 0 0 0 10px;
     cursor: pointer;
     display: block;
     margin-bottom: 11px;
@@ -6230,6 +6243,8 @@ body {
     .bmr__title_laptop {
       padding-top: 24px;
       margin-top: 0; }
+    .bmr__title_three-circles {
+      margin-bottom: 126px; }
   .bmr__fields-area {
     display: -webkit-box;
     display: -webkit-flex;
@@ -6514,6 +6529,8 @@ body {
     font-size: 24px; }
     .bmr__title_laptop {
       margin-top: 0; }
+    .bmr__title_three-circles {
+      margin-bottom: 90px; }
   .bmr__fields-area {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;

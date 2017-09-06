@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Calculatop 2</title>
+    <title>Calculatop 10</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/normalize.min.css">
     <link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap.min.css">
@@ -51,7 +51,7 @@
     <div class="text">
         <div class="container">
             <div class="row">
-                <h1 class="calc__title calc__title_laptop">Calculate Your Your Body Fat Percentage</h1>
+                <h1 class="calc__title calc__title_laptop">Calculate Your Recommended Creatine Consumption</h1>
                 <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1">
                     <p><b>If you want to lose weight, get in shape, build muscle, feel good, healthy and positive about
                         yourself then you have come to the right place!</b>
@@ -77,21 +77,6 @@
                         <div v-if="formHelpers.formStepOne" class="calc__tablet-wrapper">
                             <form class="calc-form calc-form__laptop"
                                   @submit.prevent="goToSecondStep()">
-                                <div class="calc-form__area calc-form__area_laptop">
-                                    <p class="calc-form__input-title">Age</p>
-                                    <input class="calc-form__input calc-form__input_laptop"
-                                           v-model="formsFields.age"
-                                           v-validate="'required|numeric'"
-                                           type="text" name="age"
-                                           placeholder="Enter your age">
-                                </div>
-                                <div class="calc-form__area calc-form__area_laptop">
-                                    <p class="calc-form__input-title">Sex</p>
-                                    <select class="calc-form__input calc-form__input_laptop calc-form__input_select">
-                                        <option value="1">Male</option>
-                                        <option value="2">Female</option>
-                                    </select>
-                                </div>
                                 <div class="calc-form__area calc-form__area_laptop">
                                     <div class="calc-form__input-group calc-form__input-group_laptop">
                                         <p class="calc-form__input-title">Weight</p>
@@ -119,30 +104,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="calc-form__area calc-form__area_laptop">
-                                    <p class="calc-form__input-title">Skinfold 1</p>
-                                    <input class="calc-form__input calc-form__input_laptop"
-                                           v-model="formsFields.skinfold1"
-                                           v-validate="'required|numeric'"
-                                           type="text" name="skinfold1"
-                                           placeholder="mm">
-                                </div>
-                                <div class="calc-form__area calc-form__area_laptop">
-                                    <p class="calc-form__input-title">Skinfold 2</p>
-                                    <input class="calc-form__input calc-form__input_laptop"
-                                           v-model="formsFields.skinfold2"
-                                           v-validate="'required|numeric'"
-                                           type="text" name="skinfold2"
-                                           placeholder="mm">
-                                </div>
-                                <div class="calc-form__area calc-form__area_last calc-form__area_laptop">
-                                    <p class="calc-form__input-title">Skinfold 3</p>
-                                    <input class="calc-form__input calc-form__input_laptop"
-                                           v-model="formsFields.skinfold3"
-                                           v-validate="'required|numeric'"
-                                           type="text" name="skinfold3"
-                                           placeholder="mm">
-                                </div>
+
                                 <div class="calc-form__area calc-form__area_laptop">
                                     <button class="calc-form__btn calc-form__btn_laptop">Calculate</button>
                                 </div>
@@ -162,32 +124,15 @@
                         <div v-if="!formHelpers.formStepOne" class="calc-form__laptop">
                             <div class="bmr bmr_laptop">
                                 <button class="bmr__btn-back bmr__btn-back_laptop" type="button" @click.prevent="formHelpers.formStepOne = !formHelpers.formStepOne">« back</button>
-
-                                <h5 class="bmr__title bmr__title_three-circles bmr__title_laptop">YOUR BODY FAT PERCENTAGE:</h5>
-                                <div class="bmr__circle bmr__circle_small">
-                                    <div class="bmr__circle-item bmr__circle-item_small">
-                                        <p class="bmr__circle-name">BODY FAT PERCENTAGE:</p>
-                                        <div class="bmr__circle-item_inner bmr__circle-item_inner-small">
-                                            <span class="bmr__circle-title">18.17</span>
-                                            <span class="bmr__circle-desc">%</span>
-                                        </div>
-                                    </div>
-                                    <div class="bmr__circle-item bmr__circle-item_small">
-                                        <p class="bmr__circle-name">YOUR FAT MASS:</p>
-                                        <div class="bmr__circle-item_inner bmr__circle-item_inner-small">
-                                            <span class="bmr__circle-title">4.1</span>
-                                            <span class="bmr__circle-desc">LBS</span>
-                                        </div>
-                                    </div>
-                                    <div class="bmr__circle-item bmr__circle-item_small">
-                                        <p class="bmr__circle-name">YOUR LEAN MASS:</p>
-                                        <div class="bmr__circle-item_inner bmr__circle-item_inner-small">
-                                            <span class="bmr__circle-title">17.9</span>
-                                            <span class="bmr__circle-desc">LBS</span>
+                                <h5 class="bmr__title bmr__title_laptop">DAILY CREATINE INTAKE:</h5>
+                                <div class="bmr__circle">
+                                    <div class="bmr__circle-item bmr__circle-item_low">
+                                        <div class="bmr__circle-item_inner">
+                                            <span class="bmr__circle-title">3</span>
+                                            <span class="bmr__circle-desc">Ounces</span>
                                         </div>
                                     </div>
                                 </div>
-
                                 <form class="bmr__form" action="" class="bmr__form"
                                       @submit.prevent="submitForm()">
 

@@ -30,7 +30,7 @@ let app = new Vue({
     el: "#app",
     data: {
         formHelpers: {
-            formStepOne: true,
+            formStepOne: false,
             calcOverlay: false,
             weightUnitChecked: false,
             heightUnitChecked: false,
@@ -55,7 +55,8 @@ let app = new Vue({
             oneRm55: '',
             skinfold1: '',
             skinfold2: '',
-            skinfold3: ''
+            skinfold3: '',
+            fat: ''
         }
     },
    methods: {

@@ -288,7 +288,7 @@
       content: '';
       position: absolute;
       top: 5.5px;
-      left: 26px;
+      left: 5px;
       width: 12px;
       height: 12px;
       background-color: #0a55f7;
@@ -300,7 +300,7 @@
     position: relative;
     margin: 0;
     clear: none;
-    padding: 0 0 0 31px;
+    padding: 0 0 0 10px;
     cursor: pointer;
     display: block;
     margin-bottom: 11px;
@@ -386,6 +386,10 @@
     &_laptop {
       padding-top: 24px;
       margin-top: 0;
+    }
+
+    &_three-circles {
+      margin-bottom: 126px;
     }
   }
 
@@ -755,6 +759,10 @@
 
       &_laptop {
         margin-top: 0;
+      }
+
+      &_three-circles {
+        margin-bottom: 90px;
       }
     }
 
