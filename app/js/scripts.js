@@ -30,7 +30,7 @@ let app = new Vue({
     el: "#app",
     data: {
         formHelpers: {
-            formStepOne: false,
+            formStepOne: true,
             calcOverlay: false,
             weightUnitChecked: false,
             heightUnitChecked: false,
@@ -114,6 +114,9 @@ let app = new Vue({
         },
         heightUnit() {
             return this.formHelpers.heightUnitChecked ? 'cm' : 'ft';
+        },
+        heightUnitReverse() {
+            return this.formHelpers.heightUnitChecked ? 'ft' : 'cm';
         }
     }
 });

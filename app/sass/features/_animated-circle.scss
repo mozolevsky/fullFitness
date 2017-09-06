@@ -22,6 +22,10 @@ $color: rgb(10, 85, 247);
     border-radius: 100%;
     border: 15px solid $color;
 
+    &_low {
+      margin-bottom: 20px;
+    }
+
     &_small {
       height: $smallDiam;
       width: $smallDiam;
