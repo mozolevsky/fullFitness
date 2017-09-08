@@ -1,12 +1,12 @@
 .decision {
   padding: 80px 0;
-  background-image: url("../img/unused_program/decision_bg.jpg");
+  background-image: url("../img/decision.jpg");
   background-size: cover;
 
   &__block {
     width: 50%;
     padding: 50px 65px;
-    background-color: $white;
+    background-color: rgba(255,255,255,0.9);
     box-shadow: 0 15px 35px 0 rgba(0, 0, 0, 0.1), 0 5px 15px 0 rgba(0, 0, 0, 0.07);
     border-radius: 3px;
   }
@@ -22,9 +22,10 @@
 
   &__block-text {
     margin-bottom: 30px;
-    font-family: 'FreightSans Pro Book', Arial, sans-serif;
+    font-family: 'freight-sans-pro', Arial, sans-serif;
     font-size: 20px;
-    line-height: 1.2;
+    line-height: 26px;
+    color: $gunmetal;
   }
 
   &__block-btn {
@@ -45,6 +46,12 @@
     display: block;
     left: 27%;
     bottom: -20px;
+  }
+}
+
+@media (max-width: $md) {
+  .decision {
+    background-position-x: -190px;
   }
 }
 
@@ -82,7 +89,8 @@
     }
 
     &__block-text {
-      font-size: 18px;
+      font-size: 20px;
+      line-height: 26px;
     }
 
     &__block-arrow {

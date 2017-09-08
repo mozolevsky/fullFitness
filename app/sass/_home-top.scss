@@ -64,8 +64,11 @@
   }
 }
 
-
-
+@media(max-width: $md) {
+  .home-top {
+    min-height: 405px;
+  }
+}
 
 @media(max-width: $sm) {
   .home-top {

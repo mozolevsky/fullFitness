@@ -17,7 +17,11 @@
 
     <header class="header">
         <a href="#" class="header__logo">
-            <img src="./img/logo-header.svg" alt="" class="header__logo-img">
+            <picture>
+                <source srcset="img/logo-header.svg" media="(max-width: 991px)">
+                <source srcset="img/logo-header.svg">
+                <img class="header__logo-img" src="img/logo-header.svg" alt="">
+            </picture>
         </a>
 
         <div class="header__nav-wrapper">
@@ -25,8 +29,15 @@
                 <a href="#" class="header__nav-link">About Us</a>
                 <a href="#" class="header__nav-link">Free tools</a>
                 <a href="#" class="header__nav-link">Program</a>
-                <a href="#" class="header__nav-link">The Team</a>
                 <a href="#" class="header__nav-link">Blog</a>
+                <div href="#" class="header__nav-link header__nav-link_login" @click="submenu.status = !submenu.status">
+                    <span>Login</span>
+                    <div class="header-submenu" v-if="submenu.status" v-cloak>
+                        <a href="#" class="header-submenu__link">30 Days to Optimal Gut Health</a>
+                        <a href="#" class="header-submenu__link">Type something something</a>
+                        <a href="#" class="header-submenu__link">Integrated BodyTransformation System</a>
+                    </div>
+                </div>
             </nav>
             <a href="#" class="header__btn">Start here</a>
         </div>
@@ -36,8 +47,8 @@
                 <li><a href="#">About us</a></li>
                 <li><a href="#">Free tools</a></li>
                 <li><a href="#">Program</a></li>
-                <li><a href="#">The team</a></li>
                 <li><a href="#">Blog</a></li>
+                <li><a href="#">Login</a></li>
                 <li><a href="#">Start here</a></li>
             </ul>
         </nav>
@@ -64,9 +75,9 @@
                             <button class="wyg-top__btn"></button>
                         </section>
                         <picture class="wyg-top__img-wrapper">
-                            <source srcset="./img/wyg-top545x347.png" media="(max-width: 991px)">
-                            <source srcset="./img/wyg-top816x666.png">
-                            <img class="wyg-top__img" src="./img/wyg-top816x666.png" alt="">
+                            <source srcset="./img/tablet-wyg.png" media="(max-width: 991px)">
+                            <source srcset="./img/whatyouget.png">
+                            <img class="wyg-top__img" src="./img/whatyouget.png" alt="">
                         </picture>
                     </div>
                 </div>
@@ -77,13 +88,13 @@
     <div class="wyg-module wyg-module_first">
         <div class="container">
             <div class="row">
-                <div class="col-md-8 col-md-offset-2">
+                <div class="col-md-12">
                     <div class="icon-block">
                         <img class="icon-block__main-icon" src="img/fitness_icon.svg" alt="" >
-                        <img class="icon-block__small-icon icon-block__small-icon_1" src="img/white-hexagon.svg" alt="" >
-                        <img class="icon-block__small-icon icon-block__small-icon_2" src="img/white-hexagon.svg" alt="" >
-                        <img class="icon-block__small-icon icon-block__small-icon_3" src="img/white-hexagon.svg" alt="" >
-                        <img class="icon-block__small-icon icon-block__small-icon_4" src="img/white-hexagon.svg" alt="" >
+                        <img class="icon-block__small-icon icon-block__small-icon_1" src="img/nutrition-white.svg" alt="" >
+                        <img class="icon-block__small-icon icon-block__small-icon_2" src="img/motivation-white.svg" alt="" >
+                        <img class="icon-block__small-icon icon-block__small-icon_3" src="img/tracking-white.svg" alt="" >
+                        <img class="icon-block__small-icon icon-block__small-icon_4" src="img/guidance-white.svg" alt="" >
                         <p class="icon-block__title">Fitness Module</p>
                     </div>
                     <h3 class="wyg-module__title">A Complete Fitness Plan For Your Body Transformation</h3>
@@ -93,6 +104,7 @@
 
             <div class="row">
                 <div class="col-md-6 col-md-offset-1 col-sm-10 col-sm-offset-1">
+                  <img  class="wyg-module__list-img hidden-lg hidden-md" src="img/nutrition@2x.png" alt="">
                     <div class="wyg-module__list-block">
                         <ul class="wyg-module__list">
                             <li class="wyg-module__item">
@@ -126,11 +138,13 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="video__overflow-mobile">
+                    <img  class="wyg-module__right-laptop hidden-xs hidden-sm hidden-lg" src="img/nutrition@2x.png" alt="">
+                    <img  class="wyg-module__tablet-phone hidden-xs hidden-sm hidden-lg" src="img/nutrition@2x.png" alt="">
+                    <div class="video__overflow-mobile hidden-xs hidden-sm hidden-md">
                         <div class="video-container collapsed">
                             <div class="video">
-                                <video width="100%">
-                                    <source src="video/small2.mp4" type="video/mp4">
+                                <video width="100%" autoplay="autoplay" loop>
+                                    <source src="video/program.mp4" type="video/mp4">
                                 </video>
                                 <div class="play"></div>
                             </div>
@@ -145,13 +159,13 @@
         <div class="wyg-module_second-wrapper">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-8 col-md-offset-2">
+                    <div class="col-md-12">
                         <div class="icon-block">
                             <img class="icon-block__main-icon" src="img/nutrition_icon.svg" alt="" >
-                            <img class="icon-block__small-icon icon-block__small-icon_1" src="img/white-hexagon.svg" alt="" >
-                            <img class="icon-block__small-icon icon-block__small-icon_2" src="img/white-hexagon.svg" alt="" >
-                            <img class="icon-block__small-icon icon-block__small-icon_3" src="img/white-hexagon.svg" alt="" >
-                            <img class="icon-block__small-icon icon-block__small-icon_4" src="img/white-hexagon.svg" alt="" >
+                            <img class="icon-block__small-icon icon-block__small-icon_1" src="img/fitness-white.svg" alt="" >
+                            <img class="icon-block__small-icon icon-block__small-icon_2" src="img/motivation-white.svg" alt="" >
+                            <img class="icon-block__small-icon icon-block__small-icon_3" src="img/tracking-white.svg" alt="" >
+                            <img class="icon-block__small-icon icon-block__small-icon_4" src="img/guidance-white.svg" alt="" >
                             <p class="icon-block__title">Nutrition Module</p>
                         </div>
                         <h3 class="wyg-module__title">Something Something For Total Nutrition</h3>
@@ -161,6 +175,7 @@
 
                 <div class="row">
                     <div class="col-md-6 col-md-offset-5 col-sm-10 col-sm-offset-1">
+                      <img  class="wyg-module__list-img hidden-lg hidden-md" src="img/nutrition@2x.png" alt="">
                         <div class="wyg-module__list-block">
                             <ul class="wyg-module__list">
                                 <li class="wyg-module__item">
@@ -194,9 +209,9 @@
                                 </li>
                             </ul>
                         </div>
-                        <img  class="wyg-module__left-laptop" src="img/nutrition@2x.png" alt="">
-                        <img  class="wyg-module__tablet-phone" src="img/mobile_2_mobile-tablet.png" alt="">
-                        <img class="wyg-module__strawberry" src="img/strawberries@2x.png" alt="" >
+                        <img  class="wyg-module__left-laptop hidden-xs hidden-sm" src="img/nutrition@2x.png" alt="">
+                        <img  class="wyg-module__tablet-phone hidden-xs hidden-sm" src="img/nutrition@2x.png" alt="">
+                        <img class="wyg-module__strawberry hidden-xs hidden-sm" src="img/strawberries@2x.png" alt="" >
                     </div>
                 </div>
             </div>
@@ -207,13 +222,13 @@
        <div class="wyg-module_third-wrapper">
            <div class="container">
                <div class="row">
-                   <div class="col-md-8 col-md-offset-2">
+                   <div class="col-md-12">
                        <div class="icon-block">
                            <img class="icon-block__main-icon" src="img/motivation_icon.svg" alt="" >
-                           <img class="icon-block__small-icon icon-block__small-icon_1" src="img/white-hexagon.svg" alt="" >
-                           <img class="icon-block__small-icon icon-block__small-icon_2" src="img/white-hexagon.svg" alt="" >
-                           <img class="icon-block__small-icon icon-block__small-icon_3" src="img/white-hexagon.svg" alt="" >
-                           <img class="icon-block__small-icon icon-block__small-icon_4" src="img/white-hexagon.svg" alt="" >
+                           <img class="icon-block__small-icon icon-block__small-icon_1" src="img/fitness-white.svg" alt="" >
+                           <img class="icon-block__small-icon icon-block__small-icon_2" src="img/nutrition-white.svg" alt="" >
+                           <img class="icon-block__small-icon icon-block__small-icon_3" src="img/tracking-white.svg" alt="" >
+                           <img class="icon-block__small-icon icon-block__small-icon_4" src="img/guidance-white.svg" alt="" >
                            <p class="icon-block__title">Motivation Module</p>
                        </div>
                        <h3 class="wyg-module__title">Something Something For Your Motivation</h3>
@@ -223,6 +238,7 @@
 
                <div class="row">
                    <div class="col-md-6 col-md-offset-1 col-sm-10 col-sm-offset-1">
+                     <img  class="wyg-module__list-img hidden-lg hidden-md" src="/img/photos-mobile.png" alt="">
                        <div class="wyg-module__list-block">
                            <ul class="wyg-module__list">
                                <li class="wyg-module__item">
@@ -263,13 +279,13 @@
     <div class="wyg-module wyg-module_fourth">
         <div class="container">
             <div class="row">
-                <div class="col-md-8 col-md-offset-2">
+                <div class="col-md-12">
                     <div class="icon-block">
                         <img class="icon-block__main-icon" src="img/tracking_icon.svg" alt="" >
-                        <img class="icon-block__small-icon icon-block__small-icon_5" src="img/white-hexagon.svg" alt="" >
-                        <img class="icon-block__small-icon icon-block__small-icon_6" src="img/white-hexagon.svg" alt="" >
-                        <img class="icon-block__small-icon icon-block__small-icon_7" src="img/white-hexagon.svg" alt="" >
-                        <img class="icon-block__small-icon icon-block__small-icon_8" src="img/white-hexagon.svg" alt="" >
+                        <img class="icon-block__small-icon icon-block__small-icon_1" src="img/fitness-white.svg" alt="" >
+                        <img class="icon-block__small-icon icon-block__small-icon_2" src="img/nutrition-white.svg" alt="" >
+                        <img class="icon-block__small-icon icon-block__small-icon_3" src="img/motivation-white.svg" alt="" >
+                        <img class="icon-block__small-icon icon-block__small-icon_4" src="img/guidance-white.svg" alt="" >
                         <p class="icon-block__title">Tracking Module</p>
                     </div>
                     <h3 class="wyg-module__title">A Complete Fitness Plan For Tracking</h3>
@@ -318,13 +334,13 @@
     <div class="wyg-module wyg-module_fifth">
         <div class="container">
             <div class="row">
-                <div class="col-md-8 col-md-offset-2">
+                <div class="col-md-12">
                     <div class="icon-block">
                         <img class="icon-block__main-icon" src="img/guidance_icon.svg" alt="" >
-                        <img class="icon-block__small-icon icon-block__small-icon_5" src="img/white-hexagon.svg" alt="" >
-                        <img class="icon-block__small-icon icon-block__small-icon_6" src="img/white-hexagon.svg" alt="" >
-                        <img class="icon-block__small-icon icon-block__small-icon_7" src="img/white-hexagon.svg" alt="" >
-                        <img class="icon-block__small-icon icon-block__small-icon_8" src="img/white-hexagon.svg" alt="" >
+                        <img class="icon-block__small-icon icon-block__small-icon_1" src="img/fitness-white.svg" alt="" >
+                        <img class="icon-block__small-icon icon-block__small-icon_2" src="img/nutrition-white.svg" alt="" >
+                        <img class="icon-block__small-icon icon-block__small-icon_3" src="img/motivation-white.svg" alt="" >
+                        <img class="icon-block__small-icon icon-block__small-icon_4" src="img/tracking-white.svg" alt="" >
                         <p class="icon-block__title">Guidance Module</p>
                     </div>
                     <h3 class="wyg-module__title">Guiding You Till You Reach Your Transformation</h3>
@@ -334,6 +350,7 @@
 
             <div class="row">
                 <div class="col-md-6 col-md-offset-1 col-sm-10 col-sm-offset-1">
+                  <img  class="wyg-module__list-img hidden-lg hidden-md" src="img/nutrition@2x.png" alt="">
                     <div class="wyg-module__list-block wyg-module__list-block_fifth">
                         <ul class="wyg-module__list">
                             <li class="wyg-module__item">
@@ -365,14 +382,21 @@
                             </li>
                         </ul>
                     </div>
+                    <img  class="wyg-module__right-laptop hidden-xs hidden-sm hidden-lg" src="img/nutrition@2x.png" alt="">
+                    <img  class="wyg-module__tablet-phone hidden-xs hidden-sm hidden-lg" src="img/nutrition@2x.png" alt="">
+                    <div class="video__overflow-mobile hidden-sm hidden-xs hidden-md">
+                        <div class="video-container collapsed">
+                            <div class="video">
+                                <video width="100%" autoplay="autoplay" loop>
+                                    <source src="video/program.mp4" type="video/mp4">
+                                </video>
+                                <div class="play"></div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-        
-        <picture class="wyg-module_fifth__img">
-            <source srcset="img/guidance@2x.png">
-            <img class="wyg-module_fifth__img" src="img/guidance@2x.png" alt="" >
-        </picture>
     </div>
 
     <div class="wyg-module wyg-module_sixth">
@@ -389,14 +413,14 @@
         </div>
 
         <section class="row wyg-section">
-            <div class="col-md-8 col-sm-6 col-xs-6" >
+            <div class="col-md-8 col-sm-6 col-xs-12" >
                 <div class="wyg-section__content-wrapper">
                     <img class="wyg-section__img wyg-section__img_left" src="img/wyg-section771x359.png" alt="">
                 </div>
             </div>
-            <div class="col-md-4 col-md-offset-0 col-sm-5 col-sm-offset-1 col-xs-6 col-xs-offset-0">
+            <div class="col-md-4 col-md-offset-0 col-sm-5 col-sm-offset-1 col-xs-12 col-xs-offset-0">
                 <div class="wyg-section__txt">
-                    <h5 class="wyg-section__title">Jumpstart Guide</h5>
+                    <h5 class="wyg-section__title">Calc</h5>
                     <p class="wyg-section__desc">All of your workouts have been put together for you in a scientifically
                         proven… in this calendar.. just follow the calendar…</p>
                 </div>
@@ -404,22 +428,40 @@
         </section>
 
         <section class="row wyg-section">
-            <div class="col-md-4 col-md-offset-0 col-sm-8 col-sm-offset-2">
-                <div class="wyg-section__txt wyg-section__txt_center-mobile">
+          <div class="col-md-8 col-sm-6 col-xs-12 hidden-md hidden-lg" >
+              <div class="wyg-section__content-wrapper">
+                  <img class="wyg-section__img wyg-section__img_left" src="img/wyg-section771x359.png" alt="">
+              </div>
+          </div>
+            <div class="col-md-4 col-md-offset-0 col-sm-8 col-sm-offset-2 col-xs-12 col-xs-offset-0">
+                <div class="wyg-section__txt">
                     <h5 class="wyg-section__title">Calendar</h5>
                     <p class="wyg-section__desc">All of your workouts have been put together for you in a
                         scientifically proven… in this calendar.. just follow the calendar…</p>
                 </div>
             </div>
-            <div class="col-md-8 col-md-offset-0 col-sm-10 col-sm-offset-1">
+            <div class="col-md-8 col-md-offset-0 col-sm-10 col-sm-offset-1 hidden-xs hidden-sm">
                 <div class="wyg-section__content-wrapper wyg-section__content-wrapper_video">
-                    <video class="wyg-section__video" controls>
-                        <source src="video/small2.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
+                    <img class="wyg-section__img wyg-section__img_left" src="img/wyg-section771x359.png" alt="">
                 </div>
             </div>
         </section>
+
+        <section class="row wyg-section">
+          <div class="col-md-8 col-sm-6 col-xs-12" >
+              <div class="wyg-section__content-wrapper">
+                  <img class="wyg-section__img wyg-section__img_left" src="img/wyg-section771x359.png" alt="">
+              </div>
+          </div>
+            <div class="col-md-4 col-md-offset-0 col-sm-5 col-sm-offset-1 col-xs-12 col-xs-offset-0">
+                <div class="wyg-section__txt">
+                    <h5 class="wyg-section__title">Get Access To Our On Demand To Body Transformation Experts</h5>
+                    <p class="wyg-section__desc">All of your workouts have been put together for you in a scientifically
+                        proven… in this calendar.. just follow the calendar…</p>
+                </div>
+            </div>
+        </section>
+
     </div>
 </div>
 
@@ -437,34 +479,20 @@
             </div>
 
             <section class="row wyg-section">
-                <div class="col-md-8 col-md-offset-0 col-sm-10 col-sm-offset-1" >
-                    <div class="wyg-section__content-wrapper wyg-section__content-wrapper_video">
-                        <video class="wyg-section__video" controls>
-                            <source src="video/small2.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                    </div>
-                </div>
-                <div class="col-md-4 col-md-offset-0 col-sm-8 col-sm-offset-2">
-                    <div class="wyg-section__txt wyg-section__txt_center-mobile">
-                        <h5 class="wyg-section__title">Your own custom transformation video montage!</h5>
-                        <p class="wyg-section__desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin
-                            gravida turpis ipsum, eget viverra justo sollicitudin vel. Nulla facilisi. Pellentesque
-                            sagittis purus ac aliquet faucibus.</p>
-                    </div>
-                </div>
-            </section>
-
-            <section class="row wyg-section">
-                <div class="col-md-4 col-md-offset-0 col-sm-4 col-sm-offset-1 col-xs-5 col-xs-offset-1">
+              <div class="col-md-8 col-md-offset-0 col-sm-6 col-sm-offset-1 col-xs-12 col-xs-offset-0 hidden-md hidden-lg">
+                  <div class="wyg-section__content-wrapper">
+                      <img class="wyg-section__img wyg-section__img_right" src="img/wyg-section771x359.png" alt="">
+                  </div>
+              </div>
+                <div class="col-md-4 col-md-offset-0 col-sm-4 col-sm-offset-1 col-xs-12 col-xs-offset-0">
                     <div class="wyg-section__txt">
                         <h5 class="wyg-section__title">Certificate of completion to produly display on social media</h5>
                         <p class="wyg-section__desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin
                             gravida turpis ipsum, eget viverra justo sollicitudin vel. Nulla facilisi. Pellentesque
                             sagittis purus ac aliquet faucibus.</p>
-                    </div>
+                  </div>
                 </div>
-                <div class="col-md-8 col-md-offset-0 col-sm-6 col-sm-offset-1 col-xs-5 col-xs-offset-0">
+                <div class="col-md-8 col-md-offset-0 col-sm-6 col-sm-offset-1 col-xs-12 col-xs-offset-0 hidden-xs hidden-sm">
                     <div class="wyg-section__content-wrapper">
                         <img class="wyg-section__img wyg-section__img_right" src="img/wyg-section771x359.png" alt="">
                     </div>
@@ -472,14 +500,14 @@
             </section>
 
             <section class="row wyg-section">
-                <div class="col-md-8 col-sm-6 col-xs-6" >
+                <div class="col-md-8 col-sm-6 col-xs-12" >
                     <div class="wyg-section__content-wrapper">
                         <img class="wyg-section__img wyg-section__img_left" src="img/wyg-section771x359.png" alt="">
                     </div>
                 </div>
-                <div class="col-md-4 col-md-offset-0 col-sm-5 col-sm-offset-1 col-xs-6 col-xs-offset-0">
+                <div class="col-md-4 col-md-offset-0 col-sm-5 col-sm-offset-1 col-xs-12 col-xs-offset-0">
                     <div class="wyg-section__txt">
-                        <h5 class="wyg-section__title">Get Access To Our On Demand To Body Transformation Experts</h5>
+                        <h5 class="wyg-section__title">Free T-Shirt</h5>
                         <p class="wyg-section__desc">have a question regarding your transformation? not sure of something?
                             a bit confused? not a problem, as part of our integrated body transformation system you receieve
                             un prallel access to industry leaders in fitness, nutrition, psycology and physilogy. It’s a team
@@ -490,7 +518,7 @@
 
             <section class="wyg-section wyg-section_last">
                 <div class="row">
-                    <div class="col-md-8 col-md-offset-2">
+                    <div class="col-md-12">
                         <h3 class="wyg-module__title">60 Days from now you’ll wish you had started today</h3>
                         <p class="wyg-module__subtitle">Don’t postpone any longer, now’s the time to take action and go after your goals.</p>
                     </div>
@@ -535,7 +563,7 @@
     <div class="wyg-module wyg-module_eighth">
         <div class="container">
             <div class="row">
-                <div class="col-md-12 col-md-offset-0 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1" >
+                <div class="col-md-12 col-md-offset-0 col-sm-10 col-sm-offset-1 col-xs-12 col-xs-offset-0" >
                     <div class="sale">
                         <div class="sale__gradient">
                             <img class="sale__img" src="img/sytem-logo@2x.png" alt="">
@@ -583,8 +611,8 @@
 
             <div class="stories">
                 <div class="row">
-                    <div class="col-md-8 col-md-offset-2">
-                        <h3 class="wyg-module__title stories__big-title">Success Stories From People Like You (Sample)</h3>
+                    <div class="col-md-10 col-md-offset-1">
+                        <h3 class="wyg-module__title">Success Stories From People Like You (Sample)</h3>
                         <p class="wyg-module__subtitle stories__subtitle">Don’t postpone any longer, now’s the
                             time to take action and go after your goals.</p>
                     </div>
@@ -594,13 +622,13 @@
                     <div class="col-md-6 col-md-offset-0 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
                         <div class="stories__story">
                             <div class="stories__img-wrapper">
-                                <img class="stories__img" src="img/stories-img225x223.png" alt="" >
+                                <img class="stories__img" src="img/testimonial.jpg" alt="" >
                             </div>
                            <div class="stories__txt">
-                               <h5 class="stories__title">David Goldmen</h5>
+                               <h5 class="stories__title">"This is the best program ever!"</h5>
                                <p class="stories__desc">“Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin
                                    gravida turpis ipsum, eget viverra justo sollicitudin vel. Nulla facilisi. Pellentesque
-                                   sagittis purus ac aliquet faucibus.”
+                                   sagittis purus ac aliquet faucibus." - David
                                </p>
                            </div>
                         </div>
@@ -608,7 +636,7 @@
                     <div class="col-md-6 col-md-offset-0 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
                         <div class="stories__story">
                             <div class="stories__img-wrapper">
-                                <img class="stories__img" src="img/stories-img225x223.png" alt="" >
+                                <img class="stories__img" src="img/testimonial.jpg" alt="" >
                             </div>
                             <div class="stories__txt">
                                 <h5 class="stories__title">Dianne Clay</h5>
@@ -622,7 +650,7 @@
                     <div class="col-md-6 col-md-offset-0 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
                         <div class="stories__story">
                             <div class="stories__img-wrapper">
-                                <img class="stories__img" src="img/stories-img225x223.png" alt="" >
+                                <img class="stories__img" src="img/testimonial.jpg" alt="" >
                             </div>
                             <div class="stories__txt">
                                 <h5 class="stories__title">Jessie Hays</h5>
@@ -636,7 +664,7 @@
                     <div class="col-md-6 col-md-offset-0 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
                         <div class="stories__story">
                             <div class="stories__img-wrapper">
-                                <img class="stories__img" src="img/stories-img225x223.png" alt="" >
+                                <img class="stories__img" src="img/testimonial.jpg" alt="" >
                             </div>
                             <div class="stories__txt">
                                 <h5 class="stories__title">Rob Cohen</h5>
@@ -650,7 +678,7 @@
                     <div class="col-md-6 col-md-offset-0 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
                         <div class="stories__story">
                             <div class="stories__img-wrapper">
-                                <img class="stories__img" src="img/stories-img225x223.png" alt="" >
+                                <img class="stories__img" src="img/testimonial.jpg" alt="" >
                             </div>
                             <div class="stories__txt">
                                 <h5 class="stories__title">David Goldmen</h5>
@@ -664,7 +692,7 @@
                     <div class="col-md-6 col-md-offset-0 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
                         <div class="stories__story">
                             <div class="stories__img-wrapper">
-                                <img class="stories__img" src="img/stories-img225x223.png" alt="" >
+                                <img class="stories__img" src="img/testimonial.jpg" alt="" >
                             </div>
                             <div class="stories__txt">
                                 <h5 class="stories__title">Dianne Clay</h5>

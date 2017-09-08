@@ -4,6 +4,7 @@
 
   &__text-promo {
     margin-bottom: 25px;
+    color: $gunmetal;
   }
 
   &__promo {
@@ -24,26 +25,27 @@
 
     &-img {
       position: relative;
-      width: 55%;
+      width: 50%;
       padding-bottom: 40px;
 
       &::after {
         position: absolute;
         content: '';
-        width: 238px;
-        min-height: 72px;
-        bottom: 46px;
+        width: 239px;
+        min-height: 76px;
+        bottom: 25px;
         left: 9%;
-        background: url('../img/instant-access.png') no-repeat center;
+        background: url('../img/100-percent-digital.png') no-repeat center;
         background-size: contain;
       }
 
       &_second {
         padding-bottom: 0;
+        margin-top: -50px;
 
         &::after {
           left: 20%;
-          background: url('../img/instant-access2.png') no-repeat center;
+          background: url('../img/100-percent-digital-2.png') no-repeat center;
           background-size: contain;
         }
       }
@@ -55,19 +57,46 @@
   }
 
   &__btn {
-    padding: 10px 20px;
-    @include borderButton(var(--electric-blue));
+    display: inline-block;
+    padding: 0 40px;
+    height: 50px;
+    color: $white;
+    border-radius: 3px;
+    background-image: linear-gradient(118deg, $azure, rgb(10, 85, 247));
+    box-shadow: 0 38px 24px 0 rgba(0, 0, 0, 0.11);
+    @extend .wave;
+    font-size: 22px;
 
     &:hover {
       @include borderButtonHover(var(--electric-blue));
     }
 
     &_green {
-      @include borderButton(var(--soft-green));
+      @include borderButtonHover(var(--soft-green));
 
       &:hover {
         @include borderButtonHover(var(--soft-green));
       }
+    }
+  }
+}
+
+@media (max-width: $md) {
+  .nutrition-top {
+
+    &__promo {
+
+      &-text {
+            width: 35%;
+            margin-left: 0;
+      }
+
+      &-img {
+        &::after {
+          bottom: 5px;
+        }
+      }
+
     }
   }
 }
@@ -78,7 +107,8 @@
 
     &__text-promo {
       text-align: center;
-      font-size: 20px;
+      font-size: 18px;
+      line-height: 24px;
     }
 
     &__promo {
@@ -124,6 +154,7 @@
   .nutrition-top {
     padding-top: 10px;
     padding-bottom: 10px;
+    overflow: hidden;
 
     &__promo {
       margin-left: 15px;
@@ -141,12 +172,21 @@
       &-img {
         &::after {
           bottom: -7px;
-          left: calc(50% - 151px);
+          left: calc(50% - 150px);
+        }
+        img {
+          width: 110%;
+          padding-left: 20px;
         }
       }
 
       &-img_second {
-        margin-left: -5%;
+        &::after {
+          bottom: -7px;
+          left: calc(50% - 90px);
+        }
+        margin-left: -15%;
+        margin-top: -20px;
       }
     }
 

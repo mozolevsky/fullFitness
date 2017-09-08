@@ -24,8 +24,15 @@
                 <a href="#" class="header__nav-link header__nav-link_light">About Us</a>
                 <a href="#" class="header__nav-link header__nav-link_light">Free tools</a>
                 <a href="#" class="header__nav-link header__nav-link_light">Program</a>
-                <a href="#" class="header__nav-link header__nav-link_light">The Team</a>
                 <a href="#" class="header__nav-link header__nav-link_light">Blog</a>
+                <div href="#" class="header__nav-link header__nav-link_login header__nav-link_light" @click="submenu.status = !submenu.status">
+                    <span>Login</span>
+                    <div class="header-submenu" v-if="submenu.status" v-cloak>
+                        <a href="#" class="header-submenu__link">30 Days to Optimal Gut Health</a>
+                        <a href="#" class="header-submenu__link">Type something something</a>
+                        <a href="#" class="header-submenu__link">Integrated BodyTransformation System</a>
+                    </div>
+                </div>
             </nav>
             <a href="#" class="header__btn header__btn_light">Start here</a>
         </div>
@@ -49,9 +56,13 @@
     </header>
 
     <div class="about-top">
+      <video class="about-top__video" autoplay> <!--autoplay-->
+          <source src="video/program.mp4" type="video/mp4" loop>
+          Your browser does not support the video tag.
+      </video>
         <div class="container">
             <div class="row">
-                <div class="col-md-12 col-sm-12">
+                <div class="col-md-10 col-md-offset-1 col-sm-12">
                     <h1 class="about-top__title">
                         <span class="about-top__text-small">Your Body Transformation is Our Passion!</span>
                     </h1>
@@ -84,7 +95,7 @@
                     </div>
                     <div class="col-md-5 col-md-offset-2 col-sm-5 col-sm-offset-2">
                         <div class="two-columns__column">
-                            <h1 class="two-columns__title">Why We Are Different</h1>
+                            <h1 class="two-columns__title">Why We're Different</h1>
                             <p class="two-columns__desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent
                                 sit amet blandit lectus. Duis nec arcu imperdiet, volutpat sapien vitae, sodales sem. Aenean
                                 id velit sollicitudin, auctor dolor at.
@@ -102,18 +113,6 @@
 
     <div class="mission">
         <div class="container">
-            <div class="row">
-                <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
-                    <div class="mission__inner">
-                        <h1 class="mission__title">Our Mission</h1>
-                        <p class="mission__desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sit
-                            amet blandit lectus. Duis nec arcu imperdiet, volutpat sapien vitae, sodales sem. Aenean id
-                            velit sollicitudin, auctor dolor at, egestas nunc. Etiam efficitur ipsum sed tincidunt
-                            hendrerit.
-                        </p>
-                    </div>
-                </div>
-            </div>
             <div class="row">
                 <div class="col-md-12">
                     <div class="skew-bg skew-bg_mission">
@@ -161,10 +160,23 @@
         </div>
     </div>
 
+    <article class="insta">
+
+            <!--<div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                    <h3 class="insta__title">Get inspired by real people reaching their goals</h3>
+                    <p class="insta__subtitle">Follow us on instagram</p>
+                </div>
+            </div>-->
+            <div class="row">
+                <div class="col-md-12">
+                    <img src="img/instagram-section.png" alt="" class="program__img hidden-xs hidden-sm hidden-md">
+                </div>
+            </div>
+
+    </article>
+
     <div class="about-bottom">
-        <div class="about-bottom__img-wrapper">
-            <img src="img/contactus-man.png" alt="" class="about-bottom__img">
-        </div>
         <div class="container">
             <div class="row">
                 <div class="col-md-7 col-md-offset-3 col-sm-8 col-sm-offset-2">
@@ -187,6 +199,23 @@
             </div>
         </div>
     </div>
+
+    <article class="insta">
+
+            <!--<div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                    <h3 class="insta__title">Get inspired by real people reaching their goals</h3>
+                    <p class="insta__subtitle">Follow us on instagram</p>
+                </div>
+            </div>-->
+            <div class="row">
+                <div class="col-md-12">
+                    <img src="img/instagram-section-mobile.png" alt="" class="program__img visible-xs">
+                    <img src="img/instagram-section.png" alt="" class="program__img hidden-xs hidden-sm hidden-lg visible-md">
+                </div>
+            </div>
+
+    </article>
 
     <footer class="footer container">
         <p class="footer__copy"></p>

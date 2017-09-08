@@ -20,8 +20,9 @@
   }
 
   &__title {
-    margin-bottom: 30px;
+    //margin-bottom: 30px;
     text-align: center;
+    font-size: 34px;
   }
 
   &__see-more {
@@ -47,6 +48,7 @@
 @media (max-width: $sm) {
   .faq {
     padding-top: 60px;
+    font-size: 18px;
 
     &_crawled {
       margin-top: -160px;
@@ -65,6 +67,8 @@
     &__accordion {
       margin: 0 auto;
       width: 80%;
+      font-size: 18px;
+      line-height: 24px;
     }
 
     &__see-more {

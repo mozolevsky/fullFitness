@@ -24,11 +24,16 @@ const config = {
     aria: true
 };
 
-Vue.use(VeeValidate, config);
+if (typeof VeeValidate !== 'undefined') {
+    Vue.use(VeeValidate, config);
+}
 
 let app = new Vue({
     el: "#app",
     data: {
+        submenu: {
+            status: false
+        },
         formHelpers: {
             formStepOne: true,
             calcOverlay: false,

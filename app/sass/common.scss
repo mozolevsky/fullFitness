@@ -10,7 +10,7 @@
 body {
   font-family: 'freight-sans-pro', Arial, sans-serif;
   font-size: 22px;
-  line-height: 24px;
+  line-height: 28px;
   color: var(--black);
 }
 
@@ -18,7 +18,7 @@ h1 {
   font-family: 'ff-tisa-web-pro', "Times New Roman", Times, serif;
   font-size: 44px;
   font-weight: bold;
-  line-height: 1.05;
+  line-height: 1.2;
   margin-bottom: 11px;
 }
 
@@ -27,6 +27,7 @@ h3 {
   font-size: 34px;
   font-weight: bold;
   margin-bottom: 25px;
+  line-height: 1.2;
 }
 
 h4 {
@@ -174,6 +175,10 @@ button {
 
 #my-menu:not( .mm-menu ) {
   display: none;
+}
+.mm-menu.mm-offcanvas {
+  width: 100%;
+  max-width: 100%;
 }
 
 

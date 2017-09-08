@@ -1,6 +1,6 @@
 .nutrition-page__text {
   margin-bottom: 20px;
-  font-size: 20px;
+  //font-size: 20px;
   color: var(--slate-two);
 
   &_white {
@@ -11,8 +11,12 @@
 .nutrition__title {
   margin-left: -60px;
   margin-right: -60px;
-  font-size: 34px;
   @include block-title();
+  font-size: 34px;
+}
+
+.block-title {
+  font-size: 34px;
 }
 
 .container-wrapper {
@@ -31,6 +35,10 @@
 
     span {
       font-weight: 700;
+      background-image: url(../img/forlife-underline.png);
+      background-repeat: no-repeat;
+      background-position: 0 bottom;
+      background-size: 100%;
     }
   }
 }
@@ -61,13 +69,14 @@
 
   &__table {
     img {
-      width: 100%;
+      width: 120%;
+      margin-left: -10%;
     }
   }
 }
 
 .benefit {
-  padding-bottom: 40px;
+  //padding-bottom: 40px;
 
   &__desc-block {
     display: none;
@@ -85,8 +94,8 @@
   }
 
   &__text {
-    font-size: 18px;
-    line-height: 1.2;
+    //font-size: 18px;
+    //line-height: 1.2;
   }
 
   &__list {
@@ -178,7 +187,7 @@
 .how-works {
   padding-bottom: 40px;
 
-  .container-wrapper {
+  .timeline {
     background-image: url("../img/group-104@3x.png");
     background-repeat: no-repeat;
     background-position: 95% 0;
@@ -272,7 +281,7 @@
       display: inline-block;
       padding-left: 20px;
       font-weight: 700;
-      font-size: 20px;
+      //font-size: 20px;
       margin: 0;
       background-image: url("../img/shape-copy-16@3x.png");
       background-repeat: no-repeat;
@@ -546,7 +555,7 @@
     &__step-title {
       position: relative;
       font-size: 22px;
-      padding-bottom: 64px;
+      padding-bottom: 74px;
 
       &::after {
         content: '';
@@ -689,25 +698,34 @@
   }
 
   .nutrition-page__text {
-    font-size: 16px;
-    line-height: 1.2;
+    //font-size: 16px;
+    //line-height: 1.2;
   }
 
   .clean {
     padding-top: 30px;
     padding-bottom: 34px;
     background-position: right 0;
+
+    &__block-title {
+      font-size: 22px;
+    }
+  }
+
+  .block-title {
+    font-size: 22px;
   }
 
   .course-for {
     padding-top: 27px;
-    padding-bottom: 27px;
+    padding-bottom: 0;
+    overflow: hidden;
 
     &__subtitle {
       margin-top: 20px;
       padding-bottom: 10px;
       font-size: 16px;
-      
+
       &::after {
         display: none;
       }
@@ -766,6 +784,9 @@
     &__text {
       padding: 0 20px;
     }
+    .timeline {
+      background-image: none;
+    }
   }
 
   .what-get {
@@ -782,6 +803,9 @@
   }
 
   .curriculum {
+
+    padding-bottom: 0;
+
     &__text {
       font-size: 18px;
     }
@@ -806,6 +830,7 @@
         margin-bottom: 10px;
         font-size: 18px;
         font-weight: 700;
+        text-align: center;
       }
 
       &-desc {
@@ -814,23 +839,23 @@
       }
 
       &_1 {
-        background-image: url('../img/curriculum__item_1.jpg');
+        background-image: url('../img/curriculum__item_1.png');
       }
 
       &_2 {
-        background-image: url('../img/curriculum__item_2.jpg');
+        background-image: url('../img/curriculum__item_2.png');
       }
 
       &_3 {
-        background-image: url('../img/curriculum__item_3.jpg');
+        background-image: url('../img/curriculum__item_3.png');
       }
 
       &_4 {
-        background-image: url('../img/curriculum__item_4.jpg');
+        background-image: url('../img/curriculum__item_4.png');
       }
 
       &_5 {
-        background-image: url('../img/curriculum__item_5.jpg');
+        background-image: url('../img/curriculum__item_5.png');
       }
     }
 
@@ -898,4 +923,3 @@
     }
   }
 }
-

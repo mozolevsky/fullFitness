@@ -19,21 +19,28 @@
     <header class="header">
         <a href="#" class="header__logo">
             <picture>
-                <source srcset="./img/logo-header_white.svg" media="(max-width: 991px)">
-                <source srcset="./img/logo-header.svg">
-                <img src="./img/logo-header.svg" alt="" class="header__logo-img">
+                <source srcset="img/logo-header.svg" media="(max-width: 991px)">
+                <source srcset="img/logo-header.svg">
+                <img class="header__logo-img" src="img/logo-header.svg" alt="">
             </picture>
         </a>
 
         <div class="header__nav-wrapper">
             <nav class="header__nav">
-                <a href="#" class="header__nav-link header__nav-link_light">About Us</a>
-                <a href="#" class="header__nav-link header__nav-link_light">Free tools</a>
-                <a href="#" class="header__nav-link header__nav-link_light">Program</a>
-                <a href="#" class="header__nav-link header__nav-link_light">The Team</a>
-                <a href="#" class="header__nav-link header__nav-link_light">Blog</a>
+                <a href="#" class="header__nav-link">About Us</a>
+                <a href="#" class="header__nav-link">Free tools</a>
+                <a href="#" class="header__nav-link">Program</a>
+                <a href="#" class="header__nav-link">Blog</a>
+                <div href="#" class="header__nav-link header__nav-link_login" @click="submenu.status = !submenu.status">
+                    <span>Login</span>
+                    <div class="header-submenu" v-if="submenu.status" v-cloak>
+                        <a href="#" class="header-submenu__link">30 Days to Optimal Gut Health</a>
+                        <a href="#" class="header-submenu__link">Type something something</a>
+                        <a href="#" class="header-submenu__link">Integrated BodyTransformation System</a>
+                    </div>
+                </div>
             </nav>
-            <a href="#" class="header__btn header__btn_light">Start here</a>
+            <a href="#" class="header__btn">Start here</a>
         </div>
 
         <nav id="my-menu">
@@ -41,29 +48,30 @@
                 <li><a href="#">About us</a></li>
                 <li><a href="#">Free tools</a></li>
                 <li><a href="#">Program</a></li>
-                <li><a href="#">The team</a></li>
                 <li><a href="#">Blog</a></li>
+                <li><a href="#">Login</a></li>
                 <li><a href="#">Start here</a></li>
             </ul>
         </nav>
 
         <a class="header__burger" href="#my-menu">
-            <div class="header__burger-dash header__burger-dash__top header__burger-dash_light"></div>
-            <div class="header__burger-dash header__burger-dash__middle header__burger-dash_light"></div>
-            <div class="header__burger-dash header__burger-dash__bottom header__burger-dash_light"></div>
+            <div class="header__burger-dash header__burger-dash__top"></div>
+            <div class="header__burger-dash header__burger-dash__middle"></div>
+            <div class="header__burger-dash header__burger-dash__bottom"></div>
         </a>
     </header>
 
     <section class="program-top">
+      <div class="program-top__left-bg"></div>
         <div class="container">
             <div class="row">
-                <div class="col-md-4 col-md-offset-0 col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1">
+                <div class="col-md-5 col-md-offset-0 col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1">
                     <div class="program-top__left">
                         <section class="program-top__text-left">
                             <h1 class="program-top__title">The body tranformation system we’ve all been waiting for</h1>
                             <p class="program-top__desc">With over 50 years of combined trainig experience and deicated research
                                 into the physiology as well… what can we say? it works.</p>
-                            <button class="program-top__btn">Get Started</button>
+                            <button class="program-top__btn">Get Started &nbsp;→</button>
                         </section>
                     </div>
                 </div>
@@ -76,8 +84,8 @@
                 <span class="program-top__tagline program-top__tagline_third">Achieved</span><br>
             </section>-->
             <div class="program-top__video-wrapper">
-                <video class="program-top__video" > <!--autoplay-->
-                    <source src="video/small2.mp4" type="video/mp4">
+                <video class="program-top__video" autoplay="autoplay" loop> <!--autoplay-->
+                    <source src="video/program.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
             </div>
@@ -123,7 +131,7 @@
                     <h3 class="info__title info__title-img info__title_white">This Is Why We Created A System Which Garantees You Will Succeed</h3>
                     <picture>
                         <source media="(max-width: 768px)" srcset="img/program-logo-mobile.png">
-                        <img class="info__img" src="img/unused_program/system-logo@2x.png" alt="system-logo">
+                        <img class="info__img" src="img/system-logo@2x.png" alt="system-logo">
                     </picture>
                     <div class="info__img-content">
                         <div class="info__img-about info__img-about_1">
@@ -158,7 +166,7 @@
                             <div class="swiper-wrapper">
                                 <div class="swiper-slide slider1__slide-wrapper" data-name="Fitness">
                                     <div class="slider1__text-block">
-                                        <p class="slider1__slide-title">TRACKING</p>
+                                        <p class="slider1__slide-title">FITNESS</p>
                                         <p class="slider1__slide-subtitle">building block</p>
                                         <p class="slider1__slide-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ut nisi mollis,
                                             dictum ex at, volutpat nisl. Cras at ligula ac nulla posuere gravida eu vitae mi.
@@ -166,11 +174,11 @@
                                             faucibus eget urna.
                                         </p>
                                     </div>
-                                    <img src="img/bitmap.png" srcset="img/bitmap@2x.png 2x" alt="" class="slider1__slide-img">
+                                    <img src="img/program-fitness@2x.jpg" srcset="img/program-fitness@2x.jpg 2x" alt="" class="slider1__slide-img">
                                 </div>
                                 <div class="swiper-slide slider1__slide-wrapper" data-name="Nutrition">
                                     <div class="slider1__text-block">
-                                        <p class="slider1__slide-title">TRACKING</p>
+                                        <p class="slider1__slide-title">NUTRITION</p>
                                         <p class="slider1__slide-subtitle">building block</p>
                                         <p class="slider1__slide-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ut nisi mollis,
                                             dictum ex at, volutpat nisl. Cras at ligula ac nulla posuere gravida eu vitae mi.
@@ -178,11 +186,11 @@
                                             faucibus eget urna.
                                         </p>
                                     </div>
-                                    <img src="img/bitmap.png" srcset="img/bitmap@2x.png 2x" alt="" class="slider1__slide-img">
+                                    <img src="img/program-nutrition@2x.jpg" srcset="img/program-nutrition@2x.jpg 2x" alt="" class="slider1__slide-img">
                                 </div>
                                 <div class="swiper-slide slider1__slide-wrapper" data-name="Motivation">
                                     <div class="slider1__text-block">
-                                        <p class="slider1__slide-title">TRACKING</p>
+                                        <p class="slider1__slide-title">MOTIVATION</p>
                                         <p class="slider1__slide-subtitle">building block</p>
                                         <p class="slider1__slide-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ut nisi mollis,
                                             dictum ex at, volutpat nisl. Cras at ligula ac nulla posuere gravida eu vitae mi.
@@ -190,7 +198,7 @@
                                             faucibus eget urna.
                                         </p>
                                     </div>
-                                    <img src="img/bitmap.png" srcset="img/bitmap@2x.png 2x" alt="" class="slider1__slide-img">
+                                    <img src="img/program-motivation@2x.jpg" srcset="img/program-motivation@2x.jpg 2x" alt="" class="slider1__slide-img">
                                 </div>
                                 <div class="swiper-slide slider1__slide-wrapper" data-name="Tracking">
                                     <div class="slider1__text-block">
@@ -202,11 +210,11 @@
                                             faucibus eget urna.
                                         </p>
                                     </div>
-                                    <img src="img/bitmap.png" srcset="img/bitmap@2x.png 2x" alt="" class="slider1__slide-img">
+                                    <img src="img/program-tracking@2x.jpg" srcset="img/program-tracking@2x.jpg 2x" alt="" class="slider1__slide-img">
                                 </div>
                                 <div class="swiper-slide slider1__slide-wrapper" data-name="Guidance">
                                     <div class="slider1__text-block">
-                                        <p class="slider1__slide-title">TRACKING</p>
+                                        <p class="slider1__slide-title">GUIDANCE</p>
                                         <p class="slider1__slide-subtitle">building block</p>
                                         <p class="slider1__slide-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ut nisi mollis,
                                             dictum ex at, volutpat nisl. Cras at ligula ac nulla posuere gravida eu vitae mi.
@@ -214,7 +222,7 @@
                                             faucibus eget urna.
                                         </p>
                                     </div>
-                                    <img src="img/bitmap.png" srcset="img/bitmap@2x.png 2x" alt="" class="slider1__slide-img">
+                                    <img src="img/program-guidance@2x.jpg" srcset="img/program-guidance@2x.jpg 2x" alt="" class="slider1__slide-img">
                                 </div>
                             </div>
                             <div class="swiper-pagination swiper-program1__nav">
@@ -231,7 +239,7 @@
         <div class="round-diagram__container container">
             <h3 class="info__title round-diagram__title">A Body Transformation System Backed By Science</h3>
             <div class="row">
-                <div class="round-diagram__img-block col-lg-8 col-md-9 col-sm-6">
+                <div class="round-diagram__img-block col-sm-12">
                     <picture>
                         <source srcset="img/unused_program/tablet_2_pie-chart-science.png" media="(max-width: 991px)">
                         <img class="round-diagram__img-main"
@@ -239,12 +247,6 @@
                              srcset="img/unused_program/group-71@2x.png 2x"
                              alt="pie-chart">
                     </picture>
-                </div>
-                <div class="round-diagram__text-block col-lg-4 col-md-3 col-sm-6">
-                    <h4 class="round-diagram__text-title">HIIT Training Garantees Maximum Efficiency To Burning Fat</h4>
-                    <p class="round-diagram__text">In this program we will perform repeated bouts of high intensity effort
-                        followed by varied recovery times in order to achieve the effects of HIIT training.
-                    </p>
                 </div>
             </div>
         </div>
@@ -265,7 +267,7 @@
                     <picture>
                         <source srcset="img/unused_program/tablet_3_hiit-chart.png" media="(max-width: 991px)">
                         <img class="horizontal-diagram__img"
-                             src="img/unused_program/graph@2x.png"
+                             src="img/graph@2x.png"
                              alt="graph">
                     </picture>
                 </div>
@@ -322,7 +324,7 @@
             <h3 class="why-works__title">Here’s Why It Works</h3>
             <p class="why-works__desc">We understand that not everything is in your control.. but you can definitely
                 give yourself a huge advantage by selecting a body transformation system that is:</p>
-            <div class="why-works__item">
+            <div class="why-works__item col-md-10 col-md-offset-1 col-sm-8 col-sm-offset-2">
                 <h4 class="why-works__item-title">Proven Training Methods to Rapidly Burn Fat While Maintaining Muscle</h4>
                 <p class="why-works__item-desc">Cras semper nisi vitae arcu congue euismod. In sit amet varius nisi.
                     Nullam eu orci hendrerit lorem aliquet blandit. Pellentesque ac hendrerit nibh.</p>
@@ -339,7 +341,7 @@
                     </ul>
                 </div>
             </div>
-            <div class="why-works__item">
+            <div class="why-works__item col-md-10 col-md-offset-1 col-sm-8 col-sm-offset-2">
                 <h4 class="why-works__item-title">Full Body Workouts For Drastic Improvemtns In…</h4>
                 <p class="why-works__item-desc">Cras semper nisi vitae arcu congue euismod. In sit amet varius nisi.
                     Nullam eu orci hendrerit lorem aliquet blandit. Pellentesque ac hendrerit nibh.</p>
@@ -458,7 +460,7 @@
     <section class="rules">
         <div class="container">
             <div class="row">
-                <div class="rules__inner">
+                <div class="rules__inner col-sm-10 col-sm-offset-1">
                     <h1 class="rules__title">A Simplified System To Make Sure You Follow Through And Succeed</h1>
                     <p class="rules__desc">Over 50 years of combined trainig experience and deicated research into the
                         physiology as well as psycology of why people fail to transfrom their bodies has led us to create
@@ -584,7 +586,7 @@
         <div class="container">
             <h1 class="faq__title">Frequently Asked Questions</h1>
             <div class="row">
-                <div class="col-md-6 col-md-offset-3">
+                <div class="col-md-8 col-md-offset-2">
                     <div class="faq__accordion">
                         <div id="integration-list">
                             <ul>
@@ -753,7 +755,7 @@
                     </div>
                 </div>
             </div>
-            <a class="faq__see-more" id="see-more">See more</a>
+            <a class="faq__see-more" id="see-more">See more &nbsp;→</a>
         </div>
     </section>
 
@@ -774,7 +776,7 @@
                     we’ll do everything to make sure you will not fail.
                 </p>
                 <div class="decision__block-btn">
-                    <button class="decision__btn">Get Started Today</button>
+                    <button class="decision__btn">Get Started Today &nbsp;→</button>
                     <img class="decision__block-arrow"
                          src="img/unused_program/group-81.png"
                          srcset="img/unused_program/group-81@2x.png 2x"
@@ -846,7 +848,7 @@
             }
         }
     });
-    swiperProgram1.slideTo(3);
+    //swiperProgram1.slideTo(3);
 
 
     var swiperProgram2 = new Swiper('.swiper-program2', {

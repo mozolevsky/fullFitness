@@ -1,23 +1,23 @@
 .mpdesc {
   padding-top: 0;
-  padding-bottom: 50px;
+  //padding-bottom: 50px;
 
   &__title {
-    @include fontSH(45px, 48px);
-    margin-bottom: 39px;
+    @include fontSH(34px, 1.2);
+    margin-bottom: 18px;
   }
 
   &__desc {
-    margin-bottom: 25px;
+    //margin-bottom: 25px;
     color: var(--slate);
-    @include fontSH(18px, 22px);
+    //@include fontSH(18px, 22px);
   }
 
   &__section-one {
     min-height: 605px;
     margin-bottom: 50px;
     background: url('../img/zzzz@3x.png') no-repeat;
-    background-size: contain;
+    background-size: auto;
     background-position: calc(50% - 464px) center;
   }
 
@@ -31,7 +31,7 @@
 
 @media(max-width: $sm) {
   .mpdesc {
-    padding-bottom: 20px;
+    //padding-bottom: 20px;
 
     &__title {
       margin-bottom: 16px;
@@ -56,7 +56,7 @@
 
 @media(max-width: $xs) {
   .mpdesc {
-    padding-bottom: 25px;
+    //padding-bottom: 25px;
 
     &__title {
       @include fontSH(22px, 26px);
@@ -64,16 +64,22 @@
       margin-top: 0;
     }
 
+    &__desc {
+      //margin-bottom: 25px;
+      color: var(--slate);
+      @include fontSH(18px, 22px);
+    }
+
     &__section-one {
       margin-bottom: 15px;
-      padding-bottom: 215px;
+      padding-bottom: 235px;
       background-size: auto 230px;
       background-position: 50% bottom;
     }
 
     &__section-two {
-      padding-bottom: 215px;
-      background-size: 294px auto;
+      padding-bottom: 295px;
+      background-size: contain;
       background-position: 50% bottom;
     }
   }

@@ -1,8 +1,8 @@
 .tips {
   padding-top: 48px;
   padding-bottom: 34px;
-  background: url('../img/busy@3x.png') no-repeat;
-  background-position: calc(50% - 250px) bottom;
+  background: url('../img/transformationtips.jpg') no-repeat;
+  background-position: calc(50% - 250px) calc(100% - 50px);
   background-size: 847px auto;
 
   &__title {
@@ -53,15 +53,23 @@
   }
 }
 
+@media(max-width: $md) {
+  .tips {
+    background-position: calc(50% - 250px) calc(100% - 170px);
+    background-size: 800px auto;
+  }
+}
+
 @media(max-width: $sm) {
   .tips {
     background: none;
 
     &__first-section {
-      padding-bottom: 100px;
+      padding-bottom: 70px;
       margin-bottom: 18px;
-      background: url('../img/busy@3x.png') no-repeat;
-      background-position: calc(50% - 108px) bottom;
+      background: url('../img/transformationtips.jpg') no-repeat;
+      //background-position: calc(50%) -22px;
+      background-position: 0px -40px;
       background-size: 457px auto;
     }
 
@@ -99,8 +107,8 @@
       padding-top: 267px;
       padding-bottom: 0;
       margin-bottom: 18px;
-      background-position: calc(50% + 28px) top;
-      background-size: 375px auto;
+      background-position: calc(50%) -22px;
+      background-size: 457px auto;
     }
 
     &__list-item {

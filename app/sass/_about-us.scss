@@ -6,8 +6,21 @@
 
   text-align: center;
 
-  background: url('../img/contactus-top-bg.png') no-repeat left center;
+  //background: url('../img/contactus-top-bg.png') no-repeat left center;
+  background-color: #000;
   background-size: cover;
+
+  &__video {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    min-height: 100%;
+    width: 100%;
+    height: auto;
+    z-index: 0;
+    opacity: 0.7;
+  }
 
   &::after {
     @extend %skew__bottom;
@@ -19,7 +32,7 @@
     padding-bottom: 35px;
     margin-bottom: 0;
     font-family: 'EurostileExt-BlaIta';
-    font-size: 38px;
+    font-size: 28px;
     line-height: 1.41;
     text-align: center;
     color: $white;
@@ -46,7 +59,8 @@
     margin-bottom: 37px;
     text-align: center;
     color: $white;
-    font-size: 28px;
+    //font-size: 22px;
+    //line-height: 28px;
   }
 
   &__btn {
@@ -68,12 +82,14 @@
   position: relative;
 
   padding-top: 50px;
-  padding-bottom: 100px;
+  padding-bottom: 50px;
 
-  &::after {
+  background-color: $white;
+
+  /*&::after {
     @extend %skew__bottom;
     background: $white;
-  }
+  }*/
 
   &__inner::after {
     position: absolute;
@@ -101,16 +117,16 @@
 
 .mission {
   position: relative;
-  padding-top: 120px;
+  padding-top: 0;
   padding-bottom: 0;
 
   text-align: center;
-  background-color: $pale-grey-three;
+  //background-color: $pale-grey-three;
 
-  &::after {
+  /*&::after {
     @extend %skew__bottom;
     background-color: $pale-grey-three;
-  }
+  }*/
 
   &__title {
     margin-bottom: 19px;
@@ -118,8 +134,11 @@
 
   &__desc {
     margin-bottom: 75px;
-    font-size: 24px;
+    //font-size: 24px;
     color: $gunmetal;
+  }
+  .skew-bg__list-block {
+        background-color: #f6f9fc;
   }
 }
 
@@ -131,12 +150,13 @@
 
   background: $black url('../img/contactus-girl.jpg') no-repeat right center;
   background-size: cover;
+  background-position: center center;
   color: $white;
 
-  &::after {
+  /*&::after {
     @extend %skew__bottom;
     background-color: $pale-grey-three;
-  }
+  }*/
 
   &__title {
     margin-bottom: 18px;
@@ -144,7 +164,8 @@
 
   &__desc {
     margin-bottom: 18px;
-    font-size: 24px;
+    //font-size: 24px;
+    opacity: 0.9;
   }
 
 
@@ -168,6 +189,10 @@
   padding-bottom: 53px;
 
   background-color: $pale-grey-three;
+  //background: url(../img/about-bottom-bg.jpg) center center;
+  background-size: contain;
+
+  color: #fff
 
   &__img-wrapper {
     position: absolute;
@@ -185,7 +210,7 @@
 
   &__inner {
     padding: 37px 60px 47px 60px;
-    background-color: $white;
+    background-color: rgba(255,255,255,0.9);
     box-shadow: $shadow;
   }
 
@@ -209,11 +234,37 @@
   }
 }
 
+@media (max-width: $md) {
+  .about-top {
+    background: url('../img/program-top-girl.png') no-repeat center;
+    background-size: cover;
+    background-position: center 40%;
+    &__video {
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      min-height: 100%;
+      width: 120%;
+      height: auto;
+      z-index: 0;
+      display: none;
+    }
+  }
+}
 
 @media (max-width: $sm) {
   .about-top {
     padding-top: 93px;
     padding-bottom: 170px;
+    //background: url('../img/contactus-top-bg.png') no-repeat left center;
+    background: url('../img/program-top-girl.png') no-repeat center;
+    background-size: cover;
+    background-position: 0 0;
+
+    &__video {
+      display: none;
+    }
 
     &::after {
       bottom: -24px;
@@ -245,7 +296,7 @@
   }
 
   .mission {
-    padding-top: 50px;
+    //padding-top: 50px;
 
     &::after {
       bottom: -24px;
@@ -318,8 +369,8 @@
 
     &__title {
       margin-bottom: 4px;
-      font-size: 24px;
-      line-height: 1.6;
+      font-size: 20px;
+      line-height: 24px;
       text-align: center;
     }
 
@@ -361,6 +412,10 @@
     &__desc {
       margin-bottom: 37px;
     }
+
+    .skew-bg__list-block {
+          padding-bottom: 0;
+    }
   }
 
   .results {
@@ -391,8 +446,8 @@
   }
 
   .about-bottom {
-    padding-top: 44px;
-    padding-bottom: 58px;
+    padding-top: 10px;
+    padding-bottom: 20px;
 
     text-align: center;
 
@@ -406,11 +461,6 @@
     &__inner {
       padding: 0 15px;
       box-shadow: none;
-    }
-
-    &__title {
-      margin-bottom: 6px;
-      font-size: 34px;
     }
 
     &__desc {

@@ -129,7 +129,7 @@
   }
 }
 
-@media (max-width: 1200px) {
+@media (max-width: $md) {
   .trainers {
     &__trainer {
       width: 21%;
@@ -145,10 +145,13 @@
     &__img {
       width: 100%;
       left: 40%;
+      height: auto;
+      bottom: 178px;
+      top: auto;
     }
 
     &__name {
-      font-size: 30px;
+      font-size: 22px;
     }
   }
 }
@@ -215,6 +218,15 @@
     &__trainer {
       margin-top: 203px;
       width: 48%;
+
+      &:nth-child(3) {
+        margin-top: 183px;
+      }
+
+      &:nth-child(4) {
+        margin-top: 183px;
+      }
+
 
       &:nth-child(2n) {
         width: calc(48% + 20px);

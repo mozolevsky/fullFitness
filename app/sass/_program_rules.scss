@@ -28,6 +28,7 @@
     margin-bottom: 50px;
     width: 698px;
     font-size: 24px;
+    line-height: 28px;
     text-align: center;
     color: $gunmetal;
   }
@@ -116,6 +117,9 @@
     &__desc {
       width: 100%;
       padding: 0 30px;
+      font-size: 20px;
+      line-height: 26px;
+      margin-bottom: 20px;
     }
 
     &__wrapper {
@@ -129,8 +133,12 @@
 
     &__rule {
       width: 50%;
+      padding: 20px 5px 20px;
       box-sizing: border-box;
       border-right: none;
+      &:nth-of-type(4) {
+        display: none;
+      }
     }
   }
 }

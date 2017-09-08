@@ -3,8 +3,9 @@
   margin-top: -100px;
   padding-top: 150px;
   padding-bottom: 100px;
-  background-image: url("../img/unused_program/group-14.png");
+  background-image: url("../img/program-advantages.jpg");
   background-size: cover;
+  background-position: 50% 50%;
 
   &::after {
     @extend %skew__bottom;
@@ -19,16 +20,14 @@
 
   &__text-block-title {
     margin-bottom: 25px;
-    font-family: 'ff-tisa-web-pro', "Times New Roman", Times, serif;
     font-size: 44px;
-    line-height: 1.1;
+    line-height: 1.2;
     font-weight: 700;
   }
 
   &__text {
-    font-family: 'FreightSans Pro Book', Arial, sans-serif;
-    font-size: 24px;
-    line-height: 1.2;
+    font-size: 22px;
+    line-height: 28px;
   }
 
   &__graph {
@@ -39,7 +38,7 @@
   &__graph-arrow {
     position: absolute;
     top: -250px;
-    right: 100px;
+    right: 30%;
   }
 
   &__graph-container {
@@ -68,7 +67,6 @@
       border-radius: 50%;
       background-color: $white;
       box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.2);
-      font-family: 'FreightSans Pro Book', Arial, sans-serif;
       font-size: 18px;
       line-height: 30px;
       font-style: normal;
@@ -144,10 +142,9 @@
     position: absolute;
     bottom: 105%;
     margin-bottom: 0;
-    font-family: 'FreightSans Pro Book', Arial, sans-serif;
     font-size: 18px;
-    font-weight: 700;
-    line-height: 1.2;
+    font-weight: 600;
+    line-height: 24px;
     color: $white;
     text-align: center;
   }
@@ -293,5 +290,14 @@
     &__graph-text {
       font-size: 14px;
     }
+
+    &__container {
+      padding-top: 40px;
+    }
+
+    &__graph-container {
+      padding-bottom: 100px;
+    }
+
   }
 }

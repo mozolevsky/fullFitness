@@ -48,7 +48,7 @@
       width: 2px;
       height: 100%;
       display: block;
-      background-color: #dbdbdb;
+      background-color: rgba(0,0,0,0.05);
     }
 
     &_right {
@@ -113,6 +113,25 @@
 
   }
 
+  &__item-content-green {
+    &_1 {
+      background-image: url("../img/lime-green.svg");
+    }
+    &_2 {
+      background-image: url("../img/portions.svg");
+    }
+    &_3 {
+      background-image: url("../img/recipes.svg");
+    }
+    &_4 {
+      background-image: url("../img/whole.svg");
+    }
+    &_5 {
+      background-image: url("../img/prep.svg");
+    }
+
+  }
+
   &__item-line {
     position: relative;
     z-index: 2;
@@ -120,7 +139,7 @@
     width: calc(100% - 150px);
     margin-left: -30px;
     margin-top: 25px;
-    background-color: #dbdbdb;
+    background-color: rgba(0,0,0,0.05);
 
     &::before {
       content: '';
@@ -148,6 +167,16 @@
       background-color: var(--electric-blue);
     }
   }
+
+  &__item-line.green {
+    &::before {
+      background-color: #81C784;
+    }
+    &::after {
+      box-shadow: 0 0 0 4px rgba(129, 199, 132, 0.23);
+      background-color: #81C784;
+    }
+  }
 }
 
 @media (max-width: $sm) {
@@ -155,11 +184,12 @@
     &__block-title {
       margin-left: 0;
       margin-right: 0;
+      margin-bottom: 8px;
     }
 
     &__text {
       padding: 0 100px;
-      font-size: 22px;
+      font-size: 18px;
       text-align: center;
     }
 

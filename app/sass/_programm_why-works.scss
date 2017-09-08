@@ -24,10 +24,11 @@
   }
 
   &__desc {
-    font-family: 'FreightSans Pro Book', Arial, sans-serif;
+    font-family: 'freight-sans-pro', Arial, sans-serif;
     font-size: 24px;
     line-height: 1.2;
     text-align: center;
+    color: #4C515B;
   }
 
   &__item {
@@ -57,10 +58,11 @@
 
   &__item-desc {
     margin-bottom: 25px;
-    font-family: 'FreightSans Pro Book', Arial, sans-serif;
+    font-family: 'freight-sans-pro', Arial, sans-serif;
     font-size: 20px;
     line-height: 1.2;
     text-align: center;
+    color: #4C515B;
   }
 
   &__skew-block {
@@ -70,7 +72,7 @@
 
   &__skew-list {
     margin: 0;
-    padding: 55px;
+    padding: 45px;
     list-style: none;
     width: 54%;
 
@@ -101,13 +103,15 @@
 
     &-item {
       padding-left: 18px;
-      font-family: 'FreightSans Pro Book', Arial, sans-serif;
-      font-size: 20px;
-      line-height: 32px;
+      font-family: 'freight-sans-pro', Arial, sans-serif;
+      font-size: 18px;
+      line-height: 22px;
       background-image: url("../img/check.svg");
       background-repeat: no-repeat;
       background-position: 0 9px;
       background-size: 12px;
+      font-weight: 600;
+      margin-bottom: 10px;
     }
   }
 }

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="57px" height="40px" viewBox="0 0 57 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 41.2 (35397) - http://www.bohemiancoding.com/sketch -->
+    <title>Bread</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g transform="translate(-770.000000, -5501.000000)" stroke-width="2" stroke="#81C784">
+            <g transform="translate(693.000000, 5502.000000)">
+                <g>
+                    <g transform="translate(78.000000, 0.000000)">
+                        <path d="M22.762,0 L8,0 C3.6,0 0,3.6 0,8 L0,14 C0,16.208 0.909,18.21 2.369,19.66 C3.464,20.747 4,22.279 4,23.822 L4,30.973 C4,34.838 7.162,38 11.027,38 L18.558,38 C22.101,38 25,35.101 25,31.558 L25,23.355 C25,21.949 25.633,20.651 26.631,19.66 C28.091,18.21 29,16.208 29,14 L29,6.238 C29,2.807 26.193,0 22.762,0 L22.762,0 Z"></path>
+                        <path d="M47,0 L8,0 C3.6,0 0,3.6 0,8 L0,14 C0,16.208 0.909,18.21 2.369,19.66 C3.464,20.747 4,22.279 4,23.822 L4,30.973 C4,34.838 7.162,38 11.027,38 L44.846,38 C48.231,38 51,35.231 51,31.846 L51,24.051 C51,22.36 51.625,20.721 52.791,19.497 C54.157,18.062 55,16.126 55,14 L55,8 C55,3.6 51.4,0 47,0 L47,0 Z"></path>
+                        <path d="M37,21 L46,21" stroke-linecap="round"></path>
+                        <path d="M31,21 L33,21" stroke-linecap="round"></path>
+                        <path d="M11,24 L9.5,25.5" stroke-linecap="round"></path>
+                        <path d="M17.594,18.393 L15.906,17.107" stroke-linecap="round"></path>
+                        <path d="M12,33 L10.313,31.714" stroke-linecap="round"></path>
+                        <path d="M19.173,28.34 L17.14,28.945" stroke-linecap="round"></path>
+                        <path d="M6.827,6 L5.327,7.5" stroke-linecap="round"></path>
+                        <path d="M7.827,15 L6.14,13.714" stroke-linecap="round"></path>
+                        <path d="M24.02,14.403 L23.667,12.311" stroke-linecap="round"></path>
+                        <path d="M15,10.34 L12.967,10.945" stroke-linecap="round"></path>
+                        <path d="M20.978,6.768 L19,6" stroke-linecap="round"></path>
+                        <path d="M46.609,5.396 C47.195,3.722 47.28,1.776 45.608,0.283 C45.394,0.092 45.105,0 44.819,0 L43.613,0 C42.622,0 42.044,1.117 42.622,1.922 C43.323,2.897 43.937,4.036 44.291,5.315 C44.605,6.455 46.218,6.512 46.609,5.396 L46.609,5.396 Z"></path>
+                        <path d="M37.217,5.396 C37.803,3.722 37.888,1.776 36.216,0.283 C36.002,0.092 35.713,0 35.427,0 L34.221,0 C33.23,0 32.652,1.117 33.23,1.922 C33.931,2.897 34.545,4.036 34.899,5.315 C35.213,6.455 36.826,6.512 37.217,5.396 L37.217,5.396 Z"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -2,12 +2,13 @@
   padding-bottom: 35px;
 
   &__title {
-    margin-right: auto;
+    /*margin-right: auto;
     margin-left: auto;
     margin-bottom: 13px;
     margin-top: 0;
-    width: 702px;
-    @include fontSH(44px, 48px);
+    width: 702px;*/
+    margin-bottom: 10px;
+    @include fontSH(34px, 1.2);
     font-weight: bold;
     text-align: center;
   }
@@ -16,7 +17,7 @@
     margin-bottom: 40px;
     margin-right: auto;
     margin-left: auto;
-    width: 545px;
+    //width: 545px;
     @include fontSH(22px, 26px);
     color: var(--slate);
     text-align: center;
@@ -27,7 +28,7 @@
   margin-bottom: 35px;
 
   &__title {
-    margin-bottom: 17px;
+    margin-bottom: 10px;
     padding-left: 37px;
     @include fontSH(24px, 29px);
     font-weight: bold;
@@ -51,15 +52,17 @@
 
 @media (max-width: $xs) {
   .benefits {
+    padding-bottom: 10px;
     &__title {
-      width: 90%;
+      //width: 90%;
       @include fontSH(22px, 24px);
+      margin-top: 0;
     }
 
     &__desc {
       margin-bottom: 13px;
-      width: 90%;
-      @include fontSH(16px, 18px);
+      //width: 90%;
+      @include fontSH(18px, 24px);
     }
   }
 
@@ -70,6 +73,9 @@
     &__title {
       margin-bottom: 4px;
       @include fontSH(16px, 19px);
+    }
+    &__desc {
+      @include fontSH(18px, 24px);
     }
   }
 }

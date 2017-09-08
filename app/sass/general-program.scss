@@ -41,10 +41,14 @@
   }
 
   &__img-wrapper {
-
+    text-align: center;
   }
 
   &__img {
+    width: 80%;
+  }
+
+  .nutrition &__img {
     width: 100%;
   }
 }

@@ -1,6 +1,6 @@
 .slider2 {
   position: relative;
-  padding-top: 98px;
+  padding-top: 70px;
 
   &::after {
     @extend %skew__bottom;
@@ -9,15 +9,15 @@
   }
 
   &__title {
-    margin-bottom: 7px;
+    margin-bottom: 18px;
     text-align: center;
   }
 
   &__desc {
     margin: 0 auto;
-    margin-bottom: 45px;
+    //margin-bottom: 45px;
     width: 615px;
-    @include fontSH(24px, 26px);
+    @include fontSH(24px, 28px);
     text-align: center;
     color: $gunmetal;
   }
@@ -52,13 +52,14 @@
 
   &__text {
     font-size: 20px;
-    line-height: 1.1;
-    color: $charcoal-grey-two;
+    line-height: 28px;
+    color: #4C515B;
+    font-family: 'ff-tisa-web-pro', "Times New Roman", Times, serif;
   }
 
   &__img-block {
     position: absolute;
-    top: 0;
+    top: 70px;
     left: 130px;
     width: auto;
     height: 470px;
@@ -94,7 +95,7 @@
     font-style: italic;
     line-height: 1.57;
     text-align: center;
-    color: $charcoal-grey-two;
+    color: #4C515B;
   }
 
   &__bullets {
@@ -204,13 +205,18 @@
     }
 
     &__title {
-      padding: 0 32px;
+      padding: 20px 32px;
     }
 
     &__desc {
       padding: 0 32px;
       width: 100%;
       @include fontSH(18px, 22px);
+    }
+
+    &__text {
+      font-size: 16px;
+      line-height: 22px;
     }
 
     &__wrapper {

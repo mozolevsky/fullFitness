@@ -14,9 +14,13 @@
 </head>
 <body>
 <div id="app">
-    <header class="header">
+    <header class="header header_white-bg">
         <a href="#" class="header__logo">
-            <img src="./img/logo-header.svg" alt="" class="header__logo-img">
+            <picture>
+                <source srcset="img/logo-header.svg" media="(max-width: 991px)">
+                <source srcset="img/logo-header.svg">
+                <img class="header__logo-img" src="img/logo-header.svg" alt="">
+            </picture>
         </a>
 
         <div class="header__nav-wrapper">
@@ -24,8 +28,15 @@
                 <a href="#" class="header__nav-link">About Us</a>
                 <a href="#" class="header__nav-link">Free tools</a>
                 <a href="#" class="header__nav-link">Program</a>
-                <a href="#" class="header__nav-link">The Team</a>
                 <a href="#" class="header__nav-link">Blog</a>
+                <div href="#" class="header__nav-link header__nav-link_login" @click="submenu.status = !submenu.status">
+                    <span>Login</span>
+                    <div class="header-submenu" v-if="submenu.status" v-cloak>
+                        <a href="#" class="header-submenu__link">30 Days to Optimal Gut Health</a>
+                        <a href="#" class="header-submenu__link">Type something something</a>
+                        <a href="#" class="header-submenu__link">Integrated BodyTransformation System</a>
+                    </div>
+                </div>
             </nav>
             <a href="#" class="header__btn">Start here</a>
         </div>
@@ -35,8 +46,8 @@
                 <li><a href="#">About us</a></li>
                 <li><a href="#">Free tools</a></li>
                 <li><a href="#">Program</a></li>
-                <li><a href="#">The team</a></li>
                 <li><a href="#">Blog</a></li>
+                <li><a href="#">Login</a></li>
                 <li><a href="#">Start here</a></li>
             </ul>
         </nav>
@@ -83,7 +94,7 @@
                                            v-model="formsFields.age"
                                            v-validate="'required|numeric'"
                                            type="text" name="age"
-                                           placeholder="Enter your age">
+                                           placeholder="Weight Lifted">
                                 </div>
                                 <div class="calc-form__area  calc-form__area_last calc-form__area_laptop">
                                     <p class="calc-form__input-title">Reps</p>

@@ -3,7 +3,7 @@
 
   &_green {
     padding-top: 0;
-    background-image: url("../img/group-47@3x.png");
+    background-image: url("../img/mealplan-mock.png");
     background-repeat: no-repeat;
     background-size: auto 90%;
     background-position: calc(50% - 326px) 0;
@@ -26,7 +26,7 @@
     color: var(--slate);
     line-height: 1.2;
 
-    &::before {
+    /*&::before {
       content: '';
       position: absolute;
       top: 47px;
@@ -36,7 +36,7 @@
       background: url('../img/guthealth-arrow.png') no-repeat center;
       background-size: contain;
 
-    }
+    }*/
   }
 
   &__garanty-title {
@@ -68,7 +68,7 @@
     background-repeat: no-repeat;
     background-position: 0 center;
     background-size: auto 100%;
-    
+
     &_green {
       background-image:none;
     }
@@ -101,6 +101,7 @@
     &__content-wrap {
       padding-left: 0;
       padding-right: 0;
+      background-size: auto 90%;
     }
 
     &_green {
@@ -177,9 +178,9 @@
     }
 
     &__content-wrap {
-      padding-top: 210px;
-      background-position: 60% 0;
-      background-size: auto 220px;
+      padding-top: 260px;
+      background-position: 100% 0;
+      background-size: auto 280px;
     }
 
     &__title {
@@ -213,7 +214,8 @@
       background-image: url("../img/it-s-100-risk-free@3x.png");
       background-repeat: no-repeat;
       background-size: 190px auto;
-      background-position: 30% 95%;
+      background-position: 30% 45%;
+      padding-bottom: 0;
     }
 
     &__garanty-title {
@@ -228,6 +230,7 @@
 
     &__garanty-desc {
       font-size: 16px;
+      margin-top: 40px;
     }
   }
 }

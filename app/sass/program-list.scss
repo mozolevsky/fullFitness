@@ -1,7 +1,7 @@
 .plist-top {
   padding-top: 130px;
   padding-bottom: 150px;
-  background: url('../img/group@3x.jpg') no-repeat center;
+  background: url('../img/nutrition-programs-bg.jpg') no-repeat center;
   background-size: cover;
 
   &__text-wrapper {
@@ -13,11 +13,12 @@
   &__title {
     margin-top: 0;
     font-size: 36px;
-    color: var(--electric-blue);
+    color: $white;
   }
 
   &__desc {
-    color: var(--slate);
+    color: $white;
+    opacity: 0.9;
   }
 }
 
@@ -29,7 +30,7 @@
   &__wrapper {
     position: relative;
     padding-top: 66px;
-    padding-bottom: 160px;
+    //padding-bottom: 160px;
 
     &:after {
       content: '';
@@ -56,6 +57,14 @@
   &__desc {
     margin-bottom: 28px;
     color: var(--slate);
+  }
+  &__img-wrapper {
+    float: left;
+  }
+  &__img {
+    width: 80%;
+    text-align: center;
+    margin-top: 15px;
   }
 
   &__btn {
@@ -110,11 +119,22 @@
     }
 
     &__title {
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+
+    &__desc {
       font-size: 18px;
+      line-height: 22px;
     }
 
     &__btn {
       padding: 12px 23px;
+      width: 100%;
+    }
+
+    &__img-wrapper {
+      text-align: center;
     }
   }
 }

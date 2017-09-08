@@ -19,7 +19,6 @@
       margin-bottom: 30px;
       font-family: 'ff-tisa-web-pro', "Times New Roman", Times, serif;
       font-size: 44px;
-      line-height: 1.2;
       text-align: center;
 
       &_small {
@@ -33,10 +32,11 @@
 
     &-desc {
       margin-bottom: 30px;
-      font-family: 'FreightSans Pro Book', Arial, sans-serif;
+      font-family: 'freight-sans-pro', Arial, sans-serif;
       font-size: 24px;
-      line-height: 1.2;
+      line-height: 28px;
       text-align: center;
+      color: $gunmetal;
     }
   }
 
@@ -53,15 +53,15 @@
 
   &__item-list-point {
     padding-left: 20px;
-    font-family: 'FreightSans Pro Book', Arial, sans-serif;
+    font-family: 'freight-sans-pro', Arial, sans-serif;
     font-size: 20px;
     line-height: 34px;
-    font-weight: 700;
+    font-weight: 600;
     background-image: url("../img/check.svg");
     background-repeat: no-repeat;
     background-position: 0 center;
     background-size: 12px;
-    
+
     &_cross {
       background-image: url("../img/unused_program/crossed.svg");
     }
@@ -102,6 +102,9 @@
 @media (max-width: $xs) {
   .see-results {
     padding-bottom: 0;
+    padding-top: 0px;
+    z-index: 2;
+    position: relative;
 
     &__container {
       width: 100%;
@@ -116,6 +119,8 @@
     &__item-desc {
       margin-bottom: 20px;
       text-align: left;
+      font-size: 20px;
+      line-height: 26px;
     }
 
     &__item-list-block {
@@ -123,4 +128,3 @@
     }
   }
 }
-
