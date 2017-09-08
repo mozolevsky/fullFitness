@@ -595,18 +595,10 @@
 <script src="libs/jquery/dist/jquery.min.js"></script>
 <script src="libs/ellipsis/jquery.ellipsis.min.js"></script>
 <script src="libs/mmenu/jquery.mmenu.js" type="text/javascript"></script>
+<script src="libs/mmenu/addons/navbars/jquery.mmenu.navbars.js" type="text/javascript"></script>
+<link href="libs/mmenu/extensions/fullscreen/jquery.mmenu.fullscreen.css" type="text/css" rel="stylesheet" />
+<link href="libs/mmenu/addons/navbars/jquery.mmenu.navbars.css" type="text/css" rel="stylesheet" />
 <script type="text/javascript">
-    $(document).ready(function() {
-        $("#my-menu").mmenu({
-            // options
-        }, {
-            // configuration
-            offCanvas: {
-                pageSelector: "#app"
-            }
-        });
-    });
-
     function trimString () {
         if (app.windowWidth < 768) {
             $('.js-trim').ellipsis({

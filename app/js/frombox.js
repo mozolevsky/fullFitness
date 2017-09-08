@@ -90,3 +90,32 @@
         }
 })();
 
+$(document).ready(function() {
+    $("#my-menu").mmenu({
+        // options
+        extensions: ["fullscreen"],
+        navbar: {
+            add: false
+        },
+        "navbars": [
+            {
+                "position": "top",
+                height: 2,
+                "content": [
+                    '<a class="mm-menu__inner-logo" href="#"></a>',
+                    '<div class="mm-menu__inner-close" href="#"></div>'
+                ]
+            }
+        ]
+    }, {
+        // configuration
+        offCanvas: {
+            pageSelector: "#app"
+        }
+    });
+    var API = $("#my-menu").data( "mmenu" );
+
+    $(".mm-menu__inner-close").click(function() {
+        API.close();
+    });
+});

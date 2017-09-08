@@ -13,8 +13,6 @@
   &__container {
     width: 702px;
     text-align: center;
-    margin-top: 0;
-    margin-bottom: 100px;
   }
 
   &__title {
@@ -80,6 +78,10 @@
       padding: 40px 50px 55px 50px;
       margin-bottom: 10px;
       width: 580px;
+    }
+
+    &__title {
+      margin-top: 56px;
     }
 
     &__sub-title {
