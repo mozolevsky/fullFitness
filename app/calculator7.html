@@ -87,7 +87,7 @@
                     <transition name="slide1">
                         <div v-if="formHelpers.formStepOne" class="calc__tablet-wrapper">
                             <form class="calc-form calc-form__laptop"
-                                  @submit.prevent="goToSecondStep()">
+                                  @submit.prevent="calcProt()">
 
                                 <div class="calc-form__area calc-form__area_laptop">
                                     <p class="calc-form__input-title">Age</p>
@@ -100,9 +100,9 @@
 
                                 <div class="calc-form__area calc-form__area_laptop">
                                     <p class="calc-form__input-title">Sex</p>
-                                    <select class="calc-form__input calc-form__input_laptop calc-form__input_select">
-                                        <option value="1">Male</option>
-                                        <option value="2">Female</option>
+                                    <select v-model="formsFields.gender" class="calc-form__input calc-form__input_laptop calc-form__input_select">
+                                        <option value="M">Male</option>
+                                        <option value="F">Female</option>
                                     </select>
                                 </div>
 
@@ -171,13 +171,13 @@
                                 <div class="calc-form__area calc-form__area_laptop">
                                     <p class="calc-form__input-title">Goal</p>
                                     <div class="calc-form__radio-area">
-                                        <input id="fatLoss" type="radio" name="goal" value="fat loss" class="calc-form__radio-btn" checked>
+                                        <input v-model="formsFields.goal" id="fatLoss" type="radio" name="goal" value="FL" class="calc-form__radio-btn" checked>
                                         <label for="fatLoss" class="calc-form__radio-lab">Fat Loss</label>
 
-                                        <input id="maintenance" type="radio" name="goal" value="maintenance" class="calc-form__radio-btn">
+                                        <input v-model="formsFields.goal" id="maintenance" type="radio" name="goal" value="M" class="calc-form__radio-btn">
                                         <label for="maintenance" class="calc-form__radio-lab">Maintenance</label>
 
-                                        <input id="muscleGain" type="radio" name="goal" value="muscleGain" class="calc-form__radio-btn">
+                                        <input v-model="formsFields.goal" id="muscleGain" type="radio" name="goal" value="MG" class="calc-form__radio-btn">
                                         <label for="muscleGain" class="calc-form__radio-lab">Muscle Gain</label>
                                     </div>
                                 </div>
@@ -185,16 +185,16 @@
                                 <div class="calc-form__area calc-form__area_last calc-form__area_laptop">
                                     <p class="calc-form__input-title">Activity Level</p>
                                     <div class="calc-form__radio-area">
-                                        <input id="lActivity" type="radio" name="Activity" value="lActivity" class="calc-form__radio-btn" checked>
+                                        <input v-model="formsFields.activity" id="lActivity" type="radio" name="Activity" value="L" class="calc-form__radio-btn" checked>
                                         <label for="lActivity" class="calc-form__radio-lab">Lightly active (moderate exercise but sedentary job)</label>
 
-                                        <input id="mActivity" type="radio" name="Activity" value="mActivity" class="calc-form__radio-btn">
+                                        <input v-model="formsFields.activity" id="mActivity" type="radio" name="Activity" value="M" class="calc-form__radio-btn">
                                         <label for="mActivity" class="calc-form__radio-lab">Moderately active (intense exercise but sedentary job)</label>
 
-                                        <input id="vActivity" type="radio" name="Activity" value="vActivity" class="calc-form__radio-btn">
+                                        <input v-model="formsFields.activity" id="vActivity" type="radio" name="Activity" value="V" class="calc-form__radio-btn">
                                         <label for="vActivity" class="calc-form__radio-lab">Very active (moderate exercise and active job)</label>
 
-                                        <input id="eActivity" type="radio" name="Activity" value="eActivity" class="calc-form__radio-btn">
+                                        <input v-model="formsFields.activity" id="eActivity" type="radio" name="Activity" value="E" class="calc-form__radio-btn">
                                         <label for="eActivity" class="calc-form__radio-lab">Extra active (intense exercise and active job)</label>
                                     </div>
 
@@ -223,7 +223,7 @@
                                 <div class="bmr__circle">
                                     <div class="bmr__circle-item bmr__circle-item_low">
                                         <div class="bmr__circle-item_inner">
-                                            <span class="bmr__circle-title">399</span>
+                                            <span class="bmr__circle-title">{{ formsFields.proteins }}</span>
                                             <span class="bmr__circle-desc">GRAMS</span>
                                         </div>
                                     </div>

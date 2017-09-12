@@ -42,6 +42,16 @@ let app = new Vue({
             firstValidCounter: 0
         },
         formsFields: {
+            tdee: '',
+            fm: '',
+            lm: '',
+            bodyFat: 0,
+            calories: '',
+            fat: '',
+            proteins: '',
+            carbs: '',
+            activity: '',
+            goal: 'FL',
             water: '',
             workoutTime: 'L',
             creatine: '',
@@ -62,8 +72,7 @@ let app = new Vue({
             email: '',
             skinfold1: '',
             skinfold2: '',
-            skinfold3: '',
-            fat: ''
+            skinfold3: ''
         }
     },
     methods: {
@@ -212,6 +221,356 @@ let app = new Vue({
                    break;
            }
 
+           this.goToSecondStep();
+       },
+       calcCarb() {
+           let height;
+           let weight;
+           let calories;
+
+           if (!this.formHelpers.heightUnitChecked) {
+               height = ((this.formsFields.heightFeet * 30.48) + (this.formsFields.heightInches * 2.54));
+           }
+           else {
+               height = this.formsFields.heightCm;
+           }
+
+           if (!this.formHelpers.weightUnitChecked) {
+               weight = (this.formsFields.weightLbs * 0.453592);
+           } else {
+               weight = this.formsFields.weightKg;
+           }
+
+           if (this.formsFields.gender == "M") {
+               calories = Math.round((weight * 10) + (height * 6.25) - (this.formsFields.age * 5) + 5);
+           }
+           else {
+               calories = Math.round((weight * 10) + (height * 6.25) - (this.formsFields.age * 5) - 161);
+           }
+
+           switch (this.formsFields.activity) {
+               case "L":
+                   calories = Math.round(calories * 1.1);
+                   break;
+               case "M":
+                   calories = Math.round(calories * 1.3);
+                   break;
+               case "V":
+                   calories = Math.round(calories * 1.5);
+                   break;
+               case "E":
+                   calories = Math.round(calories * 1.7);
+                   break;
+           }
+
+           switch (this.formsFields.goal) {
+               case "FM":
+                   if (calories <= 2000) calories = 0.9 * calories;
+                   if (calories > 2000) calories = 0.8 * calories;
+                   this.formsFields.carbs = Math.round(0.40 * calories / 4);
+                   break;
+               case "M":
+                   this.formsFields.carbs = Math.round(0.45 * calories / 4);
+                   break;
+               case "MG":
+                   calories += 500;
+                   this.formsFields.carbs = Math.round(0.45 * calories / 4);
+                   break;
+           }
+           this.goToSecondStep();
+       },
+       calcProt() {
+           let height;
+           let weight;
+           let calories;
+
+           if (!this.formHelpers.heightUnitChecked) {
+               height = ((this.formsFields.heightFeet * 30.48) + (this.formsFields.heightInches * 2.54));
+           }
+           else {
+               height = this.formsFields.heightCm;
+           }
+
+           if (!this.formHelpers.weightUnitChecked) {
+               weight = (this.formsFields.weightLbs * 0.453592);
+           } else {
+               weight = this.formsFields.weightKg;
+           }
+
+           if (this.formsFields.gender == "M") {
+               calories = Math.round((weight * 10) + (height * 6.25) - (this.formsFields.age * 5) + 5);
+           }
+           else {
+               calories = Math.round((weight * 10) + (height * 6.25) - (this.formsFields.age * 5) - 161);
+           }
+
+           switch (this.formsFields.activity) {
+               case "L":
+                   calories = Math.round(calories * 1.1);
+                   break;
+               case "M":
+                   calories = Math.round(calories * 1.3);
+                   break;
+               case "V":
+                   calories = Math.round(calories * 1.5);
+                   break;
+               case "E":
+                   calories = Math.round(calories * 1.7);
+                   break;
+           }
+
+           switch (this.formsFields.goal) {
+               case "FM":
+                   if (calories <= 2000) calories = 0.9 * calories;
+                   if (calories > 2000) calories = 0.8 * calories;
+                   this.formsFields.proteins = Math.round(0.4 * calories / 4);
+                   break;
+               case "M":
+                   this.formsFields.proteins = Math.round(0.3 * calories / 4);
+                   break;
+               case "MG":
+                   calories += 500;
+                   this.formsFields.proteins = Math.round(0.3 * calories / 4);
+                   break;
+           }
+           this.goToSecondStep();
+       },
+       calcFat() {
+           let height;
+           let weight;
+           let calories;
+
+           if (!this.formHelpers.heightUnitChecked) {
+               height = ((this.formsFields.heightFeet * 30.48) + (this.formsFields.heightInches * 2.54));
+           }
+           else {
+               height = this.formsFields.heightCm;
+           }
+
+           if (!this.formHelpers.weightUnitChecked) {
+               weight = (this.formsFields.weightLbs * 0.453592);
+           } else {
+               weight = this.formsFields.weightKg;
+           }
+
+           if (this.formsFields.gender == "M") {
+               calories = Math.round((weight * 10) + (height * 6.25) - (this.formsFields.age * 5) + 5);
+           }
+           else {
+               calories = Math.round((weight * 10) + (height * 6.25) - (this.formsFields.age * 5) - 161);
+           }
+
+           switch (this.formsFields.activity) {
+               case "L":
+                   calories = Math.round(calories * 1.1);
+                   break;
+               case "M":
+                   calories = Math.round(calories * 1.3);
+                   break;
+               case "V":
+                   calories = Math.round(calories * 1.5);
+                   break;
+               case "E":
+                   calories = Math.round(calories * 1.7);
+                   break;
+           }
+
+           switch (this.formsFields.goal) {
+               case "FM":
+                   if (calories <= 2000) calories = 0.9 * calories;
+                   if (calories > 2000) calories = 0.8 * calories;
+                   this.formsFields.fat = Math.round(0.2 * calories / 9);
+                   break;
+               case "M":
+                   this.formsFields.fat = Math.round(0.25 * calories / 9);
+                   break;
+               case "MG":
+                   calories += 500;
+                   this.formsFields.fat = Math.round(0.25 * calories / 9);
+                   break;
+           }
+           this.goToSecondStep();
+       },
+       calcMacroNut() {
+           let height;
+           let weight;
+           let calories;
+
+           if (!this.formHelpers.heightUnitChecked) {
+               height = ((this.formsFields.heightFeet * 30.48) + (this.formsFields.heightInches * 2.54));
+           }
+           else {
+               height = this.formsFields.heightCm;
+           }
+
+           if (!this.formHelpers.weightUnitChecked) {
+               weight = (this.formsFields.weightLbs * 0.453592);
+           } else {
+               weight = this.formsFields.weightKg;
+           }
+
+           if (this.formsFields.gender == "M") {
+               calories = Math.round((weight * 10) + (height * 6.25) - (this.formsFields.age * 5) + 5);
+           }
+           else {
+               calories = Math.round((weight * 10) + (height * 6.25) - (this.formsFields.age * 5) - 161);
+           }
+
+           switch (this.formsFields.activity) {
+               case "L":
+                   calories = Math.round(calories * 1.1);
+                   break;
+               case "M":
+                   calories = Math.round(calories * 1.3);
+                   break;
+               case "V":
+                   calories = Math.round(calories * 1.5);
+                   break;
+               case "E":
+                   calories = Math.round(calories * 1.7);
+                   break;
+           }
+
+           switch (this.formsFields.goal) {
+               case "FM":
+                   if (calories <= 2000) calories = 0.9 * calories;
+                   if (calories > 2000) calories = 0.8 * calories;
+                   this.formsFields.carbs = Math.round(0.40 * calories / 4);
+                   this.formsFields.proteins = Math.round(0.40 * calories / 4);
+                   this.formsFields.fat = Math.round(0.2 * calories / 9);
+                   break;
+               case "M":
+                   this.formsFields.carbs = Math.round(0.45 * calories / 4);
+                   this.formsFields.proteins = Math.round(0.30 * calories / 4);
+                   this.formsFields.fat = Math.round(0.25 * calories / 9);
+                   break;
+               case "MG":
+                   calories += 500;
+                   this.formsFields.carbs = Math.round(0.45 * calories / 4);
+                   this.formsFields.proteins = Math.round(0.30 * calories / 4);
+                   this.formsFields.fat = Math.round(0.25 * calories / 9);
+                   break;
+           }
+           this.goToSecondStep();
+       },
+       calcCalories() {
+           let height;
+           let weight;
+           let calories = this.formsFields.calories;
+
+           if (!this.formHelpers.heightUnitChecked) {
+               height = ((this.formsFields.heightFeet * 30.48) + (this.formsFields.heightInches * 2.54));
+           }
+           else {
+               height = this.formsFields.heightCm;
+           }
+
+           if (!this.formHelpers.weightUnitChecked) {
+               weight = (this.formsFields.weightLbs * 0.453592);
+           } else {
+               weight = this.formsFields.weightKg;
+           }
+
+           if (this.formsFields.gender == "M") {
+               calories = Math.round((weight * 10) + (height * 6.25) - (this.formsFields.age * 5) + 5);
+           }
+           else {
+               calories = Math.round((weight * 10) + (height * 6.25) - (this.formsFields.age * 5) - 161);
+           }
+
+           switch (this.formsFields.activity) {
+               case "L":
+                   calories = Math.round(calories * 1.1);
+                   break;
+               case "M":
+                   calories = Math.round(calories * 1.3);
+                   break;
+               case "V":
+                   calories = Math.round(calories * 1.5);
+                   break;
+               case "E":
+                   calories = Math.round(calories * 1.7);
+                   break;
+           }
+
+           switch (this.formsFields.goal) {
+               case "FM":
+                   if (calories <= 2000) calories = 0.9 * calories;
+                   if (calories > 2000) calories = 0.8 * calories;
+                   break;
+               case "M":
+                   break;
+               case "MG":
+                   calories += 500;
+                   break;
+           }
+
+           this.formsFields.calories = calories;
+           this.goToSecondStep();
+       },
+       calcFatPerc() {
+           let weight;
+           let sum = (Number(this.formsFields.skinfold1) + Number(this.formsFields.skinfold2) + Number(this.formsFields.skinfold3));
+           console.log(sum);
+
+           if (!this.formHelpers.weightUnitChecked) {
+               weight = this.formsFields.weightLbs;
+           } else {
+               weight = this.formsFields.weightKg;
+           }
+
+           if (this.formsFields.gender == 'M') {
+               this.formsFields.bodyFat = Math.round((495 / (1.10938 - (0.0008267*sum) + (0.0000016*sum*sum) - (0.0002574 * this.formsFields.age)) - 450) * 10) / 10;
+           } else {
+               this.formsFields.bodyFat = Math.round((495 / (1.089733 - (0.0009245*sum) + (0.0000025*sum*sum) - (0.0000979 * this.formsFields.age)) - 450) * 10) / 10;
+           }
+
+           this.formsFields.fm = Math.round(weight * (this.formsFields.bodyFat / 100) * 10) / 10;
+           this.formsFields.lm = weight - this.formsFields.fm;
+
+           this.goToSecondStep();
+       },
+       calcTdee() {
+           let height;
+           let weight;
+           let tdee = this.formsFields.tdee;
+
+           if (!this.formHelpers.heightUnitChecked) {
+               height = ((this.formsFields.heightFeet * 30.48) + (this.formsFields.heightInches * 2.54));
+           }
+           else {
+               height = this.formsFields.heightCm;
+           }
+
+           if (!this.formHelpers.weightUnitChecked) {
+               weight = (this.formsFields.weightLbs * 0.453592);
+           } else {
+               weight = this.formsFields.weightKg;
+           }
+
+           if (this.formsFields.gender == "M") {
+               tdee = ((weight * 10) + (height * 6.25) - (this.formsFields.age * 5) + 5);
+           }
+           else {
+               tdee = ((weight * 10) + (height * 6.25) - (this.formsFields.age * 5) - 161);
+           }
+
+           switch (this.formsFields.activity) {
+               case "L":
+                   tdee = Math.round(tdee * 1.1);
+                   break;
+               case "M":
+                   tdee = Math.round(tdee * 1.3);
+                   break;
+               case "V":
+                   tdee = Math.round(tdee * 1.5);
+                   break;
+               case "E":
+                   tdee = Math.round(tdee * 1.7);
+                   break;
+           }
+
+           this.formsFields.tdee = tdee;
            this.goToSecondStep();
        }
     },
