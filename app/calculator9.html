@@ -87,7 +87,7 @@
                     <transition name="slide1">
                         <div v-if="formHelpers.formStepOne" class="calc__tablet-wrapper">
                             <form class="calc-form calc-form__laptop"
-                                  @submit.prevent="goToSecondStep()">
+                                  @submit.prevent="calcRmr()">
 
                                 <div class="calc-form__area calc-form__area_laptop">
                                     <p class="calc-form__input-title">Age</p>
@@ -100,9 +100,9 @@
 
                                 <div class="calc-form__area calc-form__area_laptop">
                                     <p class="calc-form__input-title">Sex</p>
-                                    <select class="calc-form__input calc-form__input_laptop calc-form__input_select">
-                                        <option value="1">Male</option>
-                                        <option value="2">Female</option>
+                                    <select v-model="formsFields.gender" class="calc-form__input calc-form__input_laptop calc-form__input_select">
+                                        <option value="M">Male</option>
+                                        <option value="F">Female</option>
                                     </select>
                                 </div>
 
@@ -191,7 +191,7 @@
                                 <div class="bmr__circle">
                                     <div class="bmr__circle-item bmr__circle-item_low">
                                         <div class="bmr__circle-item_inner">
-                                            <span class="bmr__circle-title">6803</span>
+                                            <span class="bmr__circle-title">{{ formsFields.rmr }}</span>
                                             <span class="bmr__circle-desc">CALORIES/DAY</span>
                                         </div>
                                     </div>

@@ -87,7 +87,7 @@
                     <transition name="slide1">
                         <div v-if="formHelpers.formStepOne" class="calc__tablet-wrapper">
                             <form class="calc-form calc-form__laptop"
-                                  @submit.prevent="goToSecondStep()">
+                                  @submit.prevent="calcCreatine()">
                                 <div class="calc-form__area calc-form__area_laptop">
                                     <div class="calc-form__input-group calc-form__input-group_laptop">
                                         <p class="calc-form__input-title">Weight</p>
@@ -139,7 +139,7 @@
                                 <div class="bmr__circle">
                                     <div class="bmr__circle-item bmr__circle-item_low">
                                         <div class="bmr__circle-item_inner">
-                                            <span class="bmr__circle-title">3</span>
+                                            <span class="bmr__circle-title">{{ this.formsFields.creatine }}</span>
                                             <span class="bmr__circle-desc">Ounces</span>
                                         </div>
                                     </div>

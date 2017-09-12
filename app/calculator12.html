@@ -87,7 +87,7 @@
                     <transition name="slide1">
                         <div v-if="formHelpers.formStepOne" class="calc__tablet-wrapper">
                             <form class="calc-form calc-form__laptop"
-                                  @submit.prevent="goToSecondStep()">
+                                  @submit.prevent="calcWater()">
 
                                 <div class="calc-form__area calc-form__area_laptop">
                                     <div class="calc-form__input-group calc-form__input-group_laptop">
@@ -120,13 +120,32 @@
                                 <div class="calc-form__area calc-form__area_laptop">
                                     <p class="calc-form__input-title">TOTAL DAILY WORKOUT TIME</p>
                                     <div class="calc-form__radio-area">
-                                        <input id="workout-1" type="radio" name="workoutTime" value="Less then one hour" class="calc-form__radio-btn" checked>
+                                        <input
+                                                v-model="formsFields.workoutTime"
+                                                id="workout-1"
+                                                type="radio"
+                                                name="workoutTime"
+                                                value="L"
+                                                class="calc-form__radio-btn"
+                                                checked>
                                         <label for="workout-1" class="calc-form__radio-lab">Less than an hour</label>
 
-                                        <input id="workout-2" type="radio" name="workoutTime" value="One hour" class="calc-form__radio-btn">
+                                        <input
+                                                v-model="formsFields.workoutTime"
+                                                id="workout-2"
+                                                type="radio"
+                                                name="workoutTime"
+                                                value="M"
+                                                class="calc-form__radio-btn">
                                         <label for="workout-2" class="calc-form__radio-lab">One hour</label>
 
-                                        <input id="workout-3" type="radio" name="workoutTime" value="More then one hour" class="calc-form__radio-btn">
+                                        <input
+                                                v-model="formsFields.workoutTime"
+                                                id="workout-3"
+                                                type="radio"
+                                                name="workoutTime"
+                                                value="V"
+                                                class="calc-form__radio-btn">
                                         <label for="workout-3" class="calc-form__radio-lab">More than an hour</label>
                                     </div>
                                 </div>
@@ -154,8 +173,8 @@
                                 <div class="bmr__circle">
                                     <div class="bmr__circle-item bmr__circle-item_low">
                                         <div class="bmr__circle-item_inner">
-                                            <span class="bmr__circle-title">57</span>
-                                            <span class="bmr__circle-desc">Ounces</span>
+                                            <span class="bmr__circle-title">{{ formsFields.water }}</span>
+                                            <span class="bmr__circle-desc">OZ</span>
                                         </div>
                                     </div>
                                 </div>

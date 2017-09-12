@@ -87,7 +87,7 @@
                     <transition name="slide1">
                         <div v-if="formHelpers.formStepOne" class="calc__tablet-wrapper">
                             <form class="calc-form calc-form__laptop"
-                                  @submit.prevent="goToSecondStep()">
+                                  @submit.prevent="calcLeanBodyMass()">
 
                                 <div class="calc-form__area calc-form__area_laptop">
                                     <div class="calc-form__input-group calc-form__input-group_laptop">
@@ -149,8 +149,8 @@
                                 <div class="bmr__circle">
                                     <div class="bmr__circle-item bmr__circle-item_low">
                                         <div class="bmr__circle-item_inner">
-                                            <span class="bmr__circle-title">17.2</span>
-                                            <span class="bmr__circle-desc">lbs</span>
+                                            <span class="bmr__circle-title">{{ formsFields.lbm }}</span>
+                                            <span class="bmr__circle-desc">{{ weightUnit }}</span>
                                         </div>
                                     </div>
                                 </div>

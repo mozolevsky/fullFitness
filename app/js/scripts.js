@@ -42,6 +42,13 @@ let app = new Vue({
             firstValidCounter: 0
         },
         formsFields: {
+            water: '',
+            workoutTime: 'L',
+            creatine: '',
+            rmr: '',
+            bmr: '',
+            gender: 'M',
+            lbm: '0',
             reps: '1',
             weightLifted: '',
             oneRepMax: '',
@@ -59,7 +66,7 @@ let app = new Vue({
             fat: ''
         }
     },
-   methods: {
+    methods: {
        goToSecondStep() {
             this.$validator.validateAll().then((result) => {
                 if (result) {
@@ -108,6 +115,104 @@ let app = new Vue({
        calcOneRm() {
            this.formsFields.oneRepMax = Math.round(this.formsFields.weightLifted / this.formsFields.reps);
            this.goToSecondStep();
+       },
+       calcLeanBodyMass() {
+            if (!this.formHelpers.weightUnitChecked) {
+                this.formsFields.lbm = Math.round((1 - this.bodyFat) * this.formsFields.weightLbs * 10) / 10;
+            } else {
+                this.formsFields.lbm = Math.round((1 - this.bodyFat) * this.formsFields.weightKg * 10) / 10;
+            }
+            this.goToSecondStep();
+       },
+       calcBmr() {
+           let height;
+           let weight;
+
+           if (!this.formHelpers.heightUnitChecked) {
+               height = ((this.formsFields.heightFeet * 30.48) + (this.formsFields.heightInches * 2.54));
+           }
+           else {
+               height = this.formsFields.heightCm;
+           }
+
+           if (!this.formHelpers.weightUnitChecked) {
+               weight = (this.formsFields.weightLbs * 0.453592);
+           } else {
+               weight = this.formsFields.weightKg;
+           }
+
+           if (this.formsFields.gender == "M") {
+               this.formsFields.bmr = Math.round(66.5 + (weight * 13.75) + (height * 5.003) - (this.formsFields.age * 6.755));
+           }
+           else {
+               this.formsFields.bmr = Math.round(655 + (weight * 9.563) + (height * 1.850) - (this.formsFields.age * 4.676));
+           }
+
+           this.goToSecondStep();
+       },
+       calcRmr() {
+           let height;
+           let weight;
+
+           if (!this.formHelpers.heightUnitChecked) {
+               height = ((this.formsFields.heightFeet * 30.48) + (this.formsFields.heightInches * 2.54));
+           }
+           else {
+               height = this.formsFields.heightCm;
+           }
+
+           if (!this.formHelpers.weightUnitChecked) {
+               weight = (this.formsFields.weightLbs * 0.453592);
+           } else {
+               weight = this.formsFields.weightKg;
+           }
+
+           if (this.formsFields.gender == "M") {
+               this.formsFields.rmr = Math.round((weight * 9.99) + (height * 6.25) - (this.formsFields.age * 4.92) + 5);
+           }
+           else {
+               this.formsFields.rmr = Math.round((weight * 9.99) + (height * 6.25) - (this.formsFields.age * 4.92) + 161);
+           }
+
+           this.goToSecondStep();
+       },
+       calcCreatine() {
+           let weight;
+
+           if (this.formHelpers.weightUnitChecked) {
+               weight = this.formsFields.weightKg * 2.20462;
+           } else {
+               weight = this.formsFields.weightLbs;
+           }
+
+           if (weight < 120) this.formsFields.creatine = 3;
+           if (weight > 119 && weight < 201) this.formsFields.creatine = 5;
+           if (weight > 200) this.formsFields.creatine = 8;
+
+           this.goToSecondStep();
+       },
+       calcWater() {
+           let weight;
+
+           if (this.formHelpers.weightUnitChecked) {
+               weight = this.formsFields.weightKg * 2.20462;
+           } else {
+               weight = this.formsFields.weightLbs;
+           }
+
+           switch (this.formsFields.workoutTime) {
+               case "L":
+                   this.formsFields.water = Math.round(weight * 0.6 + 12);
+                   break;
+               case "M":
+                   this.formsFields.water = Math.round(weight * 0.6 + 24);
+                   break;
+               case "V":
+                   this.formsFields.water = Math.round(weight * 0.6 + 36);
+                   break;
+           }
+
+           this.goToSecondStep();
        }
     },
     computed: {
@@ -152,6 +257,9 @@ let app = new Vue({
         },
         oneRm50() {
             return Math.round(this.formsFields.oneRepMax * 0.5);
+        },
+        bodyFat() {
+            return this.formsFields.fat / 100;
         }
     }
 });
