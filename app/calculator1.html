@@ -87,21 +87,31 @@
                     <transition name="slide1">
                         <div v-if="formHelpers.formStepOne" class="calc__tablet-wrapper">
                             <form class="calc-form calc-form__laptop"
-                                  @submit.prevent="goToSecondStep()">
+                                  @submit.prevent="calcOneRm()">
                                 <div class="calc-form__area calc-form__area_laptop">
                                     <p class="calc-form__input-title">Weight Lifted</p>
                                     <input class="calc-form__input calc-form__input_laptop"
-                                           v-model="formsFields.age"
+                                           v-model="formsFields.weightLifted"
                                            v-validate="'required|numeric'"
-                                           type="text" name="age"
+                                           type="text" name="weightLifted"
                                            placeholder="Weight Lifted">
                                 </div>
                                 <div class="calc-form__area  calc-form__area_last calc-form__area_laptop">
                                     <p class="calc-form__input-title">Reps</p>
-                                    <select class="calc-form__input calc-form__input_laptop calc-form__input_select">
+                                    <select class="calc-form__input calc-form__input_laptop calc-form__input_select"
+                                    v-model="formsFields.reps">
                                         <option value="1">1</option>
-                                        <option value="2">2</option>
-                                        <option value="3">3</option>1
+                                        <option value="0.95">2</option>
+                                        <option value="0.93">3</option>
+                                        <option value="0.9">4</option>
+                                        <option value="0.87">5</option>
+                                        <option value="0.85">6</option>
+                                        <option value="0.83">7</option>
+                                        <option value="0.8">8</option>
+                                        <option value="0.77">9</option>
+                                        <option value="0.75">10</option>
+                                        <option value="0.73">11</option>
+                                        <option value="0.70">12</option>
                                     </select>
                                 </div>
                                 <div class="calc-form__area calc-form__area_laptop">
@@ -127,7 +137,7 @@
                                 <div class="bmr__circle">
                                     <div class="bmr__circle-item">
                                         <div class="bmr__circle-item_inner">
-                                            <span class="bmr__circle-title">4,232</span>
+                                            <span class="bmr__circle-title">{{ formsFields.oneRepMax }}</span>
                                             <span class="bmr__circle-desc">calories / day</span>
                                         </div>
                                     </div>
@@ -137,39 +147,46 @@
 
                                 <div class="bmr__fields-area">
                                     <div class="bmr__field-area">
-                                        <p class="calc-form__input-title">90% ONE-RM</p>
+                                        <p class="calc-form__input-title">95% ONE-RM</p>
                                         <input class="calc-form__input calc-form__input_laptop"
-                                               v-model="formsFields.oneRm90"
-                                               v-validate="'required|numeric'"
-                                               type="text" name="oneRm90"
-                                               placeholder="29">
+                                               v-model="oneRm95"
+                                               type="text" name="oneRm95">
                                     </div>
                                     <div class="bmr__field-area">
-                                        <p class="calc-form__input-title">65% ONE-RM</p>
+                                        <p class="calc-form__input-title">70% ONE-RM</p>
                                             <input class="calc-form__input calc-form__input_laptop"
-                                                   v-model="formsFields.oneRm65"
-                                                   v-validate="'required|numeric'"
-                                                   type="text" name="oneRm65"
-                                                   placeholder="29">
+                                                   v-model="oneRm70"
+                                                   type="text" name="oneRm70">
                                     </div>
                                 </div>
 
                                 <div class="bmr__fields-area">
                                     <div class="bmr__field-area">
-                                        <p class="calc-form__input-title">85% ONE-RM</p>
+                                        <p class="calc-form__input-title">90% ONE-RM</p>
                                         <input class="calc-form__input calc-form__input_laptop"
-                                               v-model="formsFields.oneRm85"
-                                               v-validate="'required|numeric'"
-                                               type="text" name="oneRm85"
-                                               placeholder="29">
+                                               v-model="oneRm90"
+                                               type="text" name="oneRm90">
                                     </div>
                                     <div class="bmr__field-area">
-                                        <p class="calc-form__input-title">60% ONE-RM</p>
+                                        <p class="calc-form__input-title">65% ONE-RM</p>
                                             <input class="calc-form__input calc-form__input_laptop"
-                                                   v-model="formsFields.oneRm60"
-                                                   v-validate="'required|numeric'"
-                                                   type="text" name="oneRm60"
-                                                   placeholder="29">
+                                                   v-model="oneRm65"
+                                                   type="text" name="oneRm65">
+                                    </div>
+                                </div>
+
+                                <div class="bmr__fields-area bmr__fields-area_last">
+                                    <div class="bmr__field-area">
+                                        <p class="calc-form__input-title">85% ONE-RM</p>
+                                        <input class="calc-form__input calc-form__input_laptop"
+                                               v-model="oneRm85"
+                                               type="text" name="oneRm85">
+                                    </div>
+                                    <div class="bmr__field-area bmr__field-area_last">
+                                        <p class="calc-form__input-title">60% ONE-RM</p>
+                                        <input class="calc-form__input calc-form__input_laptop"
+                                               v-model="oneRm60"
+                                               type="text" name="oneRm60">
                                     </div>
                                 </div>
 
@@ -177,18 +194,29 @@
                                     <div class="bmr__field-area">
                                         <p class="calc-form__input-title">80% ONE-RM</p>
                                         <input class="calc-form__input calc-form__input_laptop"
-                                               v-model="formsFields.oneRm80"
-                                               v-validate="'required|numeric'"
-                                               type="text" name="oneRm80"
-                                               placeholder="29">
+                                               v-model="oneRm80"
+                                               type="text" name="oneRm55">
                                     </div>
                                     <div class="bmr__field-area bmr__field-area_last">
                                         <p class="calc-form__input-title">55% ONE-RM</p>
-                                            <input class="calc-form__input calc-form__input_laptop"
-                                                   v-model="formsFields.oneRm55"
-                                                   v-validate="'required|numeric'"
-                                                   type="text" name="oneRm55"
-                                                   placeholder="29">
+                                        <input class="calc-form__input calc-form__input_laptop"
+                                               v-model="oneRm55"
+                                               type="text" name="oneRm55">
+                                    </div>
+                                </div>
+
+                                <div class="bmr__fields-area bmr__fields-area_last">
+                                    <div class="bmr__field-area">
+                                        <p class="calc-form__input-title">75% ONE-RM</p>
+                                        <input class="calc-form__input calc-form__input_laptop"
+                                               v-model="oneRm75"
+                                               type="text" name="oneRm75">
+                                    </div>
+                                    <div class="bmr__field-area bmr__field-area_last">
+                                        <p class="calc-form__input-title">50% ONE-RM</p>
+                                        <input class="calc-form__input calc-form__input_laptop"
+                                               v-model="oneRm50"
+                                               type="text" name="oneRm50">
                                     </div>
                                 </div>
 

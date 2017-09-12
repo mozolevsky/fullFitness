@@ -42,6 +42,9 @@ let app = new Vue({
             firstValidCounter: 0
         },
         formsFields: {
+            reps: '1',
+            weightLifted: '',
+            oneRepMax: '',
             weightLbs: '',
             weightKg: '',
             heightCm: '',
@@ -50,14 +53,6 @@ let app = new Vue({
             age: '',
             name: '',
             email: '',
-            oneRm90: '',
-            oneRm85: '',
-            oneRm80: '',
-            oneRm75: '',
-            oneRm70: '',
-            oneRm65: '',
-            oneRm60: '',
-            oneRm55: '',
             skinfold1: '',
             skinfold2: '',
             skinfold3: '',
@@ -65,7 +60,7 @@ let app = new Vue({
         }
     },
    methods: {
-        goToSecondStep: function() {
+       goToSecondStep() {
             this.$validator.validateAll().then((result) => {
                 if (result) {
                     this.formHelpers.calcOverlay = true;
@@ -80,7 +75,7 @@ let app = new Vue({
                 console.log('Correct them errors!');
             });
         },
-       submitForm: function() {
+       submitForm() {
              this.$validator.validateAll().then((result) => {
                 if (result) {
                     // here code for pass form data
@@ -88,7 +83,7 @@ let app = new Vue({
                 }
             });
        },
-       sendViaAjax: function() {
+       sendViaAjax() {
            let dataForServer = {};
 
            for (let key in this.formsFields) {
@@ -109,6 +104,10 @@ let app = new Vue({
                    console.log('We did not succeed!');
                }
            });
+       },
+       calcOneRm() {
+           this.formsFields.oneRepMax = Math.round(this.formsFields.weightLifted / this.formsFields.reps);
+           this.goToSecondStep();
        }
     },
     computed: {
@@ -123,6 +122,36 @@ let app = new Vue({
         },
         heightUnitReverse() {
             return this.formHelpers.heightUnitChecked ? 'ft' : 'cm';
+        },
+        oneRm95() {
+            return Math.round(this.formsFields.oneRepMax * 0.95);
+        },
+        oneRm90() {
+            return Math.round(this.formsFields.oneRepMax * 0.90);
+        },
+        oneRm85() {
+            return Math.round(this.formsFields.oneRepMax * 0.85);
+        },
+        oneRm80() {
+            return Math.round(this.formsFields.oneRepMax * 0.8);
+        },
+        oneRm75() {
+            return Math.round(this.formsFields.oneRepMax * 0.75);
+        },
+        oneRm70() {
+            return Math.round(this.formsFields.oneRepMax * 0.7);
+        },
+        oneRm65() {
+            return Math.round(this.formsFields.oneRepMax * 0.65);
+        },
+        oneRm60() {
+            return Math.round(this.formsFields.oneRepMax * 0.6);
+        },
+        oneRm55() {
+            return Math.round(this.formsFields.oneRepMax * 0.55);
+        },
+        oneRm50() {
+            return Math.round(this.formsFields.oneRepMax * 0.5);
         }
     }
 });
