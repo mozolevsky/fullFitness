@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Landing</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/normalize.min.css">
+    <link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap.min.css">
+    <link href="libs/mmenu/jquery.mmenu.css" type="text/css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/main.min.css">
+    <script src="https://use.typekit.net/pca4zir.js"></script>
+    <script>try{Typekit.load({ async: true });}catch(e){}</script>
+</head>
+<body>
+
+
+<div id="app">
+    <header class="header">
+        <a href="#" class="header__logo">
+            <picture>
+                <source srcset="img/logo-header.svg" media="(max-width: 991px)">
+                <source srcset="img/logo-header.svg">
+                <img class="header__logo-img" src="img/logo-header.svg" alt="">
+            </picture>
+        </a>
+
+        <div class="header__nav-wrapper">
+            <nav class="header__nav">
+                <a href="#" class="header__nav-link">About Us</a>
+                <a href="#" class="header__nav-link">Free tools</a>
+                <a href="#" class="header__nav-link">Program</a>
+                <a href="#" class="header__nav-link">Blog</a>
+                <div href="#" class="header__nav-link header__nav-link_login" @click="submenu.status = !submenu.status">
+                    <span>Login</span>
+                    <div class="header-submenu" v-if="submenu.status" v-cloak>
+                        <a href="#" class="header-submenu__link">30 Days to Optimal Gut Health</a>
+                        <a href="#" class="header-submenu__link">Type something something</a>
+                        <a href="#" class="header-submenu__link">Integrated BodyTransformation System</a>
+                    </div>
+                </div>
+            </nav>
+            <a href="#" class="header__btn">Start here</a>
+        </div>
+
+        <nav id="my-menu">
+            <ul>
+                <li><a href="#">About us</a></li>
+                <li><a href="#">Free tools</a></li>
+                <li><a href="#">Program</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Login</a></li>
+                <li><a href="#">Start here</a></li>
+            </ul>
+        </nav>
+
+        <a class="header__burger" href="#my-menu">
+            <div class="header__burger-dash header__burger-dash__top"></div>
+            <div class="header__burger-dash header__burger-dash__middle"></div>
+            <div class="header__burger-dash header__burger-dash__bottom"></div>
+        </a>
+    </header>
+
+    <section class="pgeneral pgeneral_first">
+        <div class="container pgeneral__line">
+            <div class="row">
+                <div class="col-md-7 col-sm-push-5 col-sm-6 col-xs-12">
+                    <div class="pgeneral__img-wrapper">
+                        <img src="img/shutterstock-638555473-1-copy@3x.jpg" alt="" class="pgeneral__img">
+                    </div>
+                </div>
+                <div class="col-md-5 col-sm-pull-6 col-md-offset-0 col-sm-5 col-sm-offset-1 col-xs-12 col-xs-offset-0">
+                    <div class="pgeneral__text-block">
+                        <h5 class="pgeneral__title">Fitness Programs</h5>
+                        <p class="pgeneral__desc">All of your workouts have been put together for you in a scientifically proven…
+                            in this calendar.. just follow the calendar. All of your workouts have been put together for you in a
+                            scientifically proven… in this calendar.. just follow the calendar…
+                        </p>
+                        <p class="pgeneral__desc pgeneral__desc_last">All of your workouts have been put together for you in a scientifically proven…
+                            in this calendar.. just follow the calendar…
+                        </p>
+                        <a href="" class="pgeneral__btn">Start here</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="pgeneral pgeneral__line">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-7 col-sm-6 col-xs-12">
+                    <div class="pgeneral__img-wrapper nutrition">
+                        <img src="img/nutrition-programs-hero.jpg" alt="" class="pgeneral__img">
+                    </div>
+                </div>
+                <div class="col-md-5 col-sm-5 col-xs-12">
+                    <div class="pgeneral__text-block">
+                        <h5 class="pgeneral__title">Nutrition Programs</h5>
+                        <p class="pgeneral__desc">All of your workouts have been put together for you in a scientifically proven…
+                            in this calendar.. just follow the calendar. All of your workouts have been put together for you in a
+                            scientifically proven… in this calendar.. just follow the calendar…
+                        </p>
+                        <p class="pgeneral__desc pgeneral__desc_last">All of your workouts have been put together for you in a scientifically proven…
+                            in this calendar.. just follow the calendar…
+                        </p>
+                        <a href="" class="pgeneral__btn">Start here</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="pgeneral">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-7 col-sm-push-5 col-sm-6 col-xs-12">
+                    <div class="pgeneral__img-wrapper">
+                        <img src="img/shutterstock-573103063@3x.jpg" alt="" class="pgeneral__img">
+                    </div>
+                </div>
+                <div class="col-md-5 col-sm-pull-6 col-md-offset-0 col-sm-5 col-sm-offset-1 col-xs-12 col-xs-offset-0">
+                    <div class="pgeneral__text-block">
+                        <h5 class="pgeneral__title">Meal Plans</h5>
+                        <p class="pgeneral__desc">All of your workouts have been put together for you in a scientifically
+                            proven… in this calendar.. just follow the calendar. All of your workouts have been put together
+                            for you in a scientifically proven… in this calendar.. just follow the calendar…
+                        </p>
+                        <a href="" class="pgeneral__btn">Start here</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--<article class="trans-goals">
+        <div class="container">
+            <div class="trans-goals__wrapper">
+                <h3 class="trans-goals__title">Got transformation goals?</h3>
+                <p class="trans-goals__desc">Our mission is to cut straight through the noise and confusion that has taken over
+                    the fitness and nutrition industry.
+                </p>
+                <a href="#" class="trans-goals__btn">Start here</a>
+            </div>
+        </div>
+    </article>-->
+
+    <footer class="footer container">
+        <p class="footer__copy"></p>
+        <nav class="footer__nav">
+            <a href="#" class="footer__link">Terms</a>
+            <a href="#" class="footer__link">Privacy</a>
+            <a href="#" class="footer__link">About</a>
+            <a href="#" class="footer__link">Press</a>
+            <a href="#" class="footer__link">Jobs</a>
+            <a href="#" class="footer__link">Feedback</a>
+            <a href="#" class="footer__link">Site Map</a>
+            <a href="#" class="footer__link">Rss</a>
+        </nav>
+    </footer>
+</div>
+
+<script src="libs/jquery/dist/jquery.min.js"></script>
+<script src="libs/vue/dist/vue.min.js"></script>
+<script src="js/frombox.js"></script>
+<script src="libs/mmenu/jquery.mmenu.js" type="text/javascript"></script>
+<script src="libs/mmenu/addons/navbars/jquery.mmenu.navbars.js" type="text/javascript"></script>
+<link href="libs/mmenu/extensions/fullscreen/jquery.mmenu.fullscreen.css" type="text/css" rel="stylesheet" />
+<link href="libs/mmenu/addons/navbars/jquery.mmenu.navbars.css" type="text/css" rel="stylesheet" />
+<script src="js/scripts.min.js"></script>
+</body>
+</html>

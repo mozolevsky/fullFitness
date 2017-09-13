@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Nutrition</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/normalize.min.css">
+    <link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap.min.css">
+    <link href="libs/mmenu/jquery.mmenu.css" type="text/css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/main.min.css">
+    <script src="https://use.typekit.net/pca4zir.js"></script>
+    <script>try{Typekit.load({ async: true });}catch(e){}</script>
+</head>
+<body>
+
+<div id="app">
+    <header class="header header_ind">
+        <a href="#" class="header__logo">
+            <picture>
+                <source srcset="img/logo-header.svg" media="(max-width: 991px)">
+                <source srcset="img/logo-header.svg">
+                <img class="header__logo-img" src="img/logo-header.svg" alt="">
+            </picture>
+        </a>
+
+        <div class="header__nav-wrapper">
+            <nav class="header__nav">
+                <a href="#" class="header__nav-link">About Us</a>
+                <a href="#" class="header__nav-link">Free tools</a>
+                <a href="#" class="header__nav-link">Program</a>
+                <a href="#" class="header__nav-link">Blog</a>
+                <div href="#" class="header__nav-link header__nav-link_login" @click="submenu.status = !submenu.status">
+                    <span>Login</span>
+                    <div class="header-submenu" v-if="submenu.status" v-cloak>
+                        <a href="#" class="header-submenu__link">30 Days to Optimal Gut Health</a>
+                        <a href="#" class="header-submenu__link">Type something something</a>
+                        <a href="#" class="header-submenu__link">Integrated BodyTransformation System</a>
+                    </div>
+                </div>
+            </nav>
+            <a href="#" class="header__btn">Start here</a>
+        </div>
+
+        <nav id="my-menu">
+            <ul>
+                <li><a href="#">About us</a></li>
+                <li><a href="#">Free tools</a></li>
+                <li><a href="#">Program</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Login</a></li>
+                <li><a href="#">Start here</a></li>
+            </ul>
+        </nav>
+
+        <a class="header__burger" href="#my-menu">
+            <div class="header__burger-dash header__burger-dash__top"></div>
+            <div class="header__burger-dash header__burger-dash__middle"></div>
+            <div class="header__burger-dash header__burger-dash__bottom"></div>
+        </a>
+    </header>
+
+    <section class="nutrition-top">
+        <div class="nutrition-top__promo">
+            <div class="nutrition-top__promo-text">
+                <h1 class="nutrition-top__promo-title">30 Days To Optimal Gut Health</h1>
+                <p class="nutrition-top__text-promo">Our mission is to cut straight through the noise and confusion that has
+                    taken over the fitness and nutrition industry. </p>
+                <button class="nutrition-top__btn">Enroll Now &nbsp;→</button>
+            </div>
+            <div class="nutrition-top__promo-img">
+                <img src="img/group-28@3x.png">
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+              <div class="col-sm-12">
+                <h3 class="nutrition__title">Does this situation sound familiar to you?</h3>
+              </div>
+              <div class="col-sm-8 col-sm-offset-2">
+                <div class="nutrition-top__text-block">
+                    <p class="nutrition-page__text">If you’re like most people you have no problem starting a new fitness routine…
+                        but actually sticking with it and not quitting until you reach your goal is the part you struggle with.
+                        As the saying goes, if it was easy, everybody would do it. If you’re like most people you have no problem
+                        starting a new fitness routine… </p>
+                    <p class="nutrition-page__text">If you’re like most people you have no problem starting a new fitness routine… but actually sticking
+                        with it and not quitting until you reach your goal is the part you struggle with. As the saying goes,
+                        if it was easy, everybody would do it. If you’re like most people you have no problem starting a new
+                        fitness routine… If you’re like most people you have no problem starting a new fitness routine… </p>
+                    <p class="nutrition-page__text">but actually sticking with it and not quitting until you reach your goal is the part you struggle with.
+                        As the saying goes, if it was easy, everybody would do it. If you’re like most people you have no problem
+                        starting a new fitness routine…</p>
+                    <p class="nutrition-page__text">but actually sticking with it and not quitting until you reach
+                        your goal is the part you struggle with. <b>As the saying goes, if it was easy, everybody would do it.</b></p>
+                </div>
+              </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="clean">
+      <div class="container">
+          <div class="row">
+            <div class="col-sm-12">
+                <h3 class="block-title block-title_white clean__block-title">Learn how to clean your gut <span>for life!</span></h3>
+            </div>
+            <div class="col-sm-8 col-sm-offset-2">
+                <p class="nutrition-page__text nutrition-page__text_white">Cras semper nisi vitae arcu congue euismod. In sit
+                    amet varius nisi. Nullam eu orci hendrerit lorem aliquet blandit. Pellentesque ac hendrerit nibh. Cras
+                    semper nisi vitae arcu congue euismod. In sit amet varius nisi. <b>Nullam eu orci hendrerit lorem</b> aliquet blandit.
+                    Pellentesque ac hendrerit nibh.Cras semper nisi vitae arcu congue euismod. In sit amet varius nisi. Nullam
+                    eu orci hendrerit lorem aliquet blandit. Pellentesque ac hendrerit nibh.
+                </p>
+                <p class="nutrition-page__text nutrition-page__text_white">
+                    Cras semper nisi vitae arcu congue euismod. In sit amet varius nisi. Nullam eu orci hendrerit lorem aliquet
+                    blandit. Pellentesque ac hendrerit nibh.
+                </p>
+            </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="course-for">
+      <div class="container">
+          <div class="row">
+            <div class="col-sm-12">
+                <h3 class="block-title">Who Is This Course For?</h3>
+            </div>
+            <div class="col-sm-8 col-sm-offset-2">
+                <p class="nutrition-page__text">Almost anyone can benefit from this course because it resets the digestive
+                    system by removing harmful foods that cause damaging inflammation. In today’s society, almost everyone faces
+                    more stress than the body can handle. Coupled with a Westernized mentality that includes eating fast foods,
+                    a lack of exercise or physical activity, and spending lots of time on our phones, this buildup of stress
+                    can cause unwanted side effects that you might not even be aware of because they have been developing slowly
+                    over time. Even if you don’t suffer from a chronic disease, this course will help you restore the health you
+                    once felt to help you perform better at work, be a better spouse or parent, or simply improve your daily
+                    happiness.
+                </p>
+                <h5 class="block-subtitle course-for__subtitle">The course is especially designed for anyone who experiences the following symptoms or conditions:</h5>
+                <div class="course-for__table">
+                    <picture>
+                        <source media="(max-width: 767px)" srcset="img/table-mobile.png">
+                        <source media="(min-width: 768px)" srcset="img/group-87@3x.png">
+                        <img src="img/group-87@3x.png">
+                    </picture>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="benefit">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <h3 class="block-title">How you will benefit from this course</h3>
+          </div>
+            <div class="col-sm-8 col-sm-offset-2">
+                <div class="benefit__text benefit__desc-block">
+                    <p class="nutrition-page__text">If you’re like most people you have no problem starting a new fitness routine…
+                        but actually sticking with it and not quitting until you reach your goal is the part you struggle with. As
+                        the saying goes, if it was easy, everybody would do it. If you’re like most people you have no problem
+                        starting a new fitness routine…</p>
+                    <p class="nutrition-page__text">If you’re like most people you have no problem starting a new fitness routine…
+                        but actually sticking with it and not quitting until you reach your goal is the part you struggle with. As
+                        the saying goes, if it was easy, everybody would do it. If you’re like most people you have no problem
+                        starting a new fitness routine…</p>
+                    <p class="nutrition-page__text">but actually sticking with it and not quitting until you reach your goal is the part you struggle with. As
+                        the saying goes, if it was easy, everybody would do it. If you’re like most people you have no problem starting
+                        a new fitness routine…</p>
+                    <p class="nutrition-page__text">but actually sticking with it and not quitting until you reach your goal is the part you struggle with. As
+                        the saying goes, <b>if it was easy, everybody would do it.</b></p>
+                </div>
+                <div class="benefit__img-block">
+                    <img src="img/group-100@3x.png">
+                </div>
+                <div class="benefit__goal-block">
+                    <p class="nutrition-page__text benefit__text">The overall goal of the course is to improve your health by taking dietary
+                        intervention to maintain a healthy digestive tract. This course is not designed to cure any disease, but can
+                        be used to reduce side effects associated with medications, autoimmune diseases, or simply stress from everyday
+                        life. By the end of the course, you should be able to <b>achieve the following goals:</b></p>
+                    <ul class="benefit__list">
+                        <li class="benefit__list-item">Improve the side effects of many medications or erase the need for medications all together.</li>
+                        <li class="benefit__list-item">Reverse autoimmunity or put the disease into remission.</li>
+                        <li class="benefit__list-item">Slow down the progression of many chronic diseases</li>
+                        <li class="benefit__list-item">Improve overall health: Including weight loss, improved sleep, better memory and cognitive function, alleviate skin conditions and enhance mood</li>
+                        <li class="benefit__list-item">Restore sexual health, outward appearance, and self-confidence.</li>
+                        <li class="benefit__list-item">Ease joint and muscle pain.</li>
+                        <li class="benefit__list-item">Learn the tools to keep your gut healthy for life.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="why-works2">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <h3 class="block-title">Here’s why it works</h3>
+          </div>
+          <div class="col-sm-8 col-sm-offset-2">
+                <div class="why-works2__block why-works2__block_yes">
+                    <p class="why-works2__block-title">This program is…</p>
+                    <ul class="why-works2__list">
+                        <li class="why-works2__item why-works2__item_yes">a thorough, in depth course for gut health cleansing</li>
+                        <li class="why-works2__item why-works2__item_yes">structured course specifically designed for easy learning</li>
+                        <li class="why-works2__item why-works2__item_yes">all info backed by the latest scientific research and studies</li>
+                        <li class="why-works2__item why-works2__item_yes">actionable step by step program to achieve optimal gut health</li>
+                    </ul>
+                </div>
+                <div class="why-works2__block why-works2__block_no">
+                    <p class="why-works2__block-title why-works2__block-title_no">This program is NOT…</p>
+                    <ul class="why-works2__list why-works2__list_no">
+                        <li class="why-works2__item why-works2__item_no">a pdf “quick guide”</li>
+                        <li class="why-works2__item why-works2__item_no">surface level information</li>
+                        <li class="why-works2__item why-works2__item_no">a collection of unsubstantiated info</li>
+                        <li class="why-works2__item why-works2__item_no">theoretical information with no plan of action</li>
+                    </ul>
+                </div>
+            </div>
+          </div>
+        </div>
+    </section>
+
+    <section class="how-works">
+      <div class="container timeline">
+        <div class="row">
+          <div class="col-sm-12">
+            <h3 class="block-title">How It Works</h3>
+          </div>
+            <div class="col-sm-8 col-sm-offset-2">
+                <div class="how-works__step">
+                    <p class="how-works__step-title how-works__step_1"><b>Step 1:</b> Sign up and get instant access to your “30 day to gut health course”</p>
+                    <p class="nutrition-page__text how-works__text">Cras semper nisi vitae arcu congue euismod. In sit amet varius nisi. Nullam
+                        eu orci hendrerit lorem aliquet blandit. Cras semper nisi vitae arcu congue euismod. In sit amet varius
+                        nisi. Nullam eu orci hendrerit.</p>
+                </div>
+                <div class="how-works__step">
+                    <p class="how-works__step-title how-works__step_2"><b>Step 2:</b> Follow the course step by step for 30 days (the course is built to be clear and easy to follow)</p>
+                    <p class="nutrition-page__text how-works__text">Cras semper nisi vitae arcu congue euismod. In sit amet varius nisi. Nullam
+                        eu orci hendrerit lorem aliquet blandit. Cras semper nisi vitae arcu congue euismod. In sit amet varius
+                        nisi. Nullam eu orci hendrerit.</p>
+                </div>
+                <div class="how-works__step">
+                    <p class="how-works__step-title how-works__step_3"><b>Step 3:</b> Eat exclusively from the meal plan program </p>
+                    <p class="nutrition-page__text how-works__text">Cras semper nisi vitae arcu congue euismod. In sit amet varius nisi. Nullam
+                        eu orci hendrerit lorem aliquet blandit. Cras semper nisi vitae arcu congue euismod. In sit amet varius
+                        nisi. Nullam eu orci hendrerit.</p>
+                </div>
+                <div class="how-works__step">
+                    <p class="how-works__step-title how-works__step_4"><b>Step 4:</b> Track your progress in your goal tracking progress worksheet</p>
+                    <p class="nutrition-page__text how-works__text">Cras semper nisi vitae arcu congue euismod. In sit amet varius nisi. Nullam
+                        eu orci hendrerit lorem aliquet blandit. Cras semper nisi vitae arcu congue euismod. In sit amet varius
+                        nisi. Nullam eu orci hendrerit.</p>
+                </div>
+                <div class="how-works__step">
+                    <p class="how-works__step-title how-works__step_5"><b>Step 5:</b> Achieve optimal gut health and feel energized, healthy, strong and happy</p>
+                    <p class="nutrition-page__text how-works__text">Cras semper nisi vitae arcu congue euismod. In sit amet varius nisi. Nullam
+                        eu orci hendrerit lorem aliquet blandit. Cras semper nisi vitae arcu congue euismod. In sit amet varius
+                        nisi. Nullam eu orci hendrerit.</p>
+                </div>
+            </div>
+          </div>
+        </div>
+    </section>
+
+    <section class="what-get">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <h3 class="block-title what-get__title">Here’s What You Get</h3>
+          </div>
+          <div class="col-sm-8 col-sm-offset-2">
+            <p class="nutrition-page__text what-get__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, dolor sit amet.</p>
+                <div class="what-get__list">
+                    <div class="what-get__item">
+                        <p class="what-get__item-title">gut health detox course</p>
+                        <p class="what-get__item-text">4 week all encompusing lorem ipsum dolor est</p>
+                    </div>
+                    <div class="what-get__item">
+                        <p class="what-get__item-title">30 day meal plan</p>
+                        <p class="what-get__item-text">including breakfast, lunch and dinner</p>
+                    </div>
+                    <div class="what-get__item">
+                        <p class="what-get__item-title">Weekly shopping list</p>
+                        <p class="what-get__item-text">(and tips for buying in bulk)</p>
+                    </div>
+                    <div class="what-get__item">
+                        <p class="what-get__item-title">Food diary</p>
+                        <p class="what-get__item-text">example page to track symptoms of your new meal plan</p>
+                    </div>
+                    <div class="what-get__item">
+                        <p class="what-get__item-title">An overview</p>
+                        <p class="what-get__item-text">of the digestive process and how it works/contributes to disease</p>
+                    </div>
+                    <div class="what-get__item">
+                        <p class="what-get__item-title">Goal setting worksheet</p>
+                        <p class="what-get__item-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, dolor sit amet</p>
+                    </div>
+                    <div class="what-get__item">
+                        <p class="what-get__item-title">Tips</p>
+                        <p class="what-get__item-text">for making healthier food choices  and fighting food cravings</p>
+                    </div>
+                    <div class="what-get__item">
+                        <p class="what-get__item-title">A checklist</p>
+                        <p class="what-get__item-text">for cleaning out your kitchen before starting the program</p>
+                    </div>
+                    <div class="what-get__item">
+                        <p class="what-get__item-title">A Safe Snacking Food list</p>
+                        <p class="what-get__item-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, dolor sit amet</p>
+                    </div>
+                    <div class="what-get__item">
+                        <p class="what-get__item-title">Tips for how to eat out</p>
+                        <p class="what-get__item-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, dolor sit amet</p>
+                    </div>
+                    <div class="what-get__item">
+                        <p class="what-get__item-title">Tips for sleeping</p>
+                        <p class="what-get__item-text">more and maintaining healthy exercise goals</p>
+                    </div>
+                    <div class="what-get__item">
+                        <p class="what-get__item-title">Food label checklist</p>
+                        <p class="what-get__item-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, dolor sit amet</p>
+                    </div>
+              </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="curriculum">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <h3 class="block-title">Your Course Curiculum</h3>
+          </div>
+          <div class="col-sm-8 col-sm-offset-2">
+                <p class="nutrition-page__text curriculum__text">Our mission is to cut straight through the noise and confusion that has taken over the fitness and nutrition industry. </p>
+                <div class="curriculum__list">
+                    <div class="curriculum__item curriculum__item_1">
+                        <p class="curriculum__item-title"><b>Module 1:</b> How Does the Gut Contribute to Health</p>
+                        <p class="curriculum__item-desc">In this module we’ll cras semper nisi vitae arcu congue euismod. In sit
+                            amet varius nisi. Nullam eu orci hendrerit lorem aliquet blandit. Pellentesque ac hendrerit nibh.
+                            Cras semper nisi vitae arcu congue euismod. In sit amet varius nisi. Nullam eu orci hendrerit lorem
+                            aliquet blandit. Pellentesque ac hendrerit nibh.
+                        </p>
+                        <ul class="curriculum__list">
+                            <p class="curriculum__list-title">Some of the topics covered:</p>
+                            <li class="curriculum__list-item">The workings of the gut</li>
+                            <li class="curriculum__list-item">Discover how the gut continues to disease</li>
+                            <li class="curriculum__list-item">The gut-brain connection</li>
+                            <li class="curriculum__list-item">Stress in the gut</li>
+                            <li class="curriculum__list-item">Digesteive organs and how they work</li>
+                            <li class="curriculum__list-item">Disoreders associated with proper gut health</li>
+                        </ul>
+                    </div>
+                    <div class="curriculum__item curriculum__item_2">
+                        <p class="curriculum__item-title"><b>Module 2:</b> Getting Started for Your Gut Cleanse</p>
+                        <p class="curriculum__item-desc">In this module we’ll cras semper nisi vitae arcu congue euismod. In sit
+                            amet varius nisi. Nullam eu orci hendrerit lorem aliquet blandit. Pellentesque ac hendrerit nibh.
+                            Cras semper nisi vitae arcu congue euismod. In sit amet varius nisi. Nullam eu orci hendrerit lorem
+                            aliquet blandit. Pellentesque ac hendrerit nibh.
+                        </p>
+                        <ul class="curriculum__list">
+                            <p class="curriculum__list-title">Some of the topics covered:</p>
+                            <li class="curriculum__list-item">Kitchen guthealth makeover</li>
+                            <li class="curriculum__list-item">How to talk to your friends and family about the program</li>
+                            <li class="curriculum__list-item">Food lists: allowed / not allowed</li>
+                            <li class="curriculum__list-item">Goal setting worksheet</li>
+                            <li class="curriculum__list-item">How to fight and control cravings</li>
+                            <li class="curriculum__list-item">Wellness diary</li>
+                        </ul>
+                    </div>
+                    <div class="curriculum__item curriculum__item_3">
+                        <p class="curriculum__item-title"><b>Module 3:</b> Elimination Week</p>
+                        <p class="curriculum__item-desc">In this module we’ll cras semper nisi vitae arcu congue euismod. In sit
+                            amet varius nisi. Nullam eu orci hendrerit lorem aliquet blandit. Pellentesque ac hendrerit nibh.
+                            Cras semper nisi vitae arcu congue euismod. In sit amet varius nisi. Nullam eu orci hendrerit lorem
+                            aliquet blandit. Pellentesque ac hendrerit nibh.
+                        </p>
+                        <ul class="curriculum__list">
+                            <p class="curriculum__list-title">Some of the topics covered:</p>
+                            <li class="curriculum__list-item">Eliminating harmful foods from your diet</li>
+                            <li class="curriculum__list-item">Detoxing harmful foods</li>
+                            <li class="curriculum__list-item">Elimination week meal plan</li>
+                        </ul>
+                    </div>
+                    <div class="curriculum__item curriculum__item_4">
+                        <p class="curriculum__item-title"><b>Module 4:</b> Introducing Healthy Foods Into Your Diet</p>
+                        <p class="curriculum__item-desc">In this module we’ll cras semper nisi vitae arcu congue euismod. In sit
+                            amet varius nisi. Nullam eu orci hendrerit lorem aliquet blandit. Pellentesque ac hendrerit nibh.
+                            Cras semper nisi vitae arcu congue euismod. In sit amet varius nisi. Nullam eu orci hendrerit lorem
+                            aliquet blandit. Pellentesque ac hendrerit nibh.
+                        </p>
+                        <ul class="curriculum__list">
+                            <p class="curriculum__list-title">Some of the topics covered:</p>
+                            <li class="curriculum__list-item">Learn how to incoprporate healing foods into your diet</li>
+                            <li class="curriculum__list-item">Dealing with lingering effects of cravings</li>
+                            <li class="curriculum__list-item">Introduction of healing supplements</li>
+                            <li class="curriculum__list-item">Inputing symptoms into your wellness diary</li>
+                            <li class="curriculum__list-item">Introduction week meal plan</li>
+                        </ul>
+                    </div>
+                    <div class="curriculum__item curriculum__item_5">
+                        <p class="curriculum__item-title"><b>Module 5:</b> Reintroducing Grains and Dairy</p>
+                        <p class="curriculum__item-desc">In this module we’ll cras semper nisi vitae arcu congue euismod.
+                            In sit amet varius nisi. Nullam eu orci hendrerit lorem aliquet blandit. Pellentesque ac
+                            hendrerit nibh. Cras semper nisi vitae arcu congue euismod. In sit amet varius nisi.
+                            Nullam eu orci hendrerit lorem aliquet blandit. Pellentesque ac hendrerit nibh.
+                        </p>
+                        <ul class="curriculum__list">
+                            <p class="curriculum__list-title">Some of the topics covered:</p>
+                            <li class="curriculum__list-item">Tips for making smart choice when purchasing and preparing grains</li>
+                            <li class="curriculum__list-item">Tips for eating dairy</li>
+                            <li class="curriculum__list-item">Raw dairy v.s. conventional dairy</li>
+                            <li class="curriculum__list-item">Health benefits of sprouted grains</li>
+                            <li class="curriculum__list-item">Introducing grains and dairy meal plan</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+          </div>
+        </div>
+    </section>
+
+    <section class="meal-plan">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-10 col-sm-offset-1">
+                <h3 class="block-title meal-plan__block-title">
+                    <span>A Complete Gut Health Meal Plan Solution So You Stay On Track</span>
+                </h3>
+                <p class="nutrition-page__text meal-plan__text">
+                    <span>Cras semper nisi vitae arcu congue euismod. In sit amet varius nisi.</span>
+                </p>
+            </div>
+          </div>
+        </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-10 col-sm-offset-2">
+            <div class="meal-plan__item">
+                <div class="col-sm-6">
+                    <p class="nutrition__title meal-plan__title">Breakfast, Lunch, Dinner</p>
+                    <p class="nutrition-page__text">Cras semper nisi vitae arcu congue euismod. In sit amet varius nisi.
+                        Nullam eu orci hendrerit lorem aliquet blandit. Pellentesque ac hendrerit nibh. Cras semper nisi
+                        vitae arcu congue euismod. In sit amet varius nisi. Nullam eu orci hendrerit lorem aliquet blandit.
+                        Pellentesque ac hendrerit nibh.</p>
+                </div>
+                <div class="col-sm-6 meal-plan__item-img-small">
+                    <img src="img/group-111@3x.png">
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-10 col-sm-offset-1">
+            <div class="meal-plan__item">
+              <div class="col-sm-6 meal-plan__item-img visible-md visible-lg">
+                  <img src="img/group-40-meal@3x.png">
+              </div>
+                <div class="col-sm-6">
+                    <p class="nutrition__title meal-plan__title">Grocery List Divided By Supermarket Section</p>
+                    <p class="nutrition-page__text">Nullam eu orci hendrerit lorem aliquet blandit. Pellentesque ac
+                        hendrerit nibh. Cras semper nisi vitae arcu congue euismod. In sit amet varius nisi. Nullam eu orci
+                        hendrerit lorem aliquet blandit. Pellentesque ac hendrerit nibh.</p>
+                </div>
+                <div class="col-sm-6 meal-plan__item-img visible-xs visible-sm">
+                    <img src="img/group-40-meal@3x.png">
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-10 col-sm-offset-2">
+            <div class="meal-plan__item">
+                <div class="col-sm-6">
+                    <p class="nutrition__title meal-plan__title">Nutrition Information</p>
+                    <p class="nutrition-page__text">Cras semper nisi vitae arcu congue euismod. In sit amet varius nisi.
+                        Nullam eu orci hendrerit lorem aliquet blandit. Pellentesque ac hendrerit nibh. Cras semper nisi
+                        vitae arcu congue euismod. In sit amet varius nisi. Nullam eu orci hendrerit lorem aliquet blandit.
+                        Pellentesque ac hendrerit nibh.</p>
+                </div>
+                <div class="col-sm-6 meal-plan__item-img-small">
+                    <img src="img/group-69@3x.png">
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-10 col-sm-offset-1">
+            <div class="meal-plan__item">
+              <div class="col-sm-6 meal-plan__item-img visible-md visible-lg">
+                  <img src="img/group-112@3x.png">
+              </div>
+                <div class="col-sm-6">
+                    <p class="nutrition__title meal-plan__title">Prep Instructions and Tips</p>
+                    <p class="nutrition-page__text">Nullam eu orci hendrerit lorem aliquet blandit. Pellentesque ac
+                        hendrerit nibh. Cras semper nisi vitae arcu congue euismod. In sit amet varius nisi. Nullam eu orci
+                        hendrerit lorem aliquet blandit. Pellentesque ac hendrerit nibh.</p>
+                </div>
+                <div class="col-sm-6 meal-plan__item-img visible-xs visible-sm">
+                    <img src="img/group-112@3x.png">
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+    </section>
+
+    <section class="products">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+                <h3 class="block-title products__block-title">We Make It Super Simple So You Cannot Fail</h3>
+                <p class="nutrition-page__text products__text">Cras semper nisi vitae arcu congue euismod. In sit amet varius nisi. </p>
+          </div>
+          <div class="col-sm-8 col-sm-offset-2">
+                <div class="products__block">
+                    <div class="products__item products__item_1">
+                        <div class="products__item-content products__item-content_1">
+                            <p class="products__item-title">No Processed Foods</p>
+                            <p class="products__item-desc">Nullam eu orci hendrerit lorem aliquet blandit. Pellentesque ac hendrerit nibh. </p>
+                        </div>
+                        <div class="products__item-line"></div>
+                    </div>
+                    <div class="products__item products__item_right products__item_2">
+                        <div class="products__item-content products__item-content_2">
+                            <p class="products__item-title">Portion Sizes</p>
+                            <p class="products__item-desc">Nullam eu orci hendrerit lorem aliquet blandit. Pellentesque ac hendrerit nibh. </p>
+                        </div>
+                        <div class="products__item-line"></div>
+                    </div>
+                    <div class="products__item products__item_3">
+                        <div class="products__item-content products__item-content_3">
+                            <p class="products__item-title">Simple Recipes With Few Ingredients</p>
+                            <p class="products__item-desc">Nullam eu orci hendrerit lorem aliquet blandit. </p>
+                        </div>
+                        <div class="products__item-line"></div>
+                    </div>
+                    <div class="products__item products__item_right products__item_4">
+                        <div class="products__item-content products__item-content_4">
+                            <p class="products__item-title">Whole Foods For Maximized Nutrition</p>
+                            <p class="products__item-desc">Nullam eu orci hendrerit lorem aliquet blandit. Pellentesque ac hendrerit nibh. </p>
+                        </div>
+                        <div class="products__item-line"></div>
+                    </div>
+                    <div class="products__item products__item_5">
+                        <div class="products__item-content products__item-content_5">
+                            <p class="products__item-title">Under 25m Preperation</p>
+                            <p class="products__item-desc">Nullam eu orci hendrerit lorem aliquet blandit. Pellentesque ac hendrerit nibh. </p>
+                        </div>
+                        <div class="products__item-line"></div>
+                    </div>
+                </div>
+              </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="additional">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-8 col-sm-offset-2">
+                <h3 class="block-title products__block-title">You Will Also Get…</h3>
+                <p class="nutrition-page__text additional__text">Our mission is to cut straight through the noise and confusion.</p>
+                <div class="additional__content">
+                    <div class="additional__item additional__item_1">
+                        <p class="additional__item-title">On demand access to industry leading experts</p>
+                        <p class="additional__item-text">Paragraph about hiit along with scientific “after burn” graphic.</p>
+                    </div>
+                    <div class="additional__item additional__item_2">
+                        <p class="additional__item-title">End of course summary quiz</p>
+                        <p class="additional__item-text">Paragraph about hiit along with scientific “after burn” graphic.</p>
+                    </div>
+                    <div class="additional__item additional__item_3">
+                        <p class="additional__item-title">Certificate of course completion</p>
+                        <p class="additional__item-text">Paragraph about hiit along with scientific “after burn” graphic.</p>
+                    </div>
+                </div>
+            </div>
+          </div>
+        </div>
+    </section>
+
+    <section class="faq faq_two">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-8 col-sm-offset-2">
+            <h1 class="faq__title">Frequently Asked Questions</h1>
+          </div>
+        </div>
+            <div class="row">
+                <div class="col-sm-8 col-sm-offset-2">
+                    <div class="faq__accordion">
+                        <div id="integration-list">
+                            <ul>
+                                <li>
+                                    <a class="expand">
+                                        <div>
+                                            <span>1. How do I know if this program is for me (sample)?</span>
+                                        </div>
+                                    </a>
+                                    <div class="detail">
+                                        <p class="faq__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias consequatur
+                                            dolorum ducimus ea error incidunt itaque similique temporibus voluptatibus?
+                                            Ad dicta, exercitationem hic incidunt laborum nemo nulla placeat quis
+                                            sequi!</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a class="expand">
+                                        <span>2. Duis nec arcu imperdiet, volutpat sapien vitae, sodales sem. Aenean id velit sollicitudin, auctor dolor at, egestas nunc?</span>
+                                    </a>
+                                    <div class="detail">
+                                        <p class="faq__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus adipisci
+                                            alias consectetur consequatur cum dicta doloremque ea eos in ipsa, laborum
+                                            magnam necessitatibus nisi porro quia quibusdam sunt voluptate
+                                            voluptates.</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a class="expand">
+                                        <span>3. Etiam efficitur ipsum sed tincidunt hendrerit. Quisque pulvinar sapien nisi, at viverra lacus blandit vel?</span>
+                                    </a>
+                                    <div class="detail">
+                                        <p class="faq__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus adipisci
+                                            alias consectetur consequatur cum dicta doloremque ea eos in ipsa, laborum
+                                            magnam necessitatibus nisi porro quia quibusdam sunt voluptate
+                                            voluptates.</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a class="expand">
+                                        <span>4. Fusce tellus lacus, efficitur sit amet ultrices et, posuere nec est. Morbi consequat urna sed arcu pretium, sit amet rhoncus justo?</span>
+                                    </a>
+                                    <div class="detail">
+                                        <p class="faq__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus adipisci
+                                            alias consectetur consequatur cum dicta doloremque ea eos in ipsa, laborum
+                                            magnam necessitatibus nisi porro quia quibusdam sunt voluptate
+                                            voluptates.</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a class="expand">
+                                        <span>5. Sed ultricies nisi sit amet felis ultrices, sed mollis mauris faucibus. Sed sit amet tristique tortor, sit amet imperdiet odio?</span>
+                                    </a>
+                                    <div class="detail">
+                                        <p class="faq__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus adipisci
+                                            alias consectetur consequatur cum dicta doloremque ea eos in ipsa, laborum
+                                            magnam necessitatibus nisi porro quia quibusdam sunt voluptate
+                                            voluptates.</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a class="expand">
+                                        <span>6. Fusce tellus lacus, efficitur sit amet ultrices et, posuere nec est. Morbi consequat urna sed arcu pretium, sit amet rhoncus justo?</span>
+                                    </a>
+                                    <div class="detail">
+                                        <p class="faq__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus adipisci
+                                            alias consectetur consequatur cum dicta doloremque ea eos in ipsa, laborum
+                                            magnam necessitatibus nisi porro quia quibusdam sunt voluptate
+                                            voluptates.</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a class="expand">
+                                        <span>7. Fusce tellus lacus, efficitur sit amet ultrices et, posuere nec est. Morbi consequat urna sed arcu pretium, sit amet rhoncus justo?</span>
+                                    </a>
+                                    <div class="detail">
+                                        <p class="faq__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus adipisci
+                                            alias consectetur consequatur cum dicta doloremque ea eos in ipsa, laborum
+                                            magnam necessitatibus nisi porro quia quibusdam sunt voluptate
+                                            voluptates.</p>
+                                    </div>
+                                </li>
+                            </ul>
+                            <ul id="faq-second-list">
+                                <li>
+                                    <a class="expand">
+                                        <div>
+                                            <span>8. How do I know if this program is for me (sample)?</span>
+                                        </div>
+                                    </a>
+                                    <div class="detail">
+                                        <p class="faq__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias consequatur
+                                            dolorum ducimus ea error incidunt itaque similique temporibus voluptatibus?
+                                            Ad dicta, exercitationem hic incidunt laborum nemo nulla placeat quis
+                                            sequi!</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a class="expand">
+                                        <span>9. Duis nec arcu imperdiet, volutpat sapien vitae, sodales sem. Aenean id velit sollicitudin, auctor dolor at, egestas nunc?</span>
+                                    </a>
+                                    <div class="detail">
+                                        <p class="faq__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus adipisci
+                                            alias consectetur consequatur cum dicta doloremque ea eos in ipsa, laborum
+                                            magnam necessitatibus nisi porro quia quibusdam sunt voluptate
+                                            voluptates.</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a class="expand">
+                                        <span>10. Etiam efficitur ipsum sed tincidunt hendrerit. Quisque pulvinar sapien nisi, at viverra lacus blandit vel?</span>
+                                    </a>
+                                    <div class="detail">
+                                        <p class="faq__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus adipisci
+                                            alias consectetur consequatur cum dicta doloremque ea eos in ipsa, laborum
+                                            magnam necessitatibus nisi porro quia quibusdam sunt voluptate
+                                            voluptates.</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a class="expand">
+                                        <span>11. Fusce tellus lacus, efficitur sit amet ultrices et, posuere nec est. Morbi consequat urna sed arcu pretium, sit amet rhoncus justo?</span>
+                                    </a>
+                                    <div class="detail">
+                                        <p class="faq__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus adipisci
+                                            alias consectetur consequatur cum dicta doloremque ea eos in ipsa, laborum
+                                            magnam necessitatibus nisi porro quia quibusdam sunt voluptate
+                                            voluptates.</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a class="expand">
+                                        <span>12. Sed ultricies nisi sit amet felis ultrices, sed mollis mauris faucibus. Sed sit amet tristique tortor, sit amet imperdiet odio?</span>
+                                    </a>
+                                    <div class="detail">
+                                        <p class="faq__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus adipisci
+                                            alias consectetur consequatur cum dicta doloremque ea eos in ipsa, laborum
+                                            magnam necessitatibus nisi porro quia quibusdam sunt voluptate
+                                            voluptates.</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a class="expand">
+                                        <span>13. Fusce tellus lacus, efficitur sit amet ultrices et, posuere nec est. Morbi consequat urna sed arcu pretium, sit amet rhoncus justo?</span>
+                                    </a>
+                                    <div class="detail">
+                                        <p class="faq__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus adipisci
+                                            alias consectetur consequatur cum dicta doloremque ea eos in ipsa, laborum
+                                            magnam necessitatibus nisi porro quia quibusdam sunt voluptate
+                                            voluptates.</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a class="expand">
+                                        <span>14. Fusce tellus lacus, efficitur sit amet ultrices et, posuere nec est. Morbi consequat urna sed arcu pretium, sit amet rhoncus justo?</span>
+                                    </a>
+                                    <div class="detail">
+                                        <p class="faq__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus adipisci
+                                            alias consectetur consequatur cum dicta doloremque ea eos in ipsa, laborum
+                                            magnam necessitatibus nisi porro quia quibusdam sunt voluptate
+                                            voluptates.</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a class="faq__see-more faq__see-more_two" id="see-more">See more</a>
+        </div>
+    </section>
+
+    <section class="review">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+                <h3 class="block-title">What People Are Saying</h3>
+          </div>
+          <div class="col-sm-8 col-sm-offset-2">
+                <p class="nutrition-page__text review__text">Cras semper nisi vitae arcu congue euismod. In sit amet
+                    varius nisi. Nullam eu orci hendrerit lorem aliquet blandit. </p>
+                <div class="review__content">
+                    <div class="review__item">
+                        <div class="review__title-block">
+                            <p class="review__title">“Wow this is unbelievable!”</p>
+                            <p class="review__stars">
+                                <i class="review__star-item"></i>
+                                <i class="review__star-item"></i>
+                                <i class="review__star-item"></i>
+                                <i class="review__star-item"></i>
+                                <i class="review__star-item"></i>
+                            </p>
+                        </div>
+                        <p class="review__desc">“Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin gravida
+                            turpis ipsum, eget viverra justo sollicitudin vel. Nulla facilisi. Pellentesque sagittis purus."</p>
+                        <p class="review__author">David, J.</p>
+                    </div>
+                    <div class="review__item">
+                        <div class="review__title-block">
+                            <p class="review__title">“Wow this is unbelievable!”</p>
+                            <p class="review__stars">
+                                <i class="review__star-item"></i>
+                                <i class="review__star-item"></i>
+                                <i class="review__star-item"></i>
+                                <i class="review__star-item"></i>
+                                <i class="review__star-item"></i>
+                            </p>
+                        </div>
+                        <p class="review__desc">“Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin gravida
+                            turpis ipsum, eget viverra justo sollicitudin vel. Nulla facilisi. Pellentesque sagittis purus."</p>
+                        <p class="review__author">David, J.</p>
+                    </div>
+                    <div class="review__item">
+                        <div class="review__title-block">
+                            <p class="review__title">“Wow this is unbelievable!”</p>
+                            <p class="review__stars">
+                                <i class="review__star-item"></i>
+                                <i class="review__star-item"></i>
+                                <i class="review__star-item"></i>
+                                <i class="review__star-item"></i>
+                                <i class="review__star-item"></i>
+                            </p>
+                        </div>
+                        <p class="review__desc">“Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin gravida
+                            turpis ipsum, eget viverra justo sollicitudin vel. Nulla facilisi. Pellentesque sagittis purus."</p>
+                        <p class="review__author">David, J.</p>
+                    </div>
+                    <div class="review__item">
+                        <div class="review__title-block">
+                            <p class="review__title">“Wow this is unbelievable!”</p>
+                            <p class="review__stars">
+                                <i class="review__star-item"></i>
+                                <i class="review__star-item"></i>
+                                <i class="review__star-item"></i>
+                                <i class="review__star-item"></i>
+                                <i class="review__star-item"></i>
+                            </p>
+                        </div>
+                        <p class="review__desc">“Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin gravida
+                            turpis ipsum, eget viverra justo sollicitudin vel. Nulla facilisi. Pellentesque sagittis purus."</p>
+                        <p class="review__author">David, J.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bottom-block">
+        <div class="container">
+            <div class="bottom-block__content-wrap clearfix">
+                <div class="bottom-block__content">
+                    <h3 class="block-subtitle bottom-block__title">Get the full program for Just $97</h3>
+                    <p class="nutrition-page__text bottom-block__text">Don’t postpone any longer, now’s the time to take action and go after your goals.</p>
+                    <button class="bottom-block__btn">Enroll Now</button>
+                    <div class="bottom-block__garanty">
+                        <p class="bottom-block__garanty-title">30 Day Money Back Guarantee</p>
+                        <p class="bottom-block__garanty-desc">Cras semper nisi vitae arcu congue euismod. In sit amet varius
+                            nisi. Nullam eu orci hendrerit lorem aliquet blandit. Pellentesque ac hendrerit nibh. Cras semper
+                            nisi vitae arcu congue euismod. In sit amet varius nisi. Nullam eu orci hendrerit lorem aliquet blandit.
+                            Pellentesque ac hendrerit nibh.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer container">
+        <p class="footer__copy"></p>
+        <nav class="footer__nav">
+            <a href="#" class="footer__link">Terms</a>
+            <a href="#" class="footer__link">Privacy</a>
+            <a href="#" class="footer__link">About</a>
+            <a href="#" class="footer__link">Press</a>
+            <a href="#" class="footer__link">Jobs</a>
+            <a href="#" class="footer__link">Feedback</a>
+            <a href="#" class="footer__link">Site Map</a>
+            <a href="#" class="footer__link">Rss</a>
+        </nav>
+    </footer>
+</div>
+
+<script src="libs/jquery/dist/jquery.min.js"></script>
+<script src="libs/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="libs/vue/dist/vue.min.js"></script>
+<script src="js/scripts.min.js"></script>
+<script src="js/frombox.js"></script>
+<script src="libs/mmenu/jquery.mmenu.js" type="text/javascript"></script>
+<script src="libs/mmenu/addons/navbars/jquery.mmenu.navbars.js" type="text/javascript"></script>
+<link href="libs/mmenu/extensions/fullscreen/jquery.mmenu.fullscreen.css" type="text/css" rel="stylesheet" />
+<link href="libs/mmenu/addons/navbars/jquery.mmenu.navbars.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript">
+
+    $(function() {
+        $(".expand").on( "click", function() {
+            $(this).next().slideToggle(200);
+        });
+    });
+
+    $("#see-more").click(function(){
+        $("#faq-second-list").show();
+        $("#see-more").hide();
+    });
+</script>
+</body>
+</html>

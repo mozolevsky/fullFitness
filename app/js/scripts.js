@@ -121,6 +121,29 @@ let app = new Vue({
                }
            });
        },
+       getHeight() {
+           let height;
+
+           if (!this.formHelpers.heightUnitChecked) {
+               height = ((this.formsFields.heightFeet * 30.48) + (this.formsFields.heightInches * 2.54));
+           }
+           else {
+               height = this.formsFields.heightCm;
+           }
+
+           return height;
+       },
+       getWeight() {
+           let weight;
+
+           if (!this.formHelpers.weightUnitChecked) {
+               weight = (this.formsFields.weightLbs * 0.453592);
+           } else {
+               weight = this.formsFields.weightKg;
+           }
+
+           return weight;
+       },
        calcOneRm() {
            this.formsFields.oneRepMax = Math.round(this.formsFields.weightLifted / this.formsFields.reps);
            this.goToSecondStep();
@@ -134,10 +157,10 @@ let app = new Vue({
             this.goToSecondStep();
        },
        calcBmr() {
-           let height;
-           let weight;
+           let height = this.getHeight();
+           let weight = this.getWeight();
 
-           if (!this.formHelpers.heightUnitChecked) {
+           /*if (!this.formHelpers.heightUnitChecked) {
                height = ((this.formsFields.heightFeet * 30.48) + (this.formsFields.heightInches * 2.54));
            }
            else {
@@ -148,7 +171,7 @@ let app = new Vue({
                weight = (this.formsFields.weightLbs * 0.453592);
            } else {
                weight = this.formsFields.weightKg;
-           }
+           }*/
 
            if (this.formsFields.gender == "M") {
                this.formsFields.bmr = Math.round(66.5 + (weight * 13.75) + (height * 5.003) - (this.formsFields.age * 6.755));

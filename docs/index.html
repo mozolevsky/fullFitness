@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>The list of templates</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/normalize.min.css">
+    <link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap.min.css">
+    <link href="libs/mmenu/jquery.mmenu.css" type="text/css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/main.min.css">
+    <script src="https://use.typekit.net/pca4zir.js"></script>
+    <script>try{Typekit.load({ async: true });}catch(e){}</script>
+</head>
+<body>
+
+<div id="app">
+    <header class="header header_ind">
+        <a href="#" class="header__logo">
+            <picture>
+                <source srcset="img/logo-header.svg" media="(max-width: 991px)">
+                <source srcset="img/logo-header.svg">
+                <img class="header__logo-img" src="img/logo-header.svg" alt="">
+            </picture>
+        </a>
+
+        <div class="header__nav-wrapper">
+            <nav class="header__nav">
+                <a href="#" class="header__nav-link">About Us</a>
+                <a href="#" class="header__nav-link">Free tools</a>
+                <a href="#" class="header__nav-link">Program</a>
+                <a href="#" class="header__nav-link">Blog</a>
+                <div href="#" class="header__nav-link header__nav-link_login" @click="submenu.status = !submenu.status">
+                    <span>Login</span>
+                    <div class="header-submenu" v-if="submenu.status" v-cloak>
+                        <a href="#" class="header-submenu__link">30 Days to Optimal Gut Health</a>
+                        <a href="#" class="header-submenu__link">Type something something</a>
+                        <a href="#" class="header-submenu__link">Integrated BodyTransformation System</a>
+                    </div>
+                </div>
+            </nav>
+            <a href="#" class="header__btn">Start here</a>
+        </div>
+
+        <nav id="my-menu">
+            <ul>
+                <li><a href="#">About us</a></li>
+                <li><a href="#">Free tools</a></li>
+                <li><a href="#">Program</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Login</a></li>
+                <li><a href="#">Start here</a></li>
+            </ul>
+        </nav>
+
+        <a class="header__burger" href="#my-menu">
+            <div class="header__burger-dash header__burger-dash__top"></div>
+            <div class="header__burger-dash header__burger-dash__middle"></div>
+            <div class="header__burger-dash header__burger-dash__bottom"></div>
+        </a>
+    </header>
+
+    <section class="nutrition-top">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h3 class="nutrition__title">The list of templates</h3>
+                </div>
+                <div class="col-sm-8 col-sm-offset-2">
+                    <div class="nutrition-top__text-block">
+                        <ul class="why-works2__list">
+                            <li class="why-works2__item why-works__item_yes">
+                                <a href="https://mozolevsky.github.io/fullFitness/about-us.html">About us</a>
+                            </li>
+                            <li class="why-works2__item why-works__item_yes">
+                                <a href="https://mozolevsky.github.io/fullFitness/general-program.html">General Program</a>
+                            </li>
+                            <li class="why-works2__item why-works__item_yes">
+                                <a href="https://mozolevsky.github.io/fullFitness/get-started.html">Get Started</a>
+                            </li>
+                            <li class="why-works2__item why-works__item_yes">
+                                <a href="https://mozolevsky.github.io/fullFitness/login.html">Login</a>
+                            </li>
+                            <li class="why-works2__item why-works__item_yes">
+                                <a href="https://mozolevsky.github.io/fullFitness/main.html">Main</a>
+                            </li>
+                            <li class="why-works2__item why-works__item_yes">
+                                <a href="https://mozolevsky.github.io/fullFitness/meal-plan.html">Meal Plan</a>
+                            </li>
+                            <li class="why-works2__item why-works__item_yes">
+                                <a href="https://mozolevsky.github.io/fullFitness/nutrition.html">Nutrition</a>
+                            </li>
+                            <li class="why-works2__item why-works__item_yes">
+                                <a href="https://mozolevsky.github.io/fullFitness/program.html">Program</a>
+                            </li>
+                            <li class="why-works2__item why-works__item_yes">
+                                <a href="https://mozolevsky.github.io/fullFitness/program-list.html">Program list</a>
+                            </li>
+                            <li class="why-works2__item why-works__item_yes">
+                                <a href="https://mozolevsky.github.io/fullFitness/what-you-get.html">What you get</a>
+                            </li>
+                            <li class="why-works2__item why-works__item_yes">
+                                <a href="https://mozolevsky.github.io/fullFitness/calculator.html">Calculator</a>
+                            </li>
+                            <li class="why-works2__item why-works__item_yes">
+                                <a href="https://mozolevsky.github.io/fullFitness/calculator1.html">Calculator 1</a>
+                            </li>
+                            <li class="why-works2__item why-works__item_yes">
+                                <a href="https://mozolevsky.github.io/fullFitness/calculator2.html">Calculator 2</a>
+                            </li>
+                            <li class="why-works2__item why-works__item_yes">
+                                <a href="https://mozolevsky.github.io/fullFitness/calculator3.html">Calculator 3</a>
+                            </li>
+                            <li class="why-works2__item why-works__item_yes">
+                                <a href="https://mozolevsky.github.io/fullFitness/calculator4.html">Calculator 4</a>
+                            </li>
+                            <li class="why-works2__item why-works__item_yes">
+                                <a href="https://mozolevsky.github.io/fullFitness/calculator5.html">Calculator 5</a>
+                            </li>
+                            <li class="why-works2__item why-works__item_yes">
+                                <a href="https://mozolevsky.github.io/fullFitness/calculator6.html">Calculator 6</a>
+                            </li>
+                            <li class="why-works2__item why-works__item_yes">
+                                <a href="https://mozolevsky.github.io/fullFitness/calculator7.html">Calculator 7</a>
+                            </li>
+                            <li class="why-works2__item why-works__item_yes">
+                                <a href="https://mozolevsky.github.io/fullFitness/calculator8.html">Calculator 8</a>
+                            </li>
+                            <li class="why-works2__item why-works__item_yes">
+                                <a href="https://mozolevsky.github.io/fullFitness/calculator9.html">Calculator 9</a>
+                            </li>
+                            <li class="why-works2__item why-works__item_yes">
+                                <a href="https://mozolevsky.github.io/fullFitness/calculator10.html">Calculator 10</a>
+                            </li>
+                            <li class="why-works2__item why-works__item_yes">
+                                <a href="https://mozolevsky.github.io/fullFitness/calculator11.html">Calculator 11</a>
+                            </li>
+                            <li class="why-works2__item why-works__item_yes">
+                                <a href="https://mozolevsky.github.io/fullFitness/calculator12.html">Calculator 12</a>
+                            </li>
+                            <li class="why-works2__item why-works__item_yes">
+                                <a href="https://mozolevsky.github.io/fullFitness/calculator13.html">Calculator 13</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer container">
+    <p class="footer__copy"></p>
+    <nav class="footer__nav">
+        <a href="#" class="footer__link">Terms</a>
+        <a href="#" class="footer__link">Privacy</a>
+        <a href="#" class="footer__link">About</a>
+        <a href="#" class="footer__link">Press</a>
+        <a href="#" class="footer__link">Jobs</a>
+        <a href="#" class="footer__link">Feedback</a>
+        <a href="#" class="footer__link">Site Map</a>
+        <a href="#" class="footer__link">Rss</a>
+    </nav>
+</footer>
+</div>
+
+<script src="libs/jquery/dist/jquery.min.js"></script>
+<script src="libs/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="libs/vue/dist/vue.min.js"></script>
+<script src="js/scripts.min.js"></script>
+<script src="js/frombox.js"></script>
+<script src="libs/mmenu/jquery.mmenu.js" type="text/javascript"></script>
+<script src="libs/mmenu/addons/navbars/jquery.mmenu.navbars.js" type="text/javascript"></script>
+<link href="libs/mmenu/extensions/fullscreen/jquery.mmenu.fullscreen.css" type="text/css" rel="stylesheet" />
+<link href="libs/mmenu/addons/navbars/jquery.mmenu.navbars.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript">
+
+    $(function() {
+        $(".expand").on( "click", function() {
+            $(this).next().slideToggle(200);
+        });
+    });
+
+    $("#see-more").click(function(){
+        $("#faq-second-list").show();
+        $("#see-more").hide();
+    });
+</script>
+</body>
+</html>
