@@ -145,15 +145,63 @@ let app = new Vue({
 
            return weight;
        },
-       getCalories(weight, height) {
+       getCalories() {
            let calories;
+           let height = this.getHeight();
+           let weight = this.getWeight();
+           let args = [...arguments];
 
-           if (this.formsFields.gender == "M") {
-               calories = Math.round((weight * 10) + (height * 6.25) - (this.formsFields.age * 5) + 5);
-           }
-           else {
-               calories = Math.round((weight * 10) + (height * 6.25) - (this.formsFields.age * 5) - 161);
-           }
+          if (args.indexOf('gender') !== -1) {
+              console.log('gender param');
+              if (this.formsFields.gender == "M") {
+                  calories = Math.round((weight * 10) + (height * 6.25) - (this.formsFields.age * 5) + 5);
+              }
+              else {
+                  calories = Math.round((weight * 10) + (height * 6.25) - (this.formsFields.age * 5) - 161);
+              }
+          }
+
+          if (args.indexOf('activity') !== -1) {
+              console.log('activity param');
+              switch (this.formsFields.activity) {
+                  case "L":
+                      calories = Math.round(calories * 1.1);
+                      break;
+                  case "M":
+                      calories = Math.round(calories * 1.3);
+                      break;
+                  case "V":
+                      calories = Math.round(calories * 1.5);
+                      break;
+                  case "E":
+                      calories = Math.round(calories * 1.7);
+                      break;
+              }
+          }
+
+          if (args.indexOf('goal') !== -1) {
+              console.log('goal param');
+              switch (this.formsFields.goal) {
+                  case "FL":
+                      if (calories <= 2000) calories = 0.9 * calories;
+                      if (calories > 2000) calories = 0.8 * calories;
+                      this.formsFields.carbs = Math.round(0.40 * calories / 4);
+                      this.formsFields.proteins = Math.round(0.40 * calories / 4);
+                      this.formsFields.fat = Math.round(0.2 * calories / 9);
+                      break;
+                  case "M":
+                      this.formsFields.carbs = Math.round(0.45 * calories / 4);
+                      this.formsFields.proteins = Math.round(0.30 * calories / 4);
+                      this.formsFields.fat = Math.round(0.25 * calories / 9);
+                      break;
+                  case "MG":
+                      calories += 500;
+                      this.formsFields.carbs = Math.round(0.45 * calories / 4);
+                      this.formsFields.proteins = Math.round(0.30 * calories / 4);
+                      this.formsFields.fat = Math.round(0.25 * calories / 9);
+                      break;
+              }
+          }
 
            return calories;
        },
@@ -224,187 +272,24 @@ let app = new Vue({
            this.goToSecondStep();
        },
        calcCarb() {
-           let height = this.getHeight();
-           let weight = this.getWeight();
-           let calories = this.getCalories(weight, height);
-
-           switch (this.formsFields.activity) {
-               case "L":
-                   calories = Math.round(calories * 1.1);
-                   break;
-               case "M":
-                   calories = Math.round(calories * 1.3);
-                   break;
-               case "V":
-                   calories = Math.round(calories * 1.5);
-                   break;
-               case "E":
-                   calories = Math.round(calories * 1.7);
-                   break;
-           }
-           switch (this.formsFields.goal) {
-               case "FL":
-                   if (calories <= 2000) calories = 0.9 * calories;
-                   if (calories > 2000) calories = 0.8 * calories;
-                   this.formsFields.carbs = Math.round(0.40 * calories / 4);
-                   break;
-               case "M":
-                   this.formsFields.carbs = Math.round(0.45 * calories / 4);
-                   break;
-               case "MG":
-                   calories += 500;
-                   this.formsFields.carbs = Math.round(0.45 * calories / 4);
-                   break;
-           }
-
+           this.getCalories('gender', 'activity', 'goal');
            this.goToSecondStep();
        },
        calcProt() {
-           let height = this.getHeight();
-           let weight = this.getWeight();
-           let calories = this.getCalories(weight, height);
-
-           switch (this.formsFields.activity) {
-               case "L":
-                   calories = Math.round(calories * 1.1);
-                   break;
-               case "M":
-                   calories = Math.round(calories * 1.3);
-                   break;
-               case "V":
-                   calories = Math.round(calories * 1.5);
-                   break;
-               case "E":
-                   calories = Math.round(calories * 1.7);
-                   break;
-           }
-
-           switch (this.formsFields.goal) {
-               case "FM":
-                   if (calories <= 2000) calories = 0.9 * calories;
-                   if (calories > 2000) calories = 0.8 * calories;
-                   this.formsFields.proteins = Math.round(0.4 * calories / 4);
-                   break;
-               case "M":
-                   this.formsFields.proteins = Math.round(0.3 * calories / 4);
-                   break;
-               case "MG":
-                   calories += 500;
-                   this.formsFields.proteins = Math.round(0.3 * calories / 4);
-                   break;
-           }
+           let calories = this.getCalories('gender', 'activity', 'goal');
            this.goToSecondStep();
        },
        calcFat() {
-           let height = this.getHeight();
-           let weight = this.getWeight();
-           let calories = this.getCalories(weight, height);
-
-           switch (this.formsFields.activity) {
-               case "L":
-                   calories = Math.round(calories * 1.1);
-                   break;
-               case "M":
-                   calories = Math.round(calories * 1.3);
-                   break;
-               case "V":
-                   calories = Math.round(calories * 1.5);
-                   break;
-               case "E":
-                   calories = Math.round(calories * 1.7);
-                   break;
-           }
-           switch (this.formsFields.goal) {
-               case "FM":
-                   if (calories <= 2000) calories = 0.9 * calories;
-                   if (calories > 2000) calories = 0.8 * calories;
-                   this.formsFields.fat = Math.round(0.2 * calories / 9);
-                   break;
-               case "M":
-                   this.formsFields.fat = Math.round(0.25 * calories / 9);
-                   break;
-               case "MG":
-                   calories += 500;
-                   this.formsFields.fat = Math.round(0.25 * calories / 9);
-                   break;
-           }
-
+           let calories = this.getCalories('gender', 'activity', 'goal');
            this.goToSecondStep();
        },
        calcMacroNut() {
-           let height = this.getHeight();
-           let weight = this.getWeight();
-           let calories = this.getCalories(weight, height);
-
-           switch (this.formsFields.activity) {
-               case "L":
-                   calories = Math.round(calories * 1.1);
-                   break;
-               case "M":
-                   calories = Math.round(calories * 1.3);
-                   break;
-               case "V":
-                   calories = Math.round(calories * 1.5);
-                   break;
-               case "E":
-                   calories = Math.round(calories * 1.7);
-                   break;
-           }
-           switch (this.formsFields.goal) {
-               case "FL":
-                   if (calories <= 2000) calories = 0.9 * calories;
-                   if (calories > 2000) calories = 0.8 * calories;
-                   this.formsFields.carbs = Math.round(0.40 * calories / 4);
-                   this.formsFields.proteins = Math.round(0.40 * calories / 4);
-                   this.formsFields.fat = Math.round(0.2 * calories / 9);
-                   break;
-               case "M":
-                   this.formsFields.carbs = Math.round(0.45 * calories / 4);
-                   this.formsFields.proteins = Math.round(0.30 * calories / 4);
-                   this.formsFields.fat = Math.round(0.25 * calories / 9);
-                   break;
-               case "MG":
-                   calories += 500;
-                   this.formsFields.carbs = Math.round(0.45 * calories / 4);
-                   this.formsFields.proteins = Math.round(0.30 * calories / 4);
-                   this.formsFields.fat = Math.round(0.25 * calories / 9);
-                   break;
-           }
+           let calories = this.getCalories('gender', 'activity', 'goal');
 
            this.goToSecondStep();
        },
        calcCalories() {
-           let height = this.getHeight();
-           let weight = this.getWeight();
-           let calories = this.getCalories(weight, height);
-
-           switch (this.formsFields.activity) {
-               case "L":
-                   calories = Math.round(calories * 1.1);
-                   break;
-               case "M":
-                   calories = Math.round(calories * 1.3);
-                   break;
-               case "V":
-                   calories = Math.round(calories * 1.5);
-                   break;
-               case "E":
-                   calories = Math.round(calories * 1.7);
-                   break;
-           }
-           switch (this.formsFields.goal) {
-               case "FM":
-                   if (calories <= 2000) calories = 0.9 * calories;
-                   if (calories > 2000) calories = 0.8 * calories;
-                   break;
-               case "M":
-                   break;
-               case "MG":
-                   calories += 500;
-                   break;
-           }
-
-           this.formsFields.calories = calories;
+           this.formsFields.calories = this.getCalories('gender', 'activity', 'goal');
            this.goToSecondStep();
        },
        calcFatPerc() {
@@ -429,26 +314,7 @@ let app = new Vue({
            this.goToSecondStep();
        },
        calcTdee() {
-           let height = this.getHeight();
-           let weight = this.getWeight();
-           let tdee = this.getCalories(weight, height);
-
-           switch (this.formsFields.activity) {
-               case "L":
-                   tdee = Math.round(tdee * 1.1);
-                   break;
-               case "M":
-                   tdee = Math.round(tdee * 1.3);
-                   break;
-               case "V":
-                   tdee = Math.round(tdee * 1.5);
-                   break;
-               case "E":
-                   tdee = Math.round(tdee * 1.7);
-                   break;
-           }
-
-           this.formsFields.tdee = tdee;
+           this.formsFields.tdee = this.getCalories('gender', 'activity');
            this.goToSecondStep();
        }
     },
