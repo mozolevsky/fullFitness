@@ -50,7 +50,7 @@ let app = new Vue({
             fat: '',
             proteins: '',
             carbs: '',
-            activity: '',
+            activity: 'L',
             goal: 'FL',
             water: '',
             workoutTime: 'L',
@@ -64,6 +64,7 @@ let app = new Vue({
             oneRepMax: '',
             weightLbs: '',
             weightKg: '',
+            weight: '',
             heightCm: '',
             heightFeet: '',
             heightInches: '',
@@ -137,41 +138,36 @@ let app = new Vue({
            let weight;
 
            if (!this.formHelpers.weightUnitChecked) {
-               weight = (this.formsFields.weightLbs * 0.453592);
+               weight = (this.formsFields.weight * 0.453592);
            } else {
-               weight = this.formsFields.weightKg;
+               weight = this.formsFields.weight;
            }
 
            return weight;
+       },
+       getCalories(weight, height) {
+           let calories;
+
+           if (this.formsFields.gender == "M") {
+               calories = Math.round((weight * 10) + (height * 6.25) - (this.formsFields.age * 5) + 5);
+           }
+           else {
+               calories = Math.round((weight * 10) + (height * 6.25) - (this.formsFields.age * 5) - 161);
+           }
+
+           return calories;
        },
        calcOneRm() {
            this.formsFields.oneRepMax = Math.round(this.formsFields.weightLifted / this.formsFields.reps);
            this.goToSecondStep();
        },
        calcLeanBodyMass() {
-            if (!this.formHelpers.weightUnitChecked) {
-                this.formsFields.lbm = Math.round((1 - this.bodyFat) * this.formsFields.weightLbs * 10) / 10;
-            } else {
-                this.formsFields.lbm = Math.round((1 - this.bodyFat) * this.formsFields.weightKg * 10) / 10;
-            }
+            this.formsFields.lbm = Math.round((1 - this.bodyFat) * this.formsFields.weight * 10) / 10;
             this.goToSecondStep();
        },
        calcBmr() {
            let height = this.getHeight();
            let weight = this.getWeight();
-
-           /*if (!this.formHelpers.heightUnitChecked) {
-               height = ((this.formsFields.heightFeet * 30.48) + (this.formsFields.heightInches * 2.54));
-           }
-           else {
-               height = this.formsFields.heightCm;
-           }
-
-           if (!this.formHelpers.weightUnitChecked) {
-               weight = (this.formsFields.weightLbs * 0.453592);
-           } else {
-               weight = this.formsFields.weightKg;
-           }*/
 
            if (this.formsFields.gender == "M") {
                this.formsFields.bmr = Math.round(66.5 + (weight * 13.75) + (height * 5.003) - (this.formsFields.age * 6.755));
@@ -183,21 +179,8 @@ let app = new Vue({
            this.goToSecondStep();
        },
        calcRmr() {
-           let height;
-           let weight;
-
-           if (!this.formHelpers.heightUnitChecked) {
-               height = ((this.formsFields.heightFeet * 30.48) + (this.formsFields.heightInches * 2.54));
-           }
-           else {
-               height = this.formsFields.heightCm;
-           }
-
-           if (!this.formHelpers.weightUnitChecked) {
-               weight = (this.formsFields.weightLbs * 0.453592);
-           } else {
-               weight = this.formsFields.weightKg;
-           }
+           let height = this.getHeight();
+           let weight = this.getWeight();
 
            if (this.formsFields.gender == "M") {
                this.formsFields.rmr = Math.round((weight * 9.99) + (height * 6.25) - (this.formsFields.age * 4.92) + 5);
@@ -209,13 +192,7 @@ let app = new Vue({
            this.goToSecondStep();
        },
        calcCreatine() {
-           let weight;
-
-           if (this.formHelpers.weightUnitChecked) {
-               weight = this.formsFields.weightKg * 2.20462;
-           } else {
-               weight = this.formsFields.weightLbs;
-           }
+           let weight = this.getWeight();
 
            if (weight < 120) this.formsFields.creatine = 3;
            if (weight > 119 && weight < 201) this.formsFields.creatine = 5;
@@ -227,9 +204,9 @@ let app = new Vue({
            let weight;
 
            if (this.formHelpers.weightUnitChecked) {
-               weight = this.formsFields.weightKg * 2.20462;
+               weight = this.formsFields.weight * 2.20462;
            } else {
-               weight = this.formsFields.weightLbs;
+               weight = this.formsFields.weight;
            }
 
            switch (this.formsFields.workoutTime) {
@@ -247,29 +224,9 @@ let app = new Vue({
            this.goToSecondStep();
        },
        calcCarb() {
-           let height;
-           let weight;
-           let calories;
-
-           if (!this.formHelpers.heightUnitChecked) {
-               height = ((this.formsFields.heightFeet * 30.48) + (this.formsFields.heightInches * 2.54));
-           }
-           else {
-               height = this.formsFields.heightCm;
-           }
-
-           if (!this.formHelpers.weightUnitChecked) {
-               weight = (this.formsFields.weightLbs * 0.453592);
-           } else {
-               weight = this.formsFields.weightKg;
-           }
-
-           if (this.formsFields.gender == "M") {
-               calories = Math.round((weight * 10) + (height * 6.25) - (this.formsFields.age * 5) + 5);
-           }
-           else {
-               calories = Math.round((weight * 10) + (height * 6.25) - (this.formsFields.age * 5) - 161);
-           }
+           let height = this.getHeight();
+           let weight = this.getWeight();
+           let calories = this.getCalories(weight, height);
 
            switch (this.formsFields.activity) {
                case "L":
@@ -285,9 +242,8 @@ let app = new Vue({
                    calories = Math.round(calories * 1.7);
                    break;
            }
-
            switch (this.formsFields.goal) {
-               case "FM":
+               case "FL":
                    if (calories <= 2000) calories = 0.9 * calories;
                    if (calories > 2000) calories = 0.8 * calories;
                    this.formsFields.carbs = Math.round(0.40 * calories / 4);
@@ -300,32 +256,13 @@ let app = new Vue({
                    this.formsFields.carbs = Math.round(0.45 * calories / 4);
                    break;
            }
+
            this.goToSecondStep();
        },
        calcProt() {
-           let height;
-           let weight;
-           let calories;
-
-           if (!this.formHelpers.heightUnitChecked) {
-               height = ((this.formsFields.heightFeet * 30.48) + (this.formsFields.heightInches * 2.54));
-           }
-           else {
-               height = this.formsFields.heightCm;
-           }
-
-           if (!this.formHelpers.weightUnitChecked) {
-               weight = (this.formsFields.weightLbs * 0.453592);
-           } else {
-               weight = this.formsFields.weightKg;
-           }
-
-           if (this.formsFields.gender == "M") {
-               calories = Math.round((weight * 10) + (height * 6.25) - (this.formsFields.age * 5) + 5);
-           }
-           else {
-               calories = Math.round((weight * 10) + (height * 6.25) - (this.formsFields.age * 5) - 161);
-           }
+           let height = this.getHeight();
+           let weight = this.getWeight();
+           let calories = this.getCalories(weight, height);
 
            switch (this.formsFields.activity) {
                case "L":
@@ -359,29 +296,9 @@ let app = new Vue({
            this.goToSecondStep();
        },
        calcFat() {
-           let height;
-           let weight;
-           let calories;
-
-           if (!this.formHelpers.heightUnitChecked) {
-               height = ((this.formsFields.heightFeet * 30.48) + (this.formsFields.heightInches * 2.54));
-           }
-           else {
-               height = this.formsFields.heightCm;
-           }
-
-           if (!this.formHelpers.weightUnitChecked) {
-               weight = (this.formsFields.weightLbs * 0.453592);
-           } else {
-               weight = this.formsFields.weightKg;
-           }
-
-           if (this.formsFields.gender == "M") {
-               calories = Math.round((weight * 10) + (height * 6.25) - (this.formsFields.age * 5) + 5);
-           }
-           else {
-               calories = Math.round((weight * 10) + (height * 6.25) - (this.formsFields.age * 5) - 161);
-           }
+           let height = this.getHeight();
+           let weight = this.getWeight();
+           let calories = this.getCalories(weight, height);
 
            switch (this.formsFields.activity) {
                case "L":
@@ -397,7 +314,6 @@ let app = new Vue({
                    calories = Math.round(calories * 1.7);
                    break;
            }
-
            switch (this.formsFields.goal) {
                case "FM":
                    if (calories <= 2000) calories = 0.9 * calories;
@@ -412,32 +328,13 @@ let app = new Vue({
                    this.formsFields.fat = Math.round(0.25 * calories / 9);
                    break;
            }
+
            this.goToSecondStep();
        },
        calcMacroNut() {
-           let height;
-           let weight;
-           let calories;
-
-           if (!this.formHelpers.heightUnitChecked) {
-               height = ((this.formsFields.heightFeet * 30.48) + (this.formsFields.heightInches * 2.54));
-           }
-           else {
-               height = this.formsFields.heightCm;
-           }
-
-           if (!this.formHelpers.weightUnitChecked) {
-               weight = (this.formsFields.weightLbs * 0.453592);
-           } else {
-               weight = this.formsFields.weightKg;
-           }
-
-           if (this.formsFields.gender == "M") {
-               calories = Math.round((weight * 10) + (height * 6.25) - (this.formsFields.age * 5) + 5);
-           }
-           else {
-               calories = Math.round((weight * 10) + (height * 6.25) - (this.formsFields.age * 5) - 161);
-           }
+           let height = this.getHeight();
+           let weight = this.getWeight();
+           let calories = this.getCalories(weight, height);
 
            switch (this.formsFields.activity) {
                case "L":
@@ -453,9 +350,8 @@ let app = new Vue({
                    calories = Math.round(calories * 1.7);
                    break;
            }
-
            switch (this.formsFields.goal) {
-               case "FM":
+               case "FL":
                    if (calories <= 2000) calories = 0.9 * calories;
                    if (calories > 2000) calories = 0.8 * calories;
                    this.formsFields.carbs = Math.round(0.40 * calories / 4);
@@ -474,32 +370,13 @@ let app = new Vue({
                    this.formsFields.fat = Math.round(0.25 * calories / 9);
                    break;
            }
+
            this.goToSecondStep();
        },
        calcCalories() {
-           let height;
-           let weight;
-           let calories = this.formsFields.calories;
-
-           if (!this.formHelpers.heightUnitChecked) {
-               height = ((this.formsFields.heightFeet * 30.48) + (this.formsFields.heightInches * 2.54));
-           }
-           else {
-               height = this.formsFields.heightCm;
-           }
-
-           if (!this.formHelpers.weightUnitChecked) {
-               weight = (this.formsFields.weightLbs * 0.453592);
-           } else {
-               weight = this.formsFields.weightKg;
-           }
-
-           if (this.formsFields.gender == "M") {
-               calories = Math.round((weight * 10) + (height * 6.25) - (this.formsFields.age * 5) + 5);
-           }
-           else {
-               calories = Math.round((weight * 10) + (height * 6.25) - (this.formsFields.age * 5) - 161);
-           }
+           let height = this.getHeight();
+           let weight = this.getWeight();
+           let calories = this.getCalories(weight, height);
 
            switch (this.formsFields.activity) {
                case "L":
@@ -515,7 +392,6 @@ let app = new Vue({
                    calories = Math.round(calories * 1.7);
                    break;
            }
-
            switch (this.formsFields.goal) {
                case "FM":
                    if (calories <= 2000) calories = 0.9 * calories;
@@ -534,7 +410,6 @@ let app = new Vue({
        calcFatPerc() {
            let weight;
            let sum = (Number(this.formsFields.skinfold1) + Number(this.formsFields.skinfold2) + Number(this.formsFields.skinfold3));
-           console.log(sum);
 
            if (!this.formHelpers.weightUnitChecked) {
                weight = this.formsFields.weightLbs;
@@ -554,29 +429,9 @@ let app = new Vue({
            this.goToSecondStep();
        },
        calcTdee() {
-           let height;
-           let weight;
-           let tdee = this.formsFields.tdee;
-
-           if (!this.formHelpers.heightUnitChecked) {
-               height = ((this.formsFields.heightFeet * 30.48) + (this.formsFields.heightInches * 2.54));
-           }
-           else {
-               height = this.formsFields.heightCm;
-           }
-
-           if (!this.formHelpers.weightUnitChecked) {
-               weight = (this.formsFields.weightLbs * 0.453592);
-           } else {
-               weight = this.formsFields.weightKg;
-           }
-
-           if (this.formsFields.gender == "M") {
-               tdee = ((weight * 10) + (height * 6.25) - (this.formsFields.age * 5) + 5);
-           }
-           else {
-               tdee = ((weight * 10) + (height * 6.25) - (this.formsFields.age * 5) - 161);
-           }
+           let height = this.getHeight();
+           let weight = this.getWeight();
+           let tdee = this.getCalories(weight, height);
 
            switch (this.formsFields.activity) {
                case "L":

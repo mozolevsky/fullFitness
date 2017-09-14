@@ -111,6 +111,10 @@ $color: rgb(10, 85, 247);
     font-size: 44px;
     font-weight: bold;
     color: $white;
+
+    &_middle {
+      top: 45%;
+    }
   }
 
   &-desc {

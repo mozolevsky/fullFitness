@@ -6019,6 +6019,8 @@ body {
     font-size: 44px;
     font-weight: bold;
     color: #ffffff; }
+    .bmr__circle-title_middle {
+      top: 45%; }
   .bmr__circle-desc {
     position: absolute;
     top: 60%;
