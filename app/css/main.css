@@ -8071,14 +8071,64 @@ body {
             align-items: center;
     background: url("../img/wyg-texture.jpg");
     background-size: cover; }
+    .checkout-blue1__logo-link_login {
+      margin-bottom: 30px; }
     .checkout-blue1__img-logo {
       width: 232px; }
     .checkout-blue1__main-img {
       width: 100%; }
+    .checkout-blue1__advs {
+      display: none; }
     .checkout-blue1__title {
       margin-bottom: 31px;
       text-align: center;
       color: #ffffff; }
+  .login-form__title {
+    margin-bottom: 17px;
+    opacity: 0.9;
+    font-size: 28px;
+    font-weight: bold;
+    text-align: left;
+    color: var(--black); }
+  .login-form__btn {
+    margin-bottom: 20px;
+    width: 100%;
+    height: 57px;
+    -webkit-border-radius: 3px;
+            border-radius: 3px;
+    background-image: -webkit-linear-gradient(340deg, #008cff, var(--electric-blue));
+    background-image: linear-gradient(110deg, #008cff, var(--electric-blue));
+    -webkit-box-shadow: 0 38px 24px 0 rgba(0, 0, 0, 0.11);
+            box-shadow: 0 38px 24px 0 rgba(0, 0, 0, 0.11);
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 0.82;
+    text-align: center;
+    color: var(--white); }
+  .login-form__input-area {
+    margin-bottom: 25px; }
+  .login-form__label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 20px;
+    line-height: 17px;
+    font-weight: normal;
+    text-transform: none;
+    color: #777f8f; }
+  .login-form__forget-pass {
+    display: block;
+    margin-bottom: 40px;
+    line-height: 22px;
+    font-size: 18px;
+    text-align: center;
+    color: var(--electric-blue); }
+    .login-form__forget-pass:hover {
+      cursor: pointer; }
+  .login-form__rights {
+    font-size: 16px;
+    line-height: 18px;
+    text-align: center;
+    color: var(--gunmetal); }
   .checkout-form {
     margin-top: 20px;
     margin-left: 34px;
@@ -8137,6 +8187,10 @@ body {
       font-weight: bold;
       color: #777f8f;
       text-transform: uppercase; }
+      .checkout-form__label_login {
+        font-size: 20px;
+        font-weight: normal;
+        text-transform: none; }
     .checkout-form__input {
       padding-left: 16px;
       width: 100%;
@@ -8359,6 +8413,11 @@ body {
     -webkit-justify-content: flex-start;
         -ms-flex-pack: start;
             justify-content: flex-start; }
+    .checkout-blue1_login {
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+          -ms-flex-align: center;
+              align-items: center; }
     .checkout-blue1__logo-link {
       display: none; }
     .checkout-blue1__title {
@@ -8366,6 +8425,17 @@ body {
     .checkout-blue1__main-img {
       margin-top: 50px;
       margin-bottom: 60px; }
+  .login-form__title {
+    font-size: 44px;
+    margin-bottom: 44px;
+    text-align: center; }
+  .login-form__input-area {
+    margin-right: 105px;
+    margin-left: 90px; }
+  .login-form__rights {
+    margin-left: auto;
+    margin-right: auto;
+    width: 335px; }
   .checkout-form {
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
@@ -8381,6 +8451,9 @@ body {
       margin-top: 20px;
       margin-bottom: 32px;
       text-align: center; }
+      .checkout-form__logo-link_login {
+        margin-top: 4px;
+        margin-bottom: 82px; }
     .checkout-form__img-logo {
       width: 302px; }
     .checkout-form__title {
@@ -8451,11 +8524,18 @@ body {
     margin-top: 15px; } }
 
 @media (min-width: 1440px) {
+  .login-form__forget-pass {
+    margin-bottom: 154px; }
   .checkout-form {
     width: 60%; }
+    .checkout-form_login {
+      width: 40%; }
     .checkout-form__logo-link {
       margin-top: 27px;
       margin-bottom: 20px; }
+      .checkout-form__logo-link_login {
+        margin-top: 4px;
+        margin-bottom: 154px; }
     .checkout-form__title {
       margin-bottom: 36px;
       width: 75%;
@@ -8471,4 +8551,49 @@ body {
     margin-left: 203px;
     margin-right: 203px; }
   .checkout-blue1 {
-    width: 40%; } }
+    width: 40%; }
+    .checkout-blue1_login {
+      width: 60%;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+          -ms-flex-align: center;
+              align-items: center; }
+    .checkout-blue1__main-img_login {
+      width: 610px;
+      margin-bottom: 30px; }
+    .checkout-blue1__advs {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      width: 610px;
+      -webkit-justify-content: space-around;
+          -ms-flex-pack: distribute;
+              justify-content: space-around; }
+    .checkout-blue1__adv {
+      width: 30%; }
+      .checkout-blue1__adv_1 {
+        width: 115px;
+        padding-top: 30px;
+        background: url("../img/login-stars.svg") no-repeat center top;
+        background-size: contain;
+        text-align: center; }
+      .checkout-blue1__adv_2 {
+        margin-left: 15px;
+        width: 223px;
+        padding-left: 50px;
+        background: url("../img/5@3x.png") no-repeat left 4px;
+        background-size: 40px auto; }
+      .checkout-blue1__adv_3 {
+        width: 164px;
+        padding-left: 59px;
+        background: url("../img/shield.svg") no-repeat left 4px;
+        background-size: 47px 54px; }
+      .checkout-blue1__adv-txt {
+        line-height: 22px;
+        font-size: 18px;
+        color: var(--white); }
+      .checkout-blue1__adv-bigtext {
+        line-height: 30px;
+        font-family: AvenirNext;
+        font-size: 22px; } }

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/normalize.min.css">
+    <link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap.min.css">
+    <link href="libs/mmenu/jquery.mmenu.css" type="text/css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/main.css">
+    <script src="https://use.typekit.net/pca4zir.js"></script>
+    <script>try{Typekit.load({ async: true });}catch(e){}</script>
+</head>
+<body>
+<div id="app">
+    <div class="checkout-wrapper">
+        <section class="checkout-blue1 checkout-blue1_login">
+            <a href="#" class="checkout-blue1__logo-link checkout-blue1__logo-link_login">
+                <img src="./img/logo-header_white.svg" alt="" class="checkout-blue1__img-logo">
+            </a>
+            <picture>
+                <source media="(min-width: 1440px)" srcset="./img/checkout-main-img.png">
+                <source media="(min-width: 1024px)" srcset="./img/sytem-logo@2x.png">
+                <source media="(min-width: 375px)" srcset="./img/checkout-main-img.png">
+                <img src="./img/sytem-logo@2x.png" class="checkout-blue1__main-img checkout-blue1__main-img_login">
+            </picture>
+            <div class="checkout-blue1__advs">
+                <div class="checkout-blue1__adv checkout-blue1__adv_1">
+                    <p class="checkout-blue1__adv-txt">
+                        <span class="checkout-blue1__adv-bigtext">97%</span>
+                        <br>
+                        satisfaction rate</p>
+                </div>
+                <div class="checkout-blue1__adv checkout-blue1__adv_2">
+                    <p class="checkout-blue1__adv-txt">The only home Body Transformation System that Includes all 5
+                        building blocks of transformation</p>
+                </div>
+                <div class="checkout-blue1__adv checkout-blue1__adv_3">
+                    <p class="checkout-blue1__adv-txt">Scientifically built, tested and prooven to get results</p>
+                </div>
+            </div>
+        </section>
+
+        <form class="checkout-form checkout-form_login" method="post" action="#">
+            <a href="#" class="checkout-form__logo-link checkout-form__logo-link_login">
+                <img src="./img/logo-header.svg" alt="" class="checkout-form__img-logo">
+            </a>
+
+            <h1 class="login-form__title">Log In</h1>
+
+            <form class="checkout-form__step1" method="post" action="#">
+                <div class="login-form__input-area">
+                    <label for="email" class="login-form__label">Email</label>
+                    <input id="email" type="text" class="checkout-form__input" placeholder="Enter your email">
+                </div>
+
+                <div class="login-form__input-area">
+                    <label for="password" class="login-form__label">Password</label>
+                    <input id="password" type="text" class="checkout-form__input" placeholder="Enter your password">
+                </div>
+
+                <div class="login-form__input-area">
+                    <button class="login-form__btn">Login</button>
+                    <a href="#" class="login-form__forget-pass">Forget password?</a>
+                </div>
+
+                <p class="login-form__rights">
+                    ©2001–2017 All Rights Reserved. BodyTransformation.com® is a registered trademark
+                    of The Rocket Science Group. Privacy and Terms
+                </p>
+            </form>
+
+        </form>
+    </div>
+
+</div>
+
+<script src="libs/vue/dist/vue.min.js"></script>
+<script src="libs/jquery/dist/jquery.min.js"></script>
+<script src="libs/mmenu/jquery.mmenu.js" type="text/javascript"></script>
+<script src="js/frombox.js"></script>
+<script src="js/scripts.js"></script>
+</body>
+</html>
